@@ -134,7 +134,11 @@ html, body, main {
   width: 100%;
   height: 100%;
   background-color: rgba(15, 21, 51, 0.8);
-  z-index: 0;
+  z-index: 3;
+}
+
+.menu div, .login div, .registr div {
+  z-index: 4;
 }
 
 .menu__container, .login__container, .registr__container {
@@ -289,14 +293,11 @@ html, body, main {
   vertical-align: middle;
   padding: 7px;
   color: #FFFFFF;
-}
-
-.login__auth input:last-child, .registr__auth input:last-child {
   margin-top: 17px;
 }
 
-.login__auth input:nth-last-child(2), .registr__auth input:nth-last-child(2) {
-  margin-top: 17px;
+.login__auth input:nth-child(1), .registr__auth input:nth-child(1) {
+  margin-top: 0px;
 }
 
 .login__auth input:focus, .registr__auth input:focus {
@@ -305,11 +306,64 @@ html, body, main {
 }
 
 .login__faggot, .registr__faggot {
+  display: block;
+  margin: 0 auto;
+  height: 15px;
   margin-top: 27px;
   text-align: center;
   font-size: 14px;
+  line-height: 15px;
 }
 
 .login__login, .registr__login {
-  margin-top: 35px;
+  margin-top: 27px;
+}
+
+.login__socialauth, .registr__socialauth {
+  width: 133px;
+  height: 75px;
+  margin: 0 auto;
+  margin-top: 15px;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+}
+
+.login__socialauth span, .registr__socialauth span {
+  margin-top: 6px;
+  display: block;
+  text-align: center;
+  height: 19px;
+  font-size: 17px;
+  line-height: 19px;
+}
+
+.login__socialauth div, .registr__socialauth div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.login__socialauth div div, .registr__socialauth div div {
+  margin-top: 6px;
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.registr__login {
+  margin-top: 17px;
+  width: 241px;
 }

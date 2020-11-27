@@ -23,7 +23,7 @@
         <span>Stream</span>
       </form>
       </div>
-      <div class="header__menu" onclick="show('menu')"><img src="img/menu.png" alt="MENU"></div>
+      <div class="header__menu noclose" onclick="show('menu')"><img src="img/menu.png" alt="MENU"></div>
     </nav>
     <div class="header__cm">МЕСТО ДЛЯ ВАШЕЙ РЕКЛАМЫ</div>
   </header>
@@ -40,7 +40,7 @@
       </div>
     </div>
     <div class="menu" id="menu">
-      <div class="menu__container">
+      <div class="menu__container noclose">
         <div class="menu__header"><span>Меню</span><img onclick="hide('menu')" src="img/close.png" alt="CLOSE"></div>
         <div class="menu__cm">МЕСТО ДЛЯ ВАШЕЙ РЕКЛАМЫ</div>
         <div class="menu__logo"><img src="img/logo-white-big.png" alt="LOGO"></div>
@@ -49,7 +49,7 @@
           <div>ESPORT</div>
           <div>FIFA</div>
         </div>
-        <div class="menu__login" onclick="show('login'); hide('menu'); hide('reg')">ВОЙТИ</div>
+        <div class="menu__login" onclick="show('login'); hide('menu'); hide('reg'); paint('logBtn')">ВОЙТИ</div>
         <div class="menu__social">
             <a href="#"><img src="img/social/telegramb.png" alt=""></a>
             <a href="#"><img src="img/social/twitterb.png" alt=""></a>
@@ -61,11 +61,11 @@
       </div>
     </div>
   <div class="login" id="login">
-    <div class="login__container">
+    <div class="login__container noclose">
       <div class="login__select">
-        <span >Авторизация</span>
+        <span id="logBtn">Авторизация</span>
         <div class="login__bar"></div>
-        <span onclick="show('reg'); hide('login'); hide('menu')">Регистрация</span>
+        <span onclick="show('reg'); hide('login'); hide('menu'); paint('regBtn')">Регистрация</span>
       </div>
       <div class="login__logo">
         <img src="img/logo-white-big.png" alt="LOGO">
@@ -75,24 +75,21 @@
       </div>
       <div class="login__faggot">Забыли пароль?</div>
       <div class="login__login">ВОЙТИ</div>
-      <div class="login__sociallog"><span>Войти через:</span> 
-      <div class="login__change">
+      <div class="login__socialauth">
+        <span>Войти через:</span>
         <div>
-          <a href="#"><img src="img/social/google.png" alt="GOOGLE"></a>
+          <div><img src="img/gno.png" alt="GOOGLE"></div>
+          <div><img src="img/fbno.png" alt="FACEBOOK"></div>
         </div>
-        <div>
-          <a href="#"><img src="img/social/facebook.png" alt="FACEBOOK"></a>
-        </div>
-      </div>  
+      </div>
     </div>
   </div>
-</div>
 <div class="registr" id="reg">
-  <div class="registr__container">
+  <div class="registr__container noclose">
     <div class="registr__select">
-      <span onclick="show('login'); hide('reg'); hide('menu')" >Авторизация</span>
+      <span id="logBtn" onclick="show('login'); hide('reg'); hide('menu'); paint('logBtn')">Авторизация</span>
       <div class="login__bar"></div>
-      <span>Регистрация</span>
+      <span id="regBtn">Регистрация</span>
     </div>
     <div class="registr__logo">
       <img src="img/logo-white-big.png" alt="LOGO">
@@ -104,15 +101,16 @@
     </div> 
     <div class="registr__login">ЗАРЕГИСТРИРОВАТЬСЯ</div>
     <div class="login__sociallog"> 
-      <div class="login__text"></div><span>Войти через:</span> </div>
-      <div class="menu__social">
-        <a href="#"><img src="img/social/facebookb.png" alt=""></a>
-        <a href="#"><img src="img/social/facebookb.png" alt=""></a>
-      </div>  
+      <div class="login__socialauth">
+        <span>Войти через:</span>
+        <div>
+          <div><img src="img/gno.png" alt="GOOGLE"></div>
+          <div><img src="img/fbno.png" alt="FACEBOOK"></div>
+        </div>
+      </div> 
     </div>
+  </div>
 </div>
-</div>
-
 
 </main>
 </body>
@@ -123,5 +121,19 @@
   function hide(id) {
       document.getElementById(id).style.display = "none";
   }
+  function paint(id) {
+      document.getElementById(id).style.color = "#FF0000";
+  }
+  var container = document.getElementsByClassName('header__menu')[0];
+  var container1 = document.getElementsByClassName('menu__container')[0];
+  var container2 = document.getElementsByClassName('login__container')[0];
+  var container3 = document.getElementsByClassName('registr__container')[0];
+document.addEventListener('click', function( event ) {
+  if ((container !== event.target && !container.contains(event.target)) && (container1 !== event.target && !container1.contains(event.target)) && (container2 !== event.target && !container2.contains(event.target)) && (container3 !== event.target && !container3.contains(event.target))) {    
+    document.getElementById("menu").style.display = "none";
+    document.getElementById("login").style.display = "none";  
+    document.getElementById("reg").style.display = "none";
+  }
+});
   </script>
 </html>

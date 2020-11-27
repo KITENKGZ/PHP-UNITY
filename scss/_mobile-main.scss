@@ -94,13 +94,16 @@ html, body, main {
 }
 
 .menu, .login , .registr  {
+  div {
+    z-index: 4;
+  }
   position: fixed;
   display: none;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(15, 21, 51, 0.8); 
-  z-index: 0;
+  z-index: 3;
   &__container  {
     margin: 0 auto;
     margin-top: 101px;
@@ -223,11 +226,9 @@ html, body, main {
       vertical-align: middle;
       padding: 7px;
       color: $color-second;
-      &:last-child {
-        margin-top: 17px;
-      }
-      &:nth-last-child(2){
-        margin-top: 17px;
+      margin-top: 17px;
+      &:nth-child(1) {
+        margin-top: 0px;
       }
       &:focus {
         box-shadow: inset 0px 0px 3px 1px rgba(255,255,255,0.5)
@@ -235,11 +236,53 @@ html, body, main {
     }
   }
   &__faggot {
+    display: block;
+    margin: 0 auto;
+    height: 15px;
     margin-top: 27px;
     text-align: center;
     font-size: 14px;
+    line-height: 15px;
+    
   }
   &__login {
-    margin-top: 35px;
+    margin-top: 27px;
+  }
+  &__socialauth {
+    width: 133px;
+    height: 75px;
+    margin: 0 auto;
+    margin-top: 15px;
+    border: 1px solid $color-second;
+    border-radius: 5px;
+    span {
+      margin-top: 6px;
+      display: block;
+      text-align: center;
+      height: 19px;
+      font-size: 17px;
+      line-height: 19px;
+    }
+    div {
+      display: flex;
+      justify-content: space-evenly;
+      div {
+        margin-top: 6px;
+        width: 38px;
+        height: 38px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.registr {
+  &__login {
+    margin-top: 17px;
+    width: 241px;
   }
 }
