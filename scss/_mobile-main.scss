@@ -202,7 +202,7 @@ html, body, main {
 
 }
 
-.login {
+.login, .registr {
   &__container {
     padding: 13px 13px;
   }
@@ -229,7 +229,6 @@ html, body, main {
       &:nth-last-child(2){
         margin-top: 17px;
       }
-
       &:focus {
         box-shadow: inset 0px 0px 3px 1px rgba(255,255,255,0.5)
       }
@@ -243,10 +242,4 @@ html, body, main {
   &__login {
     margin-top: 35px;
   }
-}
-
-.registr{
-
-
-
 }

@@ -265,19 +265,19 @@ html, body, main {
   background-color: #FFFFFF;
 }
 
-.login__container {
+.login__container, .registr__container {
   padding: 13px 13px;
 }
 
-.login__logo {
+.login__logo, .registr__logo {
   margin-top: 25px;
 }
 
-.login__auth {
+.login__auth, .registr__auth {
   margin-top: 25px;
 }
 
-.login__auth input {
+.login__auth input, .registr__auth input {
   background: rgba(255, 255, 255, 0.03);
   outline: none;
   border: none;
@@ -291,25 +291,25 @@ html, body, main {
   color: #FFFFFF;
 }
 
-.login__auth input:last-child {
+.login__auth input:last-child, .registr__auth input:last-child {
   margin-top: 17px;
 }
 
-.login__auth input:nth-last-child(2) {
+.login__auth input:nth-last-child(2), .registr__auth input:nth-last-child(2) {
   margin-top: 17px;
 }
 
-.login__auth input:focus {
+.login__auth input:focus, .registr__auth input:focus {
   -webkit-box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.5);
           box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.5);
 }
 
-.login__faggot {
+.login__faggot, .registr__faggot {
   margin-top: 27px;
   text-align: center;
   font-size: 14px;
 }
 
-.login__login {
+.login__login, .registr__login {
   margin-top: 35px;
 }
