@@ -127,28 +127,29 @@ html, body, main {
   padding: 0px 6px;
 }
 
-.menu {
+.menu, .login {
   position: fixed;
+  display: none;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(15, 21, 51, 0.8);
-  z-index: 1;
+  z-index: 0;
 }
 
-.menu__container {
+.menu__container, .login__container {
   margin: 0 auto;
   margin-top: 101px;
   width: 313px;
   height: 461px;
-  background-color: #01082B;
+  background-color: #0F1533;
   z-index: 2;
   border: 1px solid #FFFFFF;
   border-radius: 7px;
-  padding: 14px 5px;
+  padding: 13px 5px;
 }
 
-.menu__header {
+.menu__header, .login__header {
   height: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -162,7 +163,7 @@ html, body, main {
   padding: 0 9px;
 }
 
-.menu__header span {
+.menu__header span, .login__header span {
   padding: 0;
   display: block;
   height: 25px;
@@ -171,7 +172,7 @@ html, body, main {
   font-style: bold;
 }
 
-.menu__cm {
+.menu__cm, .login__cm {
   height: 53px;
   margin-top: 30px;
   background-color: #FFFFFF;
@@ -181,14 +182,14 @@ html, body, main {
   text-align: center;
 }
 
-.menu__logo {
+.menu__logo, .login__logo {
   height: 71px;
   width: 200px;
   margin: 0 auto;
   margin-top: 50px;
 }
 
-.menu__nav {
+.menu__nav, .login__nav {
   height: 31px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -200,23 +201,23 @@ html, body, main {
   margin-top: 50px;
 }
 
-.menu__nav div {
+.menu__nav div, .login__nav div {
   height: 31px;
-  width: 71px;
+  width: 77px;
   text-align: center;
   line-height: 31px;
   font-size: 17px;
   font-style: bold;
-  background-color: #0F1533;
+  background-color: rgba(255, 255, 255, 0.03);
   border-radius: 5px;
 }
 
-.menu__login {
+.menu__login, .login__login {
   width: 131px;
   height: 35px;
   margin: 0 auto;
   margin-top: 30px;
-  background-color: #0F1533;
+  background-color: rgba(255, 255, 255, 0.03);
   font-size: 18px;
   line-height: 35px;
   text-align: center;
@@ -224,7 +225,7 @@ html, body, main {
   border-radius: 5px;
 }
 
-.menu__social {
+.menu__social, .login__social {
   height: 30px;
   width: 190px;
   margin: 0 auto;
@@ -236,4 +237,75 @@ html, body, main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.menu__select, .login__select {
+  height: 30px;
+  width: 287px;
+  margin: 0 auto;
+  padding: 6px 9px;
+  background-color: #01082B;
+  border-radius: 5px;
+  font-size: 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__bar, .login__bar {
+  width: 2px;
+  height: 18px;
+  border-radius: 1px;
+  background-color: #FFFFFF;
+}
+
+.login__container {
+  padding: 13px 13px;
+}
+
+.login__logo {
+  margin-top: 25px;
+}
+
+.login__auth {
+  margin-top: 25px;
+}
+
+.login__auth input {
+  background: rgba(255, 255, 255, 0.03);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 35px;
+  font-size: 17px;
+  line-height: 17px;
+  vertical-align: middle;
+  padding: 7px;
+  color: #FFFFFF;
+}
+
+.login__auth input:last-child {
+  margin-top: 17px;
+}
+
+.login__auth input:focus {
+  -webkit-box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.5);
+          box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.5);
+}
+
+.login__faggot {
+  margin-top: 27px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.login__login {
+  margin-top: 35px;
 }

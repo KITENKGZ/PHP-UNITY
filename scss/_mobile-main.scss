@@ -93,23 +93,24 @@ html, body, main {
   }
 }
 
-.menu {
+.menu, .login {
   position: fixed;
+  display: none;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(15, 21, 51, 0.8); 
-  z-index: 1;
-  &__container {
+  z-index: 0;
+  &__container  {
     margin: 0 auto;
     margin-top: 101px;
     width: 313px;
     height: 461px;
-    background-color: $color-bg;
+    background-color: $color-main;
     z-index: 2;
     border: 1px solid $color-second;
     border-radius: 7px;
-    padding: 14px 5px;
+    padding: 13px 5px;
   }
   &__header {
     height: 25px;
@@ -149,12 +150,12 @@ html, body, main {
     margin-top: 50px;
     div {
       height: 31px;
-      width: 71px;
+      width: 77px;
       text-align: center;
       line-height: 31px;
       font-size: 17px;
       font-style: bold;
-      background-color: $color-main;
+      background-color: rgba(255, 255, 255, 0.03);
       border-radius: 5px;
     }
   }
@@ -163,7 +164,7 @@ html, body, main {
     height: 35px;
     margin: 0 auto;
     margin-top: 30px;
-    background-color: $color-main;
+    background-color: rgba(255, 255, 255, 0.03);
     font-size: 18px;
     line-height: 35px;
     text-align: center;
@@ -178,5 +179,62 @@ html, body, main {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
+  }
+  &__select {
+    height: 30px;
+    width: 287px;
+    margin: 0 auto;
+    padding: 6px 9px;
+    background-color: $color-bg;
+    border-radius: 5px;
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__bar {
+    width: 2px;
+    height: 18px;
+    border-radius: 1px;
+    background-color: $color-second-bg;
+  }
+}
+
+.login {
+  &__container {
+    padding: 13px 13px;
+  }
+  &__logo {
+    margin-top: 25px;
+  }
+  &__auth {
+    margin-top: 25px;
+    input {
+      background: rgba(255, 255, 255, 0.03);
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      height: 35px;
+      font-size: 17px;
+      line-height: 17px;
+      vertical-align: middle;
+      padding: 7px;
+      color: $color-second;
+      &:last-child {
+        margin-top: 17px;
+      }
+      &:focus {
+        box-shadow: inset 0px 0px 3px 1px rgba(255,255,255,0.5)
+      }
+    }
+  }
+  &__faggot {
+    margin-top: 27px;
+    text-align: center;
+    font-size: 14px;
+  }
+  &__login {
+    margin-top: 35px;
   }
 }

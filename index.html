@@ -49,7 +49,7 @@
           <div>ESPORT</div>
           <div>FIFA</div>
         </div>
-        <div class="menu__login">ВОЙТИ</div>
+        <div class="menu__login" onclick="loginOp()">ВОЙТИ</div>
         <div class="menu__social">
             <a href="#"><img src="img/social/telegramb.png" alt=""></a>
             <a href="#"><img src="img/social/twitterb.png" alt=""></a>
@@ -60,16 +60,29 @@
       </div>
     </div>
   </div>
+  <div class="login" id="login" onclick="login()">
+    <div class="login__container">
+      <div class="login__select"><span>Авторизация</span><div class="login__bar"></div><span>Регистрация</span></div>
+      <div class="login__logo"><img src="img/logo-white-big.png" alt="LOGO"></div>
+      <div class="login__auth"><input type="text" placeholder="Логин..."><input type="password" placeholder="Пароль..."></div>
+      <div class="login__faggot">Забыли пароль?</div>
+      <div class="login__login">ВОЙТИ</div>
+    </div>
+  </div>
 </body>
 <script>
-  function menuCl() {
-    if(document.getElementById("menu").style.display = "block") {
-      document.getElementById("menu").style.display = "none";
-    } else {
+  function menuOp() {
       document.getElementById("menu").style.display = "block";
-    }
-    
   }
-  
+  function menuCl() {
+      document.getElementById("menu").style.display = "none";
+  }
+  function loginOp() {
+      document.getElementById("login").style.display = "block";
+      menuCl();
+  }
+  function loginCl() {
+      document.getElementById("login").style.display = "none";
+  }
   </script>
 </html>
