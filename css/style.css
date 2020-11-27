@@ -127,7 +127,7 @@ html, body, main {
   padding: 0px 6px;
 }
 
-.menu, .login {
+.menu, .login, .registr {
   position: fixed;
   display: none;
   top: 0;
@@ -137,7 +137,7 @@ html, body, main {
   z-index: 0;
 }
 
-.menu__container, .login__container {
+.menu__container, .login__container, .registr__container {
   margin: 0 auto;
   margin-top: 101px;
   width: 313px;
@@ -149,7 +149,7 @@ html, body, main {
   padding: 13px 5px;
 }
 
-.menu__header, .login__header {
+.menu__header, .login__header, .registr__header {
   height: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -163,7 +163,7 @@ html, body, main {
   padding: 0 9px;
 }
 
-.menu__header span, .login__header span {
+.menu__header span, .login__header span, .registr__header span {
   padding: 0;
   display: block;
   height: 25px;
@@ -172,7 +172,7 @@ html, body, main {
   font-style: bold;
 }
 
-.menu__cm, .login__cm {
+.menu__cm, .login__cm, .registr__cm {
   height: 53px;
   margin-top: 30px;
   background-color: #FFFFFF;
@@ -182,14 +182,14 @@ html, body, main {
   text-align: center;
 }
 
-.menu__logo, .login__logo {
+.menu__logo, .login__logo, .registr__logo {
   height: 71px;
   width: 200px;
   margin: 0 auto;
   margin-top: 50px;
 }
 
-.menu__nav, .login__nav {
+.menu__nav, .login__nav, .registr__nav {
   height: 31px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -201,7 +201,7 @@ html, body, main {
   margin-top: 50px;
 }
 
-.menu__nav div, .login__nav div {
+.menu__nav div, .login__nav div, .registr__nav div {
   height: 31px;
   width: 77px;
   text-align: center;
@@ -212,7 +212,7 @@ html, body, main {
   border-radius: 5px;
 }
 
-.menu__login, .login__login {
+.menu__login, .login__login, .registr__login {
   width: 131px;
   height: 35px;
   margin: 0 auto;
@@ -225,7 +225,7 @@ html, body, main {
   border-radius: 5px;
 }
 
-.menu__social, .login__social {
+.menu__social, .login__social, .registr__social {
   height: 30px;
   width: 190px;
   margin: 0 auto;
@@ -239,7 +239,7 @@ html, body, main {
           justify-content: space-between;
 }
 
-.menu__select, .login__select {
+.menu__select, .login__select, .registr__select {
   height: 30px;
   width: 287px;
   margin: 0 auto;
@@ -258,7 +258,7 @@ html, body, main {
           align-items: center;
 }
 
-.menu__bar, .login__bar {
+.menu__bar, .login__bar, .registr__bar {
   width: 2px;
   height: 18px;
   border-radius: 1px;
@@ -292,6 +292,10 @@ html, body, main {
 }
 
 .login__auth input:last-child {
+  margin-top: 17px;
+}
+
+.login__auth input:nth-last-child(2) {
   margin-top: 17px;
 }
 

@@ -93,7 +93,7 @@ html, body, main {
   }
 }
 
-.menu, .login {
+.menu, .login , .registr  {
   position: fixed;
   display: none;
   top: 0;
@@ -198,6 +198,8 @@ html, body, main {
     border-radius: 1px;
     background-color: $color-second-bg;
   }
+
+
 }
 
 .login {
@@ -224,6 +226,10 @@ html, body, main {
       &:last-child {
         margin-top: 17px;
       }
+      &:nth-last-child(2){
+        margin-top: 17px;
+      }
+
       &:focus {
         box-shadow: inset 0px 0px 3px 1px rgba(255,255,255,0.5)
       }
@@ -237,4 +243,10 @@ html, body, main {
   &__login {
     margin-top: 35px;
   }
+}
+
+.registr{
+
+
+
 }
