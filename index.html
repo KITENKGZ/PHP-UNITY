@@ -23,7 +23,7 @@
         <span>Stream</span>
       </form>
       </div>
-      <div class="header__menu"><img src="img/menu.png" alt="MENU"></div>
+      <div class="header__menu" onclick="menuOp()"><img src="img/menu.png" alt="MENU"></div>
     </nav>
     <div class="header__cm">МЕСТО ДЛЯ ВАШЕЙ РЕКЛАМЫ</div>
   </header>
@@ -39,9 +39,9 @@
         <div class="content__main"></div>
       </div>
     </div>
-    <div class="menu">
+    <div class="menu" id="menu">
       <div class="menu__container">
-        <div class="menu__header"><span>Меню</span><img src="img/close.png" alt="CLOSE"></div>
+        <div class="menu__header"><span>Меню</span><img onclick="menuCl()" src="img/close.png" alt="CLOSE"></div>
         <div class="menu__cm">МЕСТО ДЛЯ ВАШЕЙ РЕКЛАМЫ</div>
         <div class="menu__logo"><img src="img/logo-white-big.png" alt="LOGO"></div>
         <div class="menu__nav">
@@ -51,16 +51,25 @@
         </div>
         <div class="menu__login">ВОЙТИ</div>
         <div class="menu__social">
-          <ul>
-            <li><a href="#"><img src="img/social/telegramb.png" alt=""></a></li>
-            <li><a href="#"><img src="img/social/twitterb.png" alt=""></a></li>
-            <li><a href="#"><img src="img/social/instagramb.png" alt=""></a></li>
-            <li><a href="#"><img src="img/social/facebookb.png" alt=""></a></li>
-            <li><a href="#"><img src="img/social/vkb.png" alt=""></a></li>
-          </ul>
+            <a href="#"><img src="img/social/telegramb.png" alt=""></a>
+            <a href="#"><img src="img/social/twitterb.png" alt=""></a>
+            <a href="#"><img src="img/social/instagramb.png" alt=""></a>
+            <a href="#"><img src="img/social/facebookb.png" alt=""></a>
+            <a href="#"><img src="img/social/vkb.png" alt=""></a>
         </div>
       </div>
     </div>
   </div>
 </body>
+<script>
+  function menuCl() {
+    if(document.getElementById("menu").style.display = "block") {
+      document.getElementById("menu").style.display = "none";
+    } else {
+      document.getElementById("menu").style.display = "block";
+    }
+    
+  }
+  
+  </script>
 </html>
