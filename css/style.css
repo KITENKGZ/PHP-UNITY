@@ -321,7 +321,8 @@ html, body, main {
 }
 
 .menu__header, .login__header, .registr__header {
-  height: 25px;
+  position: relative;
+  height: 93px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -332,6 +333,27 @@ html, body, main {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 9px;
+  background-color: #01082B;
+  border-radius: 7px;
+}
+
+.menu__header .content__horizontal, .login__header .content__horizontal, .registr__header .content__horizontal {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  -webkit-transform: translatex(-50%);
+          transform: translatex(-50%);
+}
+
+.menu__header .menu__login, .login__header .menu__login, .registr__header .menu__login {
+  margin: 0 0 0 0;
+  background: none;
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
 }
 
 .menu__header span, .login__header span, .registr__header span {
@@ -347,9 +369,23 @@ html, body, main {
   margin-top: 20px;
 }
 
+.menu__profile, .login__profile, .registr__profile {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 29px 12px 23px;
+}
+
 .menu__cm, .login__cm, .registr__cm {
   height: 53px;
-  margin-top: 30px;
+  margin-top: 15px;
   background-color: #FFFFFF;
   border-radius: 5px;
   line-height: 53px;
@@ -361,7 +397,14 @@ html, body, main {
   height: 71px;
   width: 200px;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 30px;
+}
+
+.menu__middle, .login__middle, .registr__middle {
+  margin: 0 auto;
+  margin-top: 33px;
+  width: 163px;
+  height: 30px;
 }
 
 .menu__nav, .login__nav, .registr__nav {
@@ -373,7 +416,7 @@ html, body, main {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0 8px;
-  margin-top: 50px;
+  margin-top: 22px;
 }
 
 .menu__nav div, .login__nav div, .registr__nav div {
@@ -425,7 +468,6 @@ html, body, main {
 
 .menu__select, .login__select, .registr__select {
   height: 30px;
-  width: 287px;
   margin: 0 auto;
   padding: 6px 9px;
   background-color: #01082B;

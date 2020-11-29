@@ -277,11 +277,32 @@ html, body, main {
     padding: 13px 5px;
   }
   &__header {
-    height: 25px;
+    position: relative;
+    height: 93px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 9px;
+    background-color: $color-bg;
+    border-radius:7px;
+
+    .content__horizontal
+    {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translatex(-50%);
+    }
+    .menu__login{
+      margin:0 0 0 0;
+      background:none;
+      font-family: Comfortaa;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 20px;
+      text-align: center;
+    }
     span {
       padding: 0;
       display: block;
@@ -294,9 +315,18 @@ html, body, main {
       }
     }
   }
+
+  &__profile{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 15px 29px 12px 23px;
+    
+  }
   &__cm {
     height: 53px;
-    margin-top: 30px;
+    margin-top: 15px;
     background-color: $color-second-bg;
     border-radius: 5px;
     line-height: 53px;
@@ -307,14 +337,24 @@ html, body, main {
     height: 71px;
     width: 200px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 30px;
   }
+
+ &__middle{
+   margin: 0 auto;
+   margin-top: 33px;
+  width: 163px;
+  height: 30px;
+  
+
+ }
+
   &__nav {
     height: 31px;
     display: flex;
     justify-content: space-between;
     padding: 0 8px;
-    margin-top: 50px;
+    margin-top: 22px;
     div {
       display: flex;
       justify-content: space-evenly;
@@ -354,7 +394,6 @@ html, body, main {
   }
   &__select {
     height: 30px;
-    width: 287px;
     margin: 0 auto;
     padding: 6px 9px;
     background-color: $color-bg;
@@ -496,6 +535,6 @@ font-style: normal;
 font-weight: normal;
 font-size: 7px;
 line-height: 8px;
-color: #01082B;
+color: $color-bg;
 }
 }
