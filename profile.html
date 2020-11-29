@@ -17,13 +17,14 @@
         <div class="header__bar"></div>
         <div class="header__search"><img src="img/search.png" alt="SEARCH"></div>
       </div>
-      <div class="header__select">
-        <span>News</span>
-        <div class="header__bar"></div>
-        <span>Stream</span>
-      </form>
-      </div>
-      <div class="header__menu noclose" onclick="show('menu')"><img src="img/menu.png" alt="MENU"></div>
+      <div class="header__rightside">
+          <div class="header__select">
+            <span>News</span>
+            <div class="header__bar"></div>
+            <span>Stream</span>
+          </div>
+         <div class="header__menu noclose" onclick="show('menu')"><img src="img/menu.png" alt="MENU"></div>
+    </div>
     </nav>
     <div class="header__cm">МЕСТО ДЛЯ ВАШЕЙ РЕКЛАМЫ</div>
   </header>
@@ -34,10 +35,9 @@
               <div class="content__head">
                   <img src="img/social/profile 9.png" alt="profile">
                   <div class="user__info"><span>Владимир Путин</span> 
-                    <span>Незнаю</span></div>
+                    <span>VPLORD</span></div>
               </div>  
               <div class="content__horizontal"></div> 
-
                 <div class="content__initial">
                     <div class="content__left">
                       <span>Имя</span>
@@ -45,16 +45,13 @@
                       <span>Пол</span>
                       <span>Дата рождения</span>
                     </div>
-
                     <div class="content__right">
                      <input type="text" placeholder="Имя">
                      <input type="text" placeholder="Путин">
                      <input type="text" placeholder="М">
-                     <input type="text" placeholder="15,02,1985">
+                     <input type="date" value="2018-07-22" min="1960-01-01" max="2020-01-01"> 
                     </div>
                 </div>
-
-
                 <div class="content__profile">
                   <div class="content__left">
                     <span>Логин</span>
@@ -64,19 +61,21 @@
                   </div>
                   <div class="content__right">
                     <input type="text" placeholder="VPLord">
-                     <input type="text" placeholder="*******">
-                     <input type="text" placeholder="primer@mail.ru">
-                     <input type="text" placeholder="Загрузить...">
-                  </div>
+                     <input type="password" placeholder="password">
+                     <input type="mail" placeholder="primer@mail.ru">
+                    <div class="input__wrapper">
+                     <input   name="file" type="file" name="file" id="input__file" class="input input__file" accept=".png, .jpg, .jpeg" > 
+                     <label for="input__file" class="input__file-button">
+                      <span class="input__file-button-text">Загрузить...</span>  
+                    </div>
+                  </div>   
               </div>
-
               <div class="content__theme">
                 <span> Цвет темы:</span>
                 <div></div>
                 <div></div>
                 <div></div>
               </div>
-
               <div class="content__redact">
                 <span> Редактировать</span>
               </div>
@@ -91,25 +90,19 @@
         <div class="footer__container">
           <div class="footer__logo" >
             <img src="img/logo.png" alt="">
-          </div>
-          
+          </div>      
           <div class="footer__social">
             <a href="#"><img src="img/social/telegramb.png" alt=""></a>
             <a href="#"><img src="img/social/twitterb.png" alt=""></a>
             <a href="#"><img src="img/social/instagramb.png" alt=""></a>
             <a href="#"><img src="img/social/facebookb.png" alt=""></a>
             <a href="#"><img src="img/social/vkb.png" alt=""></a>
-          </div>
-          
+          </div>    
           <div class="footer__text">
             <span>team unity</span>
           </div>  
-  
-        </div>
-        
+        </div>  
     </footer>
 
-
-  
 </body>
 </html>
