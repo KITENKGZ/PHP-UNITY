@@ -1,4 +1,6 @@
 <?php
+
+require "db.php";
 // Создаем переменную для сбора данных от пользователя по методу POST
 $data = $_POST;
 
@@ -27,8 +29,7 @@ if(isset($data['do_signup'])) {
 	}
 
          // функция mb_strlen - получает длину строки
-        // Если логин будет меньше 5 символов и больше 90, то выйдет ошибка
-	if(mb_strlen($data['login']) < 3 || mb_strlen($data['login']) > 32) {
+	if(mb_strlen($data['login']) < 4 || mb_strlen($data['login']) > 16) {
 
 	    $errors[] = "Недопустимая длина логина";
 

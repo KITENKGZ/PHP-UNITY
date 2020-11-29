@@ -1,4 +1,6 @@
 <?php
+
+require "db.php";
 // Создаем переменную для сбора данных от пользователя по методу POST
 $data = $_POST;
 
@@ -9,7 +11,7 @@ if(isset($data['do_login'])) {
 $errors = array();
 
 // Проводим поиск пользователей в таблице users
-$user = R::findOne('users', 'login = ?', ($data['login']));
+$user = R::findOne('users', 'login = ?', array($data['login']));
 
 if($user) {
 
@@ -20,7 +22,7 @@ if($user) {
     $_SESSION['logged_user'] = $user;
     
  		// Редирект на главную страницу
-                header('Location: index.php');
+    header('Location: index.php');
 
   } else {
     

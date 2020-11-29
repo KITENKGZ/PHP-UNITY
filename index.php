@@ -1,7 +1,5 @@
 <?php
 require "db.php";
-require "auth.php";
-require "reg.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -41,7 +39,7 @@ require "reg.php";
           <span>ESPORT</span>
           <span>FIFA</span>
         </div>
-        <div class="content__main"></div>
+        <div class="content__main"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7xxssLeVzW0?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
       </div>
     </div>
     <div class="menu" id="menu">
@@ -83,7 +81,7 @@ require "reg.php";
       </div>
     </div>
   <div class="login" id="login">
-    <div class="login__container noclose">
+    <div class="login__container">
       <div class="login__select">
         <span id="logBtn">Авторизация</span>
         <div class="login__bar"></div>
@@ -92,7 +90,7 @@ require "reg.php";
       <div class="login__logo">
         <img src="img/logo-white-big.png" alt="LOGO">
       </div>
-      <form action="/index.php" class="login__auth" method="POST">
+      <form action="/auth.php" class="login__auth" method="POST">
         <input class="inp" name="login" type="text" placeholder="Логин...">
         <input class="inp" name="password" type="password" placeholder="Пароль...">
         <div class="login__faggot"><a href="forget.php">Забыли пароль?</a></div>
@@ -117,7 +115,7 @@ require "reg.php";
     <div class="registr__logo">
       <img src="img/logo-white-big.png" alt="LOGO">
     </div>
-    <form action="/index.php" class="registr__auth" method="POST">
+    <form action="/reg.php" class="registr__auth" method="POST">
       <input class="inp" name="login" type="text" placeholder="Логин...">
       <input class="inp" name="password" type="password" placeholder="Пароль...">
       <input class="inp" name="email" type="text" placeholder="Почта...">
