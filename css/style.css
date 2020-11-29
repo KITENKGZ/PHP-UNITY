@@ -124,6 +124,7 @@ html, body, main {
   border-radius: 7px;
   height: 402px;
   background-color: #01082B;
+  margin-top: 7px;
 }
 
 .content__header {
@@ -155,19 +156,20 @@ html, body, main {
 }
 
 .content__head {
-  margin: 0 auto;
-  margin-top: 7px;
-  width: 100%;
-  max-width: 280px;
-  height: 80px;
-  padding: 15px 15px  0  16px;
-  background-color: #01082B;
-  border-radius: 5px;
-  font-size: 17px;
-  line-height: 17px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 255px;
+  margin: 0 auto;
+  padding: 15px 6px 0 6px;
+  height: 80px;
+  background-color: #01082B;
+  border-radius: 5px;
+  font-size: 18px;
+  line-height: 20px;
 }
 
 .content__head img {
@@ -175,15 +177,18 @@ html, body, main {
   height: 52px;
 }
 
-.content__head span {
-  margin: 11px 0 0 11px;
-  font-family: Comfortaa;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 20px;
-  text-align: center;
-  color: #FFFFFF;
+.content__info {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .content__horizontal {
@@ -193,12 +198,12 @@ html, body, main {
   background-color: #FFFFFF;
 }
 
-.content__initial, .content__profile {
+.content__initial {
   width: 255px;
-  height: 100px;
+  height: 230px;
   background: #0F1533;
   margin: 0 auto;
-  padding: 0px 0px 0px 10px;
+  padding: 10px 0px 10px 10px;
   margin-top: 10px;
   font-family: Comfortaa;
   font-style: normal;
@@ -215,7 +220,7 @@ html, body, main {
   border-radius: 5px;
 }
 
-.content__initial input, .content__profile input {
+.content__initial input {
   background: none;
   outline: none;
   border: none;
@@ -229,54 +234,13 @@ html, body, main {
   color: #FFFFFF;
 }
 
-.content__initial input:nth-child(1), .content__profile input:nth-child(1) {
+.content__initial input:nth-child(1) {
   margin-top: 0px;
 }
 
-.content__initial input:focus, .content__profile input:focus {
+.content__initial input:focus {
   -webkit-box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.5);
           box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.5);
-}
-
-.content__initial input[type=mail], .content__profile input[type=mail] {
-  width: 150px;
-  padding: 0px 0px 0px 0px;
-  margin-left: -50px;
-}
-
-.content__initial input[type=date], .content__profile input[type=date] {
-  margin-left: 5px;
-  padding: 0px 0px 0px 0px;
-}
-
-.content__initial input[type=file], .content__profile input[type=file] {
-  opacity: 0;
-  position: absolute;
-  max-width: 100%;
-  padding: 0px;
-  border-radius: 7px;
-}
-
-.content__initial .input__wrapper, .content__profile .input__wrapper {
-  width: 100%;
-  position: relative;
-  vertical-align: middle;
-  padding-left: 7px;
-}
-
-.content__initial .input__file, .content__profile .input__file {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-}
-
-.content__initial .input__file-button-text, .content__profile .input__file-button-text {
-  font-family: Comfortaa;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-  color: #FFFFFF;
 }
 
 .content__initial {
@@ -284,18 +248,43 @@ html, body, main {
 }
 
 .content__left, .content__right {
-  margin-top: 10px;
   width: 123px;
-  height: 80px;
-}
-
-.content__left {
+  height: 150px;
   line-height: 22px;
 }
 
-.content__left span {
-  height: 20px;
+.content__left span, .content__right span {
+  position: relative;
+  height: 35px;
   display: block;
+  font-size: 16px;
+}
+
+.content__right {
+  width: 122px;
+  padding-left: 4px;
+  opacity: 0.7;
+}
+
+.content__right span::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 2px;
+  background-color: #01082B;
+  bottom: -1px;
+  left: 0px;
+}
+
+.content__right span.first::before {
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 2px;
+  background-color: #01082B;
+  top: 1px;
+  left: 0px;
 }
 
 .content__theme {
@@ -704,7 +693,12 @@ html, body, main {
 
 .footer {
   height: 80px;
-  margin-top: 7px;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   border: 1px solid #000000;
   border-radius: 5px;
   padding: 20px 10px 0px 10px;
