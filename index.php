@@ -1,3 +1,8 @@
+<?php
+require "db.php";
+require "auth.php";
+require "reg.php";
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -87,11 +92,11 @@
       <div class="login__logo">
         <img src="img/logo-white-big.png" alt="LOGO">
       </div>
-      <form action="auth.php" class="login__auth" method="POST">
+      <form action="/index.php" class="login__auth" method="POST">
         <input class="inp" name="login" type="text" placeholder="Логин...">
         <input class="inp" name="password" type="password" placeholder="Пароль...">
         <div class="login__faggot"><a href="forget.php">Забыли пароль?</a></div>
-        <input type="submit" class="login__login" value="ВОЙТИ">
+        <input name="do_login" type="submit" class="login__login" value="ВОЙТИ">
       </form>
       <div class="login__socialauth">
         <span>Войти через:</span>
@@ -112,10 +117,10 @@
     <div class="registr__logo">
       <img src="img/logo-white-big.png" alt="LOGO">
     </div>
-    <form action="reg.php" class="registr__auth" method="POST">
+    <form action="/index.php" class="registr__auth" method="POST">
       <input class="inp" name="login" type="text" placeholder="Логин...">
       <input class="inp" name="password" type="password" placeholder="Пароль...">
-      <input class="inp" name="mail" type="text" placeholder="Почта...">
+      <input class="inp" name="email" type="text" placeholder="Почта...">
       <input class="registr__login" name="do_signup" type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ">
     </form> 
     <div class="login__sociallog"> 

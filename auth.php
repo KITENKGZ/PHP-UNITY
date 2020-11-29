@@ -1,21 +1,42 @@
 <?php
-  $login = filter_var(trim($_POST['login']),
-  FILTER_SANITIZE_STRING);
-  $password = md5(filter_var(trim($_POST['password']),
-  FILTER_SANITIZE_STRING)."zalupkaMorja228");
+// Создаем переменную для сбора данных от пользователя по методу POST
+$data = $_POST;
 
-  $mysql = new mysqli('localhost','u1225152_admin','10151018Kama','u1225152_unitydb');
-  $result = $mysql->query("SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'");
-  $user = $result->fetch_assoc();
-  $mysql->close();
-  if(count($user) == 0) {
-    echo "Введены неверные данные";
-    exit();
+// Пользователь нажимает на кнопку "Авторизоваться" и код начинает выполняться
+if(isset($data['do_login'])) { 
+
+// Создаем массив для сбора ошибок
+$errors = array();
+
+// Проводим поиск пользователей в таблице users
+$user = R::findOne('users', 'login = ?', ($data['login']));
+
+if($user) {
+
+ 	// Если логин существует, тогда проверяем пароль
+  if(password_verify($data['password'], $user->password)) {
+
+ 		// Все верно, пускаем пользователя
+    $_SESSION['logged_user'] = $user;
+    
+ 		// Редирект на главную страницу
+                header('Location: index.php');
+
+  } else {
+    
+    $errors[] = 'Пароль неверно введен!';
+
   }
 
-  print_r($user);
-  exit();
+  } else {
+    $errors[] = 'Пользователь с таким логином не найден!';
+  }
 
-  header("Location: index.html");
-  die();
+if(!empty($errors)) {
+
+		echo '<div style="color: red; ">' . array_shift($errors). '</div><hr>';
+
+	}
+
+}
   ?>
