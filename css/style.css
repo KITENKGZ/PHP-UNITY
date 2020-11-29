@@ -4,7 +4,7 @@ html, body, main {
   height: 100%;
   color: #FFFFFF;
   font-family: "Comfortaa", cursive;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .header {
@@ -19,9 +19,9 @@ html, body, main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -29,6 +29,16 @@ html, body, main {
 
 .header__nav div {
   margin-right: 8px;
+}
+
+.header__rightside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 0px;
 }
 
 .header__main {
@@ -45,10 +55,14 @@ html, body, main {
           justify-content: space-between;
   -ms-flex-item-align: center;
       align-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header__bar {
   width: 1px;
+  height: 100%;
   background-color: #01082B;
 }
 
@@ -73,6 +87,9 @@ html, body, main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #01082B;
   border-radius: 5px;
   font-size: 17px;
@@ -80,6 +97,7 @@ html, body, main {
 }
 
 .header__select .header__bar {
+  margin-right: 0px;
   background-color: #FFFFFF;
 }
 
@@ -196,7 +214,7 @@ html, body, main {
 }
 
 .content__initial input, .content__profile input {
-  background: rgba(255, 255, 255, 0.03);
+  background: none;
   outline: none;
   border: none;
   border-radius: 5px;
@@ -217,6 +235,42 @@ html, body, main {
 .content__initial input:focus, .content__profile input:focus {
   -webkit-box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.5);
           box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.5);
+}
+
+.content__initial input[type=date], .content__profile input[type=date] {
+  padding: 0px;
+  padding-left: 6px;
+}
+
+.content__initial input[type=file], .content__profile input[type=file] {
+  opacity: 0;
+  position: absolute;
+  max-width: 100%;
+  padding: 0px;
+  border-radius: 7px;
+}
+
+.content__initial .input__wrapper, .content__profile .input__wrapper {
+  width: 100%;
+  margin-top: 5px;
+  position: relative;
+  vertical-align: middle;
+  padding-left: 7px;
+}
+
+.content__initial .input__file, .content__profile .input__file {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.content__initial .input__file-button-text, .content__profile .input__file-button-text {
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
 }
 
 .content__initial {
