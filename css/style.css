@@ -394,6 +394,9 @@ html, body, main {
 }
 
 .menu__login, .login__login, .registr__login {
+  border: none;
+  color: #FFFFFF;
+  display: block;
   width: 131px;
   height: 35px;
   margin: 0 auto;
@@ -458,7 +461,7 @@ html, body, main {
   margin-top: 25px;
 }
 
-.login__auth input, .registr__auth input {
+.login__auth .inp, .registr__auth .inp {
   background: rgba(255, 255, 255, 0.03);
   outline: none;
   border: none;
@@ -473,11 +476,11 @@ html, body, main {
   margin-top: 17px;
 }
 
-.login__auth input:nth-child(1), .registr__auth input:nth-child(1) {
+.login__auth .inp:nth-child(1), .registr__auth .inp:nth-child(1) {
   margin-top: 0px;
 }
 
-.login__auth input:focus, .registr__auth input:focus {
+.login__auth .inp:focus, .registr__auth .inp:focus {
   -webkit-box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.5);
           box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.5);
 }
@@ -490,6 +493,11 @@ html, body, main {
   text-align: center;
   font-size: 14px;
   line-height: 15px;
+}
+
+.login__faggot a, .registr__faggot a {
+  text-decoration: none;
+  color: #FFFFFF;
 }
 
 .login__login, .registr__login {
