@@ -346,6 +346,7 @@ html, body, main {
 }
 
 .menu__header .menu__login, .login__header .menu__login, .registr__header .menu__login {
+  width: 145px;
   margin: 0 0 0 0;
   background: none;
   font-family: Comfortaa;
