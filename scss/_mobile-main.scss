@@ -163,6 +163,9 @@ html, body, main {
     }
   }
   &__login {
+    border: none;
+    color: $color-second;
+    display: block;
     width: 131px;
     height: 35px;
     margin: 0 auto;
@@ -214,7 +217,7 @@ html, body, main {
   }
   &__auth {
     margin-top: 25px;
-    input {
+    .inp{
       background: rgba(255, 255, 255, 0.03);
       outline: none;
       border: none;
@@ -236,11 +239,15 @@ html, body, main {
     }
   }
   &__faggot {
+    a {
+      text-decoration: none;
+      color: $color-second;
+    }
     display: block;
     margin: 0 auto;
     height: 15px;
     margin-top: 27px;
-    text-align: center;
+    text-align: center; 
     font-size: 14px;
     line-height: 15px;
     
