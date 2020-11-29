@@ -346,13 +346,11 @@ html, body, main {
 }
 
 .menu__header .menu__login, .login__header .menu__login, .registr__header .menu__login {
-  margin: 0 0 0 0;
+  margin: 0 auto;
+  width: 145px;
+  line-height: 35px;
   background: none;
-  font-family: Comfortaa;
-  font-style: normal;
-  font-weight: normal;
   font-size: 18px;
-  line-height: 20px;
   text-align: center;
 }
 
@@ -370,7 +368,8 @@ html, body, main {
 }
 
 .menu__profile, .login__profile, .registr__profile {
-  width: 100%;
+  width: 255px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -380,7 +379,11 @@ html, body, main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 15px 29px 12px 23px;
+  padding: 0 10px;
+}
+
+.menu__mid, .login__mid, .registr__mid {
+  width: 100%;
 }
 
 .menu__cm, .login__cm, .registr__cm {

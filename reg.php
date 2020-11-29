@@ -1,8 +1,8 @@
 <?php
   $login = filter_var(trim($_POST['login']),
   FILTER_SANITIZE_STRING);
-  $password = filter_var(trim($_POST['password']),
-  FILTER_SANITIZE_STRING);
+  $password = md5(filter_var(trim($_POST['password']),
+  FILTER_SANITIZE_STRING)."zalupkaMorja228");
   $email = filter_var(trim($_POST['mail']),
   FILTER_SANITIZE_STRING);
 
@@ -18,6 +18,6 @@
   $mysql->query("INSERT INTO `users` (`login`,`email`,`password`) VALUES('$login','$email','$password')");
   $mysql->close();
 
-  header('Location /');
-  exit();
+  header("Location: index.html");
+  die();
   ?>
