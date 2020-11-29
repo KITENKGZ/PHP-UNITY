@@ -27,7 +27,7 @@ html, body, main {
           align-items: center;
 }
 
-.header__nav div {
+.header__nav .header__main, .header__nav .header__select, .header__nav .header__menu {
   margin-right: 8px;
 }
 
@@ -38,7 +38,6 @@ html, body, main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 0px;
 }
 
 .header__main {
@@ -67,6 +66,8 @@ html, body, main {
 }
 
 .header__search {
+  height: 32px;
+  width: 32px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -75,11 +76,12 @@ html, body, main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-right: 2px;
 }
 
 .header__select {
   height: 30px;
-  width: 164px;
+  width: 158px;
   padding: 6px 17px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -196,7 +198,7 @@ html, body, main {
   height: 100px;
   background: #0F1533;
   margin: 0 auto;
-  padding: 0 5px;
+  padding: 0px 0px 0px 10px;
   margin-top: 10px;
   font-family: Comfortaa;
   font-style: normal;
@@ -218,14 +220,13 @@ html, body, main {
   outline: none;
   border: none;
   border-radius: 5px;
-  width: 100%;
+  width: 118px;
   height: 20px;
   font-size: 14px;
   line-height: 16px;
   vertical-align: middle;
   padding: 7px;
   color: #FFFFFF;
-  margin-top: 2px;
 }
 
 .content__initial input:nth-child(1), .content__profile input:nth-child(1) {
@@ -237,9 +238,15 @@ html, body, main {
           box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.5);
 }
 
+.content__initial input[type=mail], .content__profile input[type=mail] {
+  width: 150px;
+  padding: 0px 0px 0px 0px;
+  margin-left: -50px;
+}
+
 .content__initial input[type=date], .content__profile input[type=date] {
-  padding: 0px;
-  padding-left: 6px;
+  margin-left: 5px;
+  padding: 0px 0px 0px 0px;
 }
 
 .content__initial input[type=file], .content__profile input[type=file] {
@@ -252,7 +259,6 @@ html, body, main {
 
 .content__initial .input__wrapper, .content__profile .input__wrapper {
   width: 100%;
-  margin-top: 5px;
   position: relative;
   vertical-align: middle;
   padding-left: 7px;
@@ -277,16 +283,19 @@ html, body, main {
   margin-top: 15px;
 }
 
-.content__left {
+.content__left, .content__right {
   margin-top: 10px;
   width: 123px;
   height: 80px;
 }
 
-.content__right {
-  margin-top: 10px;
-  width: 123px;
-  height: 80px;
+.content__left {
+  line-height: 22px;
+}
+
+.content__left span {
+  height: 20px;
+  display: block;
 }
 
 .content__theme {
@@ -296,7 +305,7 @@ html, body, main {
   height: 38px;
   background: #0F1533;
   border-radius: 5px;
-  padding: 5px;
+  padding: 5px 0px 0px 10px;
 }
 
 .content__theme span {
@@ -309,7 +318,7 @@ html, body, main {
 
 .content__redact {
   text-align: center;
-  margin: 12px auto;
+  margin: 8px auto;
   width: 140px;
   height: 29px;
   background: #0F1533;
@@ -346,6 +355,13 @@ html, body, main {
   line-height: 20px;
   text-align: center;
   color: #FFFFFF;
+}
+
+::-webkit-calendar-picker-indicator {
+  color: transparent;
+  opacity: 0;
+  background: #ffffff;
+  background-size: contain;
 }
 
 .menu, .login, .registr {
@@ -533,6 +549,30 @@ html, body, main {
           justify-content: space-between;
 }
 
+.menu__social img, .login__social img, .registr__social img {
+  width: 30px;
+  height: 30px;
+}
+
+.menu__socialbottom, .login__socialbottom, .registr__socialbottom {
+  height: 30px;
+  width: 190px;
+  margin: 0 auto;
+  margin-top: 30px;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu__socialbottom img, .login__socialbottom img, .registr__socialbottom img {
+  width: 30px;
+  height: 30px;
+}
+
 .menu__select, .login__select, .registr__select {
   height: 30px;
   margin: 0 auto;
@@ -663,12 +703,14 @@ html, body, main {
 }
 
 .footer {
-  bottom: 0px;
-  margin-top: 10px;
+  height: 80px;
+  margin-top: 7px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 20px 10px 0px 10px;
 }
 
 .footer__container {
-  padding: 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -679,9 +721,7 @@ html, body, main {
       -ms-flex-align: center;
           align-items: center;
   width: 375;
-  height: 80px;
-  border: 1px solid #000000;
-  border-radius: 5px;
+  height: 40px;
 }
 
 .footer__social {
@@ -696,17 +736,26 @@ html, body, main {
           justify-content: space-between;
 }
 
+.footer__social img {
+  width: 30px;
+  height: 30px;
+}
+
 .footer__text {
-  position: fixed;
-  right: 4px;
-  bottom: 4px;
+  width: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  margin-right: -7px;
+  margin-top: 5px;
 }
 
 .footer span {
   font-family: Comfortaa;
   font-style: normal;
   font-weight: normal;
-  font-size: 7px;
+  font-size: 9px;
   line-height: 8px;
   color: #01082B;
 }
