@@ -10,6 +10,17 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+      <!-- Прелоадер -->
+    <div class="preloader"> 
+      <div class="preloader__image"> 
+        <div class="preloader__change">
+          <img src="img/preload/usport.png" alt="usport">
+          <img src="img/preload/unews.png" alt="unews">
+          <img src="img/preload/uwork.png" alt="uwork">
+          <img src="img/preload/ustat.png" alt="ustat">
+        </div>
+      </div>
+    </div>
   <header class="header">
     <nav class="header__nav">
       <div class="header__main">
@@ -156,5 +167,12 @@ document.addEventListener('click', function( event ) {
     document.getElementById("reg").style.display = "none";
   }
 });
+window.onload = function () {
+      document.body.classList.add('loaded_hiding');
+      window.setTimeout(function () {
+        document.body.classList.add('loaded');
+        document.body.classList.remove('loaded_hiding');
+      }, 500);
+    }
   </script>
 </html>
