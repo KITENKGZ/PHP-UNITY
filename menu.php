@@ -1,3 +1,4 @@
+<<<<<<< HEAD:index.html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -53,17 +54,28 @@
     </div>
     <div class="menu" id="menu">
       <div class="menu__container noclose">
+=======
+<div class="menu" id="menu">
+      <div class="menu__container">
+>>>>>>> 6a0a89fbb76bdcee2d2fa1383f44993e3c424e57:menu.php
         <div class="menu__header">
           <div class="menu__profile">
+                          <!-- Если авторизован выведет приветствие -->
+        <?php if(isset($_SESSION['logged_user'])) : ?>
             <img src="img/social/profile 9.png" alt="profile">
+              <div class="menu__mid" onclick="location.href='profile.php';" style="cursor: pointer;">
+                <div class="menu__login"><?php echo $_SESSION['logged_user']->login; ?></div> 
+                </div>
+        <?php else : ?>
+        <!-- Если пользователь не авторизован выведет ссылки на авторизацию и регистрацию -->
+        <img src="img/social/profile 9.png" alt="profile">
             <div class="menu__mid">
               <div class="menu__login" onclick="show('login'); hide('menu'); hide('reg'); paint('logBtn')">АВТОРИЗАЦИЯ</div> 
               </div>
-          </div>
+        <?php endif; ?>
+        </div>
         <div class="content__horizontal"></div> 
         </div>
-        
-
         <div class="menu__cm">МЕСТО ДЛЯ ВАШЕЙ РЕКЛАМЫ</div>
         <div class="menu__logo"><img src="img/logo-white-big.png" alt="LOGO"></div>
         <div class="menu__middle">
@@ -75,11 +87,9 @@
               </div>          
         </div>
         <div class="menu__nav">
-          <div class="menu__nax">
-            <div>UFC</div>
-            <div>ESPORT</div>
-            <div>FIFA</div>
-          </div>
+          <div>UFC</div>
+          <div>ESPORT</div>
+          <div>FIFA</div>
         </div>
                 <div class="menu__social">
             <a href="#"><img src="img/social/telegramb.png" alt=""></a>
@@ -92,7 +102,7 @@
       </div>
     </div>
   <div class="login" id="login">
-    <div class="login__container noclose">
+    <div class="login__container">
       <div class="login__select">
         <span id="logBtn">Авторизация</span>
         <div class="login__bar"></div>
@@ -105,7 +115,7 @@
         <input class="inp" name="login" type="text" placeholder="Логин...">
         <input class="inp" name="password" type="password" placeholder="Пароль...">
         <div class="login__faggot"><a href="forget.php">Забыли пароль?</a></div>
-        <input type="submit" class="login__login" value="ВОЙТИ">
+        <input name="do_login" type="submit" class="login__login" value="ВОЙТИ">
       </form>
       <div class="login__socialauth">
         <span>Войти через:</span>
@@ -129,7 +139,7 @@
     <form action="reg.php" class="registr__auth" method="POST">
       <input class="inp" name="login" type="text" placeholder="Логин...">
       <input class="inp" name="password" type="password" placeholder="Пароль...">
-      <input class="inp" name="mail" type="text" placeholder="Почта...">
+      <input class="inp" name="email" type="text" placeholder="Почта...">
       <input class="registr__login" name="do_signup" type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ">
     </form> 
     <div class="login__sociallog"> 
@@ -142,6 +152,7 @@
       </div> 
     </div>
   </div>
+<<<<<<< HEAD:index.html
 </div>
 
 </main>
@@ -176,3 +187,6 @@ window.onload = function () {
     }
   </script>
 </html>
+=======
+</div>
+>>>>>>> 6a0a89fbb76bdcee2d2fa1383f44993e3c424e57:menu.php
