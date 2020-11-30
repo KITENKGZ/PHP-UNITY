@@ -4,63 +4,40 @@ require "db.php";
 // Создаем переменную для сбора данных от пользователя по методу POST
 $data = $_POST;
 
-// Пользователь нажимает на кнопку "Зарегистрировать" и код начинает выполняться
-if(isset($data['do_signup'])) {
+if(isset($data['do_edit'])) {
 
-        // Регистрируем
-        // Создаем массив для сбора ошибок
 	$errors = array();
 
 	// Проводим проверки
         // trim — удаляет пробелы (или другие символы) из начала и конца строки
-	if(trim($data['login']) == '') {
-
-		$errors[] = "Введите логин!";
-	}
-
-	if(trim($data['email']) == '') {
-
-		$errors[] = "Введите Email";
-	}
-
 	if($data['password'] == '') {
-
 		$errors[] = "Введите пароль";
 	}
 
          // функция mb_strlen - получает длину строки
 	if(mb_strlen($data['login']) < 4 || mb_strlen($data['login']) > 12) {
-
 	    $errors[] = "Недопустимая длина логина";
-
-    }
-
-    if (mb_strlen($data['password']) < 8 || mb_strlen($data['password']) > 32){
-	
-	    $errors[] = "Недопустимая длина пароля (от 8 до 32 символов)";
-
-    }
-
-    // проверка на правильность написания Email
-    if (!preg_match("/[0-9a-z_]+@[0-9a-z_^\.]+\.[a-z]{2,3}/i", $data['email'])) {
-
-	    $errors[] = 'Неверно введен е-mail';
-    
     }
 
 	// Проверка на уникальность логина
-	if(R::count('users', "login = ?", array($data['login'])) > 0) {
+	if((array($data['login']) && R::count('users', "login = ?", array($data['login'])) > 0) {
 
 		$errors[] = "Пользователь с таким логином существует!";
-	}
+  }
 
-	// Проверка на уникальность email
+  if(password_verify($data['password'], $user->password)) {
 
-	if(R::count('users', "email = ?", array($data['email'])) > 0) {
+    // Все верно, пускаем пользователя
+   $_SESSION['logged_user'] = $user;
+   
+    // Редирект на главную страницу
+   header('Location: index.php');
 
-		$errors[] = "Пользователь с таким Email существует!";
-	}
+ } else {
+   
+   $errors[] = 'Пароль неверно введен!';
 
+ }
 
 	if(empty($errors)) {
 
