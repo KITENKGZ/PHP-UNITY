@@ -1,63 +1,17 @@
-<<<<<<< HEAD:index.html
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, shrink-to-fit=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="keywords" content="Unity, Стримы, Фифа, Футбол, ЮФС, юэфси, юэфс, ufc, fifa, онлайн фифа, кыргызстан футбол, кыргызстан фифа, онлайн юфс, онлайн ufc">
-  <title>Unity</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-      <!-- Прелоадер -->
-    <div class="preloader"> 
-      <div class="preloader__image"> 
-        <div class="preloader__change">
-          <img src="img/preload/usport.png" alt="usport">
-          <img src="img/preload/unews.png" alt="unews">
-          <img src="img/preload/uwork.png" alt="uwork">
-          <img src="img/preload/ustat.png" alt="ustat">
-        </div>
-      </div>
+
+  <!-- Прелоадер -->
+<div class="preloader"> 
+  <div class="preloader__image"> 
+    <div class="preloader__change">
+      <img src="img/preload/usport.png" alt="usport">
+      <img src="img/preload/unews.png" alt="unews">
+      <img src="img/preload/uwork.png" alt="uwork">
+      <img src="img/preload/ustat.png" alt="ustat">
     </div>
-  <header class="header">
-    <nav class="header__nav">
-      <div class="header__main">
-        <div class="header__logo"><a href="index.html"><img src="img/logo.png" alt=""></a></div>
-        <div class="header__bar"></div>
-        <div class="header__search"><img src="img/search.png" alt="SEARCH"></div>
-      </div>
-      <div class="header__rightside">
-        <div class="header__select">
-          <span>News</span>
-          <div class="header__bar"></div>
-          <span>Stream</span>
-        </div>
-       <div class="header__menu noclose" onclick="show('menu')"><img src="img/menu.png" alt="MENU"></div>
   </div>
-    </nav>
-    <div class="header__cm">МЕСТО ДЛЯ ВАШЕЙ РЕКЛАМЫ</div>
-  </header>
-  <main class="main">
-    <div class="container">
-      <div class="content">
-        <div class="content__header">
-          <span>ВСЕ</span>
-          <span>UFC</span>
-          <span>ESPORT</span>
-          <span>FIFA</span>
-        </div>
-        <div class="content__main"></div>
-      </div>
-    </div>
-    <div class="menu" id="menu">
-      <div class="menu__container noclose">
-=======
+</div>
 <div class="menu" id="menu">
       <div class="menu__container">
->>>>>>> 6a0a89fbb76bdcee2d2fa1383f44993e3c424e57:menu.php
         <div class="menu__header">
           <div class="menu__profile">
                           <!-- Если авторизован выведет приветствие -->
@@ -152,41 +106,4 @@
       </div> 
     </div>
   </div>
-<<<<<<< HEAD:index.html
 </div>
-
-</main>
-</body>
-<script>
-  function show(id) {
-      document.getElementById(id).style.display = "block";
-  }
-  function hide(id) {
-      document.getElementById(id).style.display = "none";
-  }
-  function paint(id) {
-      document.getElementById(id).style.color = "#FF0000";
-  }
-  var container = document.getElementsByClassName('header__menu')[0];
-  var container1 = document.getElementsByClassName('menu__container')[0];
-  var container2 = document.getElementsByClassName('login__container')[0];
-  var container3 = document.getElementsByClassName('registr__container')[0];
-document.addEventListener('click', function( event ) {
-  if ((container !== event.target && !container.contains(event.target)) && (container1 !== event.target && !container1.contains(event.target)) && (container2 !== event.target && !container2.contains(event.target)) && (container3 !== event.target && !container3.contains(event.target))) {    
-    document.getElementById("menu").style.display = "none";
-    document.getElementById("login").style.display = "none";  
-    document.getElementById("reg").style.display = "none";
-  }
-});
-window.onload = function () {
-      document.body.classList.add('loaded_hiding');
-      window.setTimeout(function () {
-        document.body.classList.add('loaded');
-        document.body.classList.remove('loaded_hiding');
-      }, 500);
-    }
-  </script>
-</html>
-=======
-</div>
->>>>>>> 6a0a89fbb76bdcee2d2fa1383f44993e3c424e57:menu.php
