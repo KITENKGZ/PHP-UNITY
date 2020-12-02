@@ -1,15 +1,4 @@
 
-  <!-- Прелоадер -->
-<div class="preloader"> 
-  <div class="preloader__image"> 
-    <div class="preloader__change">
-      <img src="img/preload/usport.png" alt="usport">
-      <img src="img/preload/unews.png" alt="unews">
-      <img src="img/preload/uwork.png" alt="uwork">
-      <img src="img/preload/ustat.png" alt="ustat">
-    </div>
-  </div>
-</div>
 <div class="menu" id="menu">
       <div class="menu__container">
         <div class="menu__header">

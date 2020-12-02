@@ -798,7 +798,7 @@ html, body, main {
   width: 100%;
   height: 100%;
   padding: 0 auto;
-  background: url("d:/PHP-UNITY/img/preload/preload.png") no-repeat 50% 50%;
+  background: url("../img/preload/preload.png") no-repeat 50% 50%;
   /*расположение (url) изображения gif и др. параметры*/
   background-size: 70px 70px;
   background-position: center;
@@ -829,6 +829,6 @@ html, body, main {
   opacity: 0;
 }
 
-loaded .preloader {
+.loaded .preloader {
   display: none;
 }
