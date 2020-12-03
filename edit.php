@@ -16,7 +16,7 @@ if(isset($data['do_edit'])) {
 
          // функция mb_strlen - получает длину строки
 	if(mb_strlen($data['login']) < 4 || mb_strlen($data['login']) > 12) {
-	    $errors[] = "Недопустимая длина логина";
+			$errors[] = "Недопустимая длина логина";
     }
 
 	// Проверка на уникальность логина
@@ -28,16 +28,16 @@ if(isset($data['do_edit'])) {
   if(password_verify($data['password'], $user->password)) {
 
     // Все верно, пускаем пользователя
-   $_SESSION['logged_user'] = $user;
-   
+  $_SESSION['logged_user'] = $user;
+  
     // Редирект на главную страницу
-   header('Location: index.php');
+  header('Location: index.php');
 
- } else {
-   
-   $errors[] = 'Пароль неверно введен!';
+	} else {
+  
+  $errors[] = 'Пароль неверно введен!';
 
- }
+}
 
 	if(empty($errors)) {
 

@@ -8,6 +8,9 @@
   function paint(id) {
       document.getElementById(id).style.color = "#FF0000";
   }
+  function painta(id) {
+      document.getElementById(id).style.color = "#FFFFFF";
+  }
   var container = document.getElementsByClassName('header__menu')[0];
   var container1 = document.getElementsByClassName('menu__container')[0];
   var container2 = document.getElementsByClassName('login__container')[0];
