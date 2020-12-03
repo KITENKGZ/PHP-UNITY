@@ -1,8 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap");
 html, body, main {
-  width: 100%;
-  height: 100%;
   color: #FFFFFF;
   font-family: "Comfortaa", cursive;
   overflow: auto;
@@ -10,11 +8,12 @@ html, body, main {
 
 .header {
   width: 100%;
-  height: 128px;
   background-color: #FFFFFF;
 }
 
 .header__nav {
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 48px;
   display: -webkit-box;
@@ -26,6 +25,8 @@ html, body, main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 999;
+  background-color: #FFFFFF;
 }
 
 .header__nav .header__main, .header__nav .header__select, .header__nav .header__menu {
@@ -114,6 +115,7 @@ html, body, main {
 }
 
 .header__cm {
+  margin-top: 48px;
   width: 100%;
   height: 80px;
   background-color: #01082B;
@@ -945,6 +947,10 @@ html, body, main {
   color: #ff0000;
 }
 
+a {
+  text-decoration: none;
+}
+
 .news-item {
   position: relative;
   padding: 5px;
@@ -954,31 +960,22 @@ html, body, main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-size: 11px;
-  line-height: 15px;
-  text-align: left;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 10px;
+  line-height: 13px;
   position: relative;
   color: rgba(255, 255, 255, 0.7);
+  height: 84px;
 }
 
-.news-item:first-child {
-  margin-top: 0;
-}
-
-.news-item a {
-  text-decoration: none;
-}
-
-.news-header img {
-  width: 90px;
-  height: 60px;
+.news-item img {
+  display: block;
+  width: 110px;
+  height: 74px;
   -o-object-fit: cover;
      object-fit: cover;
-  float: left;
   border-radius: 5px;
   margin-right: 5px;
 }
@@ -996,13 +993,24 @@ html, body, main {
 
 .news-title {
   padding: 5px;
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 10px;
+  line-height: 13px;
   text-align: center;
   color: #FFFFFF;
 }
 
-.news-short {
-  height: 100%;
+.content__news {
+  padding: 1px 6px 10px 6px;
+}
+
+.news-cm {
   width: 100%;
+  height: 53px;
+  background-color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  line-height: 53px;
+  margin-top: 10px;
+  color: #000000;
+  border-radius: 5px;
 }

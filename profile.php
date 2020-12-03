@@ -70,5 +70,11 @@
                 <span>team unity</span>
               </div>  
     </footer>
+    <?php
+    include "menu.php"
+  ?>
 </body>
+<?php
+    include "script.php"
+  ?>
 </html>
