@@ -14,7 +14,7 @@ html, body, main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 999;
+    z-index: 2;
     .header__main , .header__select,.header__menu{
       margin-right: 8px;
     }
@@ -118,13 +118,14 @@ html, body, main {
     align-items: center;
     width: 255px;
     margin: 0 auto;
-    padding: 15px 6px 0 6px;
+    padding: 0 6px;
     height: 80px;
     background-color: $color-bg;
     border-radius: 5px;
     font-size: 18px;
     line-height: 20px;
     img{
+      margin-top: -15px;
       width: 52px;
       height: 52px;
     }

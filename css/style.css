@@ -25,7 +25,7 @@ html, body, main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 999;
+  z-index: 2;
   background-color: #FFFFFF;
 }
 
@@ -171,7 +171,7 @@ html, body, main {
           align-items: center;
   width: 255px;
   margin: 0 auto;
-  padding: 15px 6px 0 6px;
+  padding: 0 6px;
   height: 80px;
   background-color: #01082B;
   border-radius: 5px;
@@ -180,6 +180,7 @@ html, body, main {
 }
 
 .content__head img {
+  margin-top: -15px;
   width: 52px;
   height: 52px;
 }
