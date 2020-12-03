@@ -23,7 +23,6 @@
         <div class="menu__logo"><img src="img/logo-white-big.png" alt="LOGO"></div>
         <div class="menu__middle">
               <div class="menu__select">
-                
                   <span>News</span>
                   <div class="menu__bar"></div>
                   <span>Stream</span>

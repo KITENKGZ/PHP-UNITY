@@ -4,7 +4,7 @@ require "libs/rb.php";
 
 // Подключаемся к БД
 R::setup( 'mysql:host=localhost;dbname=u1225152_unitydb',
-        'root', 'root' );
+        'u1225152_admin', '10151018Kama' );
 
 // Проверка подключения к БД
 if(!R::testConnection()) die('No DB connection!');
