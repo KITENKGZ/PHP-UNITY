@@ -7,7 +7,7 @@
   ?>
   <main class="main">
     <div class="container">
-      <div class="content">
+      <div class="content news-block" id="NEWS">
         <div class="content__header">
           <span>ВСЕ</span>
           <span>UFC</span>
