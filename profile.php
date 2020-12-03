@@ -59,11 +59,11 @@
             <img src="img/logo.png" alt="">
           </div>      
           <div class="footer__social">
-            <a href="https://t.me/usport_online"><img src="img/social/telegramb.png" alt=""></a>
-            <a href="https://twitter.com/usport_online"><img src="img/social/twitterb.png" alt=""></a>
-            <a href="https://instagram.com/usport.online"><img src="img/social/instagramb.png" alt=""></a>
-            <a href="https://www.facebook.com/onlineusport/"><img src="img/social/facebookb.png" alt=""></a>
-            <a href="https://vk.com/usport.online"><img src="img/social/vkb.png" alt=""></a>
+            <a href="https://t.me/usport_online"><img src="img/social/telegram.png" alt=""></a>
+            <a href="https://twitter.com/usport_online"><img src="img/social/twitter.png" alt=""></a>
+            <a href="https://instagram.com/usport.online"><img src="img/social/instagram.png" alt=""></a>
+            <a href="https://www.facebook.com/onlineusport/"><img src="img/social/facebook.png" alt=""></a>
+            <a href="https://vk.com/usport.online"><img src="img/social/vk.png" alt=""></a>
           </div>    
         </div>  
               <div class="footer__text">

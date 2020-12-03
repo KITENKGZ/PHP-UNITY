@@ -1,6 +1,11 @@
 
-
-
+<?php
+  include "head.php"
+?>
+<body>
+  <?php
+    include "header.php"
+  ?>
 <div class="login" id="login">
     <div class="login__container">
       <div class="login__select">
@@ -27,3 +32,8 @@
       </div>
     </div>
   </div>
+</body>
+<?php
+  include "script.php"
+?>
+</html>

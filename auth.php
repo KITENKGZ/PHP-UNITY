@@ -30,13 +30,10 @@ if($user) {
 
   }
 
- /* } else {
+  } else {
     $errors[] = 'Пользователь с таким логином не найден!';
   }
-  */
-  } else {
-    $errors[] = include 'faggot.php';
-  }
+  
 
 if(!empty($errors)) {
 
