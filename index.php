@@ -14,7 +14,7 @@
           <span id="NewsEsportBtn" onclick="show('ESPORTNEWS'); hide('UFCNEWS'); hide('ALLNEWS'); hide('FIFANEWS'); paint('NewsEsportBtn'); painta('NewsAllBtn'); painta('NewsUfcBtn'); painta('NewsFifaBtn')" class="esport-btn">ESPORT</span>
           <span id="NewsFifaBtn" onclick="show('FIFANEWS'); hide('UFCNEWS'); hide('ALLNEWS'); hide('ESPORTNEWS'); paint('NewsFifaBtn'); painta('NewsAllBtn'); painta('NewsUfcBtn'); painta('NewsEsportBtn')" class="fifa-btn">FIFA</span>
         </div>
-        <div class="content__main">
+        <div class="content__main content__news">
           <?php
           function dump($what) {
             echo '<pre>';print_r($what);echo '</pre>';
@@ -25,16 +25,22 @@
             $numOfNews = R::count( 'news' ); 
             $countNews = range(2,$numOfNews+1);
             $news = R::loadAll( 'news', $countNews);
+            $i = 0;
             ?>
             <?php foreach( array_reverse($news) as $post): ?>
+            <a href="post.php?post_id=<?=$post->id;?>">
               <div class="news-item">
-              <div class="news-header">
                 <img src="<?=$post->img;?>" alt="IMG">
-                <div class="news-short"><?=$post->short;?></div>
+                <div class="news-title"><?=$post->title;?></div>
+                <div class="news-bar"></div>
               </div>
-              <a href="post.php?post_id=<?=$post->id;?>"><div class="news-title"><?=$post->title;?></div></a>
-              <div class="news-bar"></div>
-            </div>
+            </a>
+            <?php
+                $i++;
+                if ($i % 7 == 0) { 
+                  echo "<div class='news-cm'>Место для вашей рекламы</div>";
+              } 
+            ?>
             <?php endforeach; ?>
           </div>
           <div id="UFCNEWS" class="none">
@@ -42,14 +48,13 @@
               $newsufc = R::find( 'news', 'type = ?', array("UFC") );
             ?>
               <?php foreach( array_reverse($newsufc) as $postufc): ?>
-                <div class="news-item">
-                <div class="news-header">
-                  <img src="<?=$postufc->img;?>" alt="IMG">
-                  <div class="news-short"><?=$postufc->short;?></div>
-                </div>
-                <a href="post.php?post_id=<?=$postufc->id;?>"><div class="news-title"><?=$postufc->title;?></div></a>
+                <a href="post.php?post_id=<?=$postufc->id;?>">
+              <div class="news-item">
+                <img src="<?=$postufc->img;?>" alt="IMG">
+                <div class="news-title"><?=$postufc->title;?></div>
                 <div class="news-bar"></div>
               </div>
+            </a>
               <?php endforeach; ?>
           </div>
           <div id="ESPORTNEWS" class="none">
@@ -57,14 +62,13 @@
               $newse = R::find( 'news', 'type = ?', array("ESPORT") );
             ?>
               <?php foreach( array_reverse($newse) as $poste): ?>
-                <div class="news-item">
-                <div class="news-header">
-                  <img src="<?=$poste->img;?>" alt="IMG">
-                  <div class="news-short"><?=$poste->short;?></div>
-                </div>
-                <a href="post.php?post_id=<?=$poste->id;?>"><div class="news-title"><?=$poste->title;?></div></a>
+                <a href="post.php?post_id=<?=$poste->id;?>">
+              <div class="news-item">
+                <img src="<?=$poste->img;?>" alt="IMG">
+                <div class="news-title"><?=$poste->title;?></div>
                 <div class="news-bar"></div>
               </div>
+            </a>
               <?php endforeach; ?>
           </div>
           <div id="FIFANEWS" class="none">
@@ -72,14 +76,13 @@
               $newsfifa = R::find( 'news', 'type = ?', array("FIFA") );
             ?>
               <?php foreach( array_reverse($newsfifa) as $postfifa): ?>
-                <div class="news-item">
-                <div class="news-header">
-                  <img src="<?=$postfifa->img;?>" alt="IMG">
-                  <div class="news-short"><?=$postfifa->short;?></div>
-                </div>
-                <a href="post.php?post_id=<?=$postfifa->id;?>"><div class="news-title"><?=$postfifa->title;?></div></a>
+                <a href="post.php?post_id=<?=$postfifa->id;?>">
+              <div class="news-item">
+                <img src="<?=$postfifa->img;?>" alt="IMG">
+                <div class="news-title"><?=$postfifa->title;?></div>
                 <div class="news-bar"></div>
               </div>
+            </a>
               <?php endforeach; ?>
           </div>
         </div>
