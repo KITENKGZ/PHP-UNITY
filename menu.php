@@ -5,13 +5,13 @@
           <div class="menu__profile">
                           <!-- Если авторизован выведет приветствие -->
         <?php if(isset($_SESSION['logged_user'])) : ?>
-            <img src="img/social/profile 9.png" alt="profile">
+            <img src="img/social/profile.png" alt="profile">
               <div class="menu__mid" onclick="location.href='profile.php';" style="cursor: pointer;">
                 <div class="menu__login"><?php echo $_SESSION['logged_user']->login; ?></div> 
                 </div>
         <?php else : ?>
         <!-- Если пользователь не авторизован выведет ссылки на авторизацию и регистрацию -->
-        <img src="img/social/profile 9.png" alt="profile">
+        <img src="img/social/profile.png" alt="profile">
             <div class="menu__mid">
               <div class="menu__login" onclick="show('login'); hide('menu'); hide('reg'); paint('logBtn')">АВТОРИЗАЦИЯ</div> 
               </div>
@@ -31,15 +31,15 @@
         </div>
         <div class="menu__nav">
           <div>UFC</div>
-          <div>ESPORT</div>
+          <div>E-SPORTS</div>
           <div>FIFA</div>
         </div>
                 <div class="menu__social">
-            <a href="#"><img src="img/social/telegramb.png" alt=""></a>
-            <a href="#"><img src="img/social/twitterb.png" alt=""></a>
-            <a href="#"><img src="img/social/instagramb.png" alt=""></a>
-            <a href="#"><img src="img/social/facebookb.png" alt=""></a>
-            <a href="#"><img src="img/social/vkb.png" alt=""></a>
+            <a href="https://t.me/usport_online"><img src="img/social/telegramb.png" alt=""></a>
+            <a href="https://twitter.com/usport_online"><img src="img/social/twitterb.png" alt=""></a>
+            <a href="https://instagram.com/usport.online"><img src="img/social/instagramb.png" alt=""></a>
+            <a href="https://www.facebook.com/onlineusport/"><img src="img/social/facebookb.png" alt=""></a>
+            <a href="https://vk.com/usport.online"><img src="img/social/vkb.png" alt=""></a>
           </div>
         </div>
       </div>
@@ -57,6 +57,7 @@
       <form action="auth.php" class="login__auth" method="POST">
         <input class="inp" name="login" type="text" placeholder="Логин...">
         <input class="inp" name="password" type="password" placeholder="Пароль...">
+        
         <div class="login__faggot"><a href="forget.php">Забыли пароль?</a></div>
         <input name="do_login" type="submit" class="login__login" value="ВОЙТИ">
       </form>

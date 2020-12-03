@@ -9,7 +9,7 @@
     <div class="content"> 
       <div class="content__box">
         <div class="content__head">
-          <img src="img/social/profile 9.png" alt="profile">
+          <img src="img/social/profile.png" alt="profile">
             <div class="content__info">
               <span><?php echo $_SESSION['logged_user']->firstname; ?></span> 
               <span><?php echo $_SESSION['logged_user']->login; ?></span>
@@ -41,7 +41,7 @@
                 <div class="input__wrapper">
                   <input name="file" type="file" name="avatar" id="input__file" class="input input__file" multiple>
                   <label for="input__file" class="input__file-button">
-                    <span class="input__file-button-text">Загрузить аву</span>
+                    <span class="input__file-button-text">Загрузить...</span>
                   </label>
                 </div>
                 <input type="password" name="password" placeholder="********">
@@ -59,11 +59,11 @@
             <img src="img/logo.png" alt="">
           </div>      
           <div class="footer__social">
-            <a href="#"><img src="img/social/telegram.png" alt=""></a>
-            <a href="#"><img src="img/social/twitter.png" alt=""></a>
-            <a href="#"><img src="img/social/instagram.png" alt=""></a>
-            <a href="#"><img src="img/social/facebook.png" alt=""></a>
-            <a href="#"><img src="img/social/vk.png" alt=""></a>
+            <a href="https://t.me/usport_online"><img src="img/social/telegramb.png" alt=""></a>
+            <a href="https://twitter.com/usport_online"><img src="img/social/twitterb.png" alt=""></a>
+            <a href="https://instagram.com/usport.online"><img src="img/social/instagramb.png" alt=""></a>
+            <a href="https://www.facebook.com/onlineusport/"><img src="img/social/facebookb.png" alt=""></a>
+            <a href="https://vk.com/usport.online"><img src="img/social/vkb.png" alt=""></a>
           </div>    
         </div>  
               <div class="footer__text">

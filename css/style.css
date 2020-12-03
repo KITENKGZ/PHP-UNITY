@@ -393,7 +393,7 @@ html, body, main {
 
 .menu__container, .login__container, .registr__container {
   margin: 0 auto;
-  margin-top: 101px;
+  margin-top: 80px;
   width: 313px;
   height: 461px;
   background-color: #0F1533;
@@ -430,12 +430,13 @@ html, body, main {
 
 .menu__header .menu__login, .login__header .menu__login, .registr__header .menu__login {
   width: 145px;
-  margin: 0 0 0 0;
   background: none;
   font-family: Comfortaa;
   font-style: normal;
   font-weight: normal;
   margin: 0 auto;
+  margin-top: -10px;
+  margin-left: 30px;
   width: 145px;
   line-height: 35px;
   background: none;
@@ -468,7 +469,12 @@ html, body, main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 10px;
+  padding: 0 6px;
+}
+
+.menu__profile img, .login__profile img, .registr__profile img {
+  width: 52px;
+  margin-top: -15px;
 }
 
 .menu__mid, .login__mid, .registr__mid {
@@ -525,7 +531,7 @@ html, body, main {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   height: 30px;
-  width: 77px;
+  width: 90px;
   text-align: center;
   line-height: 31px;
   font-size: 17px;
@@ -552,7 +558,7 @@ html, body, main {
   height: 30px;
   width: 190px;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 25px;
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -645,6 +651,24 @@ html, body, main {
 .login__auth .inp:focus, .registr__auth .inp:focus {
   -webkit-box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.5);
           box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.5);
+}
+
+.login__faggottext, .registr__faggottext {
+  width: 198px;
+  height: 15px;
+  padding: 0 auto;
+  top: 6px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.login__faggottext span, .registr__faggottext span {
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 12px;
+  color: #FF0000;
 }
 
 .login__faggot, .registr__faggot {
@@ -815,7 +839,7 @@ html, body, main {
       -ms-flex-align: center;
           align-items: center;
   padding: 0px 15% 0px 15%;
-  padding-top: 150%;
+  padding-top: 130%;
 }
 
 .preloader__image .preloader__change img {
