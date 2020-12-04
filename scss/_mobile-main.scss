@@ -125,10 +125,8 @@ html, body, main {
     font-size: 18px;
     line-height: 20px;
     img{
-      margin-top: -15px;
       width: 52px;
       height: 52px;
-      margin-top: -15px;
     }
   }
   &__info {
@@ -191,11 +189,13 @@ html, body, main {
       text-align: center;
     } 
     .input__file {
+   
       opacity: 0;
       visibility: hidden;
       position: absolute;
     } 
     .input__file-button-text {
+      color: #ffffff;
       line-height: 35px;
       font-size: 15px;
     }  
@@ -209,7 +209,7 @@ html, body, main {
       justify-content: flex-start;
       border-radius: 3px;
       margin: 0 auto;
-      background-color: $color-second;
+      background-color: $color-main;
     }
   }
   &__right {
@@ -221,7 +221,7 @@ html, body, main {
         display: block;
         width: 120px;
         height: 2px;
-        background-color: $color-bg;
+        /*background-color: $color-bg;*/
         bottom: -1px;
         left: 0px;
       }
@@ -246,7 +246,8 @@ html, body, main {
   &__redact{
     text-align: center;
     width: 100%;
-    background: #0F1533;
+    margin: 0 auto;
+    margin-top: 8px;
     border-radius: 5px;
     padding: 2px;
     span{
@@ -265,6 +266,7 @@ html, body, main {
       }
     }
   }
+
   &__exit{
     text-align: center;
     width: 131px;
@@ -395,11 +397,14 @@ html, body, main {
     height: 30px;
   }
   &__nav {
+    margin: 0 auto;
+    width: 270px;
     height: 31px;
-    padding: 0 8px;
     margin-top: 22px;
     display: flex;
     justify-content: center;
+    background-color: $color-bg;
+    border-radius:5px;
     .menu__nax{
       width: 251px;
       background-color: $color-bg;
@@ -650,7 +655,7 @@ padding: 8px 10px 0px 10px;
     justify-content: space-around;
     align-items:center;
     padding: 0px 15% 0px 15%;
-    padding-top: 130%;
+    padding-top: 500px;
     
   
     img{

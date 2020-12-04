@@ -2,6 +2,7 @@
 <div class="menu" id="menu">
       <div class="menu__container">
         <div class="menu__header">
+        
           <div class="menu__profile">
                           <!-- Если авторизован выведет приветствие -->
         <?php if(isset($_SESSION['logged_user'])) : ?>

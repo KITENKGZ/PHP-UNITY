@@ -180,10 +180,8 @@ html, body, main {
 }
 
 .content__head img {
-  margin-top: -15px;
   width: 52px;
   height: 52px;
-  margin-top: -15px;
 }
 
 .content__info {
@@ -272,6 +270,7 @@ html, body, main {
 }
 
 .content__left .input__file-button-text, .content__right .input__file-button-text {
+  color: #ffffff;
   line-height: 35px;
   font-size: 15px;
 }
@@ -292,7 +291,7 @@ html, body, main {
           justify-content: flex-start;
   border-radius: 3px;
   margin: 0 auto;
-  background-color: #FFFFFF;
+  background-color: #0F1533;
 }
 
 .content__right {
@@ -305,7 +304,7 @@ html, body, main {
   display: block;
   width: 120px;
   height: 2px;
-  background-color: #01082B;
+  /*background-color: $color-bg;*/
   bottom: -1px;
   left: 0px;
 }
@@ -331,7 +330,8 @@ html, body, main {
 .content__redact {
   text-align: center;
   width: 100%;
-  background: #0F1533;
+  margin: 0 auto;
+  margin-top: 8px;
   border-radius: 5px;
   padding: 2px;
 }
@@ -510,8 +510,9 @@ html, body, main {
 }
 
 .menu__nav, .login__nav, .registr__nav {
+  margin: 0 auto;
+  width: 270px;
   height: 31px;
-  padding: 0 8px;
   margin-top: 22px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -519,6 +520,8 @@ html, body, main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: #01082B;
+  border-radius: 5px;
 }
 
 .menu__nav .menu__nax, .login__nav .menu__nax, .registr__nav .menu__nax {
@@ -843,7 +846,7 @@ html, body, main {
       -ms-flex-align: center;
           align-items: center;
   padding: 0px 15% 0px 15%;
-  padding-top: 130%;
+  padding-top: 500px;
 }
 
 .preloader__image .preloader__change img {

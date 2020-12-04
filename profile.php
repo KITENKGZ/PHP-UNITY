@@ -45,14 +45,20 @@
                   </label>
                 </div>
                 <input type="password" name="password" placeholder="********">
-                <input name="do_edit" type="submit" class="content__submit" value="Сохранить">
+                <!--<input name="do_edit" type="submit" class="content__submit" value="Сохранить"> -->
               </form>
             </div>
+          </div>
+          <!-- тут поставил для прекола Cumиль-->
+          <div class="content__redact">
+          <input name="do_edit" type="submit" class="content__submit" value="Сохранить">
           </div>
         </div>
       </div>  
     </div>
-    <span>Выйти</span>
+      <div class="content__exit">
+      <a href="https://usport.online/"><span>Выйти</span></a>
+        </div>
     <footer class="footer">
         <div class="footer__container">
           <div class="footer__logo" >
