@@ -10,8 +10,8 @@
     <div class="content news-block" id="NEWS">
         <div class="content__header">
           <span id="NewsAllBtn" onclick="show('ALLNEWS'); hide('UFCNEWS'); hide('ESPORTNEWS'); hide('FIFANEWS'); paint('NewsAllBtn'); painta('NewsUfcBtn'); painta('NewsEsportBtn'); painta('NewsFifaBtn')" class="all-btn">ВСЕ</span>
-          <span id="NewsUfcBtn" onclick="show('UFCNEWS'); hide('ALLNEWS'); hide('ESPORTNEWS'); hide('FIFANEWS'); paint('NewsUfcBtn'); painta('NewsAllBtn'); painta('NewsEsportBtn'); painta('NewsFifaBtn')" class="ufc-btn">UFC</span>
-          <span id="NewsEsportBtn" onclick="show('ESPORTNEWS'); hide('UFCNEWS'); hide('ALLNEWS'); hide('FIFANEWS'); paint('NewsEsportBtn'); painta('NewsAllBtn'); painta('NewsUfcBtn'); painta('NewsFifaBtn')" class="esport-btn">ESPORT</span>
+          <span id="NewsUfcBtn" onclick="show('UFCNEWS'); hide('ALLNEWS'); hide('ESPORTNEWS'); hide('FIFANEWS'); paint('NewsUfcBtn'); painta('NewsAllBtn'); painta('NewsEsportBtn'); painta('NewsFifaBtn')" class="ufc-btn">MMA</span>
+          <span id="NewsEsportBtn" onclick="show('ESPORTNEWS'); hide('UFCNEWS'); hide('ALLNEWS'); hide('FIFANEWS'); paint('NewsEsportBtn'); painta('NewsAllBtn'); painta('NewsUfcBtn'); painta('NewsFifaBtn')" class="esport-btn">E-SPORTS</span>
           <span id="NewsFifaBtn" onclick="show('FIFANEWS'); hide('UFCNEWS'); hide('ALLNEWS'); hide('ESPORTNEWS'); paint('NewsFifaBtn'); painta('NewsAllBtn'); painta('NewsUfcBtn'); painta('NewsEsportBtn')" class="fifa-btn">FIFA</span>
         </div>
         <div class="content__main content__news">
@@ -90,14 +90,14 @@
       <div class="content stream-block" id="STREAM">
         <div class="content__header">
           <span id="allBtn" onclick="show('ALL'); hide('UFC'); hide('ESPORT'); hide('FIFA'); paint('allBtn'); painta('ufcBtn'); painta('esportBtn'); painta('fifaBtn')" class="all-btn">ВСЕ</span>
-          <span id="ufcBtn" onclick="show('UFC'); hide('ALL'); hide('ESPORT'); hide('FIFA'); paint('ufcBtn'); painta('allBtn'); painta('esportBtn'); painta('fifaBtn')" class="ufc-btn">UFC</span>
-          <span id="esportBtn" onclick="show('ESPORT'); hide('UFC'); hide('ALL'); hide('FIFA'); paint('esportBtn'); painta('allBtn'); painta('ufcBtn'); painta('fifaBtn')" class="esport-btn">ESPORT</span>
+          <span id="ufcBtn" onclick="show('UFC'); hide('ALL'); hide('ESPORT'); hide('FIFA'); paint('ufcBtn'); painta('allBtn'); painta('esportBtn'); painta('fifaBtn')" class="ufc-btn">MMA</span>
+          <span id="esportBtn" onclick="show('ESPORT'); hide('UFC'); hide('ALL'); hide('FIFA'); paint('esportBtn'); painta('allBtn'); painta('ufcBtn'); painta('fifaBtn')" class="esport-btn">E-SPORTS</span>
           <span id="fifaBtn" onclick="show('FIFA'); hide('UFC'); hide('ALL'); hide('ESPORT'); paint('fifaBtn'); painta('allBtn'); painta('ufcBtn'); painta('esportBtn')" class="fifa-btn">FIFA</span>
         </div>
         <div class="content__main">
           <div id="ALL">ALL stream</div>
-          <div id="UFC" class="none">UFC stream</div>
-          <div id="ESPORT" class="none">ESPORT stream</div>
+          <div id="UFC" class="none">MMA stream</div>
+          <div id="ESPORT" class="none">E-SPORTS stream</div>
           <div id="FIFA" class="none">FIFA stream</div>
         </div>
       </div>

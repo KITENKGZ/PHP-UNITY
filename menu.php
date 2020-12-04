@@ -2,7 +2,16 @@
 <div class="menu" id="menu">
       <div class="menu__container">
         <div class="menu__header">
-        
+        <div class="box">
+            <div class="top">
+              <div class="ellipse1"></div>
+              <div class="ellipse2"></div>
+            </div>
+            <div class="bottom">
+              <div class="ellipse1"></div>
+              <div class="ellipse2"></div>
+              </div>
+		      </div>
           <div class="menu__profile">
                           <!-- Если авторизован выведет приветствие -->
         <?php if(isset($_SESSION['logged_user'])) : ?>
@@ -30,7 +39,7 @@
               </div>          
         </div>
         <div class="menu__nav">
-          <div>UFC</div>
+          <div>MMA</div>
           <div>E-SPORTS</div>
           <div>FIFA</div>
         </div>

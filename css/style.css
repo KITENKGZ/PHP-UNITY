@@ -247,14 +247,38 @@ html, body, main {
 }
 
 .content__left input, .content__left select, .content__right input, .content__right select {
-  height: 35px;
+  height: 30px;
   width: 122px;
   outline: none;
-  border: none;
+  border: 1px solid rgba(72, 157, 255, 0.2);
+  border-radius: 5px;
   background-color: #0F1533;
   color: #FFFFFF;
+  margin: 0px 0px 5px 0px;
+  padding: 2px 0px 2px 5px;
+}
+
+.content__left input[type='date'], .content__right input[type='date'] {
+  position: relative;
+  margin-bottom: -3px;
+}
+
+.content__left ::-webkit-datetime-edit, .content__left ::-webkit-clear-button, .content__left ::-webkit-calendar-picker-indicator, .content__right ::-webkit-datetime-edit, .content__right ::-webkit-clear-button, .content__right ::-webkit-calendar-picker-indicator {
+  position: absolute;
+}
+
+.content__left ::-webkit-clear-button, .content__right ::-webkit-clear-button {
+  right: 1.54em;
+}
+
+.content__left ::-webkit-inner-spin-button, .content__right ::-webkit-inner-spin-button {
+  -webkit-appearance: none;
   margin: 0;
-  padding: 0;
+}
+
+.content__left ::-webkit-calendar-picker-indicator, .content__right ::-webkit-calendar-picker-indicator {
+  right: 0;
+  padding: .539em .34em;
 }
 
 .content__left .input__wrapper, .content__right .input__wrapper {
@@ -264,6 +288,7 @@ html, body, main {
 }
 
 .content__left .input__file, .content__right .input__file {
+  margin-left: -55px;
   opacity: 0;
   visibility: hidden;
   position: absolute;
@@ -273,6 +298,8 @@ html, body, main {
   color: #ffffff;
   line-height: 35px;
   font-size: 15px;
+  display: block;
+  margin-left: 5px;
 }
 
 .content__left .input__file-button, .content__right .input__file-button {
@@ -409,6 +436,8 @@ html, body, main {
 
 .menu__header, .login__header, .registr__header {
   position: relative;
+  margin: 0 auto;
+  width: 285px;
   height: 93px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -726,8 +755,8 @@ html, body, main {
 
 .login__socialauth div div, .registr__socialauth div div {
   margin-top: 6px;
-  width: 38px;
-  height: 38px;
+  width: 35px;
+  height: 35px;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 5px;
   display: -webkit-box;
@@ -1017,5 +1046,53 @@ a {
   line-height: 53px;
   margin-top: 10px;
   color: #000000;
+  border-radius: 5px;
+}
+
+.box {
+  margin: 0 auto;
+  position: fixed;
+  display: block;
+  width: 267px;
+  height: 82px;
+  top: 100px;
+}
+
+.top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 50%;
+}
+
+.bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+  height: 50%;
+}
+
+.ellipse1 {
+  background-color: #ffffff;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+}
+
+.ellipse2 {
+  background-color: #ffffff;
+  width: 5px;
+  height: 5px;
   border-radius: 5px;
 }
