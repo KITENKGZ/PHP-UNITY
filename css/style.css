@@ -65,6 +65,15 @@ html, body, main {
           align-items: center;
 }
 
+.header__main div {
+  margin: 0 auto;
+  margin-left: 8px;
+}
+
+.header__main .header__logo {
+  margin-left: 0px;
+}
+
 .header__bar {
   width: 1px;
   height: 100%;
@@ -72,8 +81,10 @@ html, body, main {
 }
 
 .header__search {
-  height: 32px;
-  width: 32px;
+  width: 100%;
+  height: 100%;
+  max-height: 32px;
+  max-width: 32px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -352,6 +363,28 @@ html, body, main {
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
+}
+
+.content__submit {
+  width: 97px;
+  height: 29px;
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-transition: all .218s ease 0s;
+  transition: all .218s ease 0s;
 }
 
 .content__redact {
@@ -689,16 +722,18 @@ html, body, main {
           box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.5);
 }
 
-.login__faggottext, .registr__faggottext {
+.login__faggottext, .login__has, .registr__faggottext, .registr__has {
+  display: block;
   width: 198px;
-  height: 15px;
-  padding: 0 auto;
-  top: 6px;
+  height: 13px;
   text-align: center;
   margin: 0 auto;
+  margin-top: 6px;
+  opacity: 1;
 }
 
-.login__faggottext span, .registr__faggottext span {
+.login__faggottext span, .login__has span, .registr__faggottext span, .registr__has span {
+  display: block;
   font-family: Comfortaa;
   font-style: normal;
   font-weight: normal;
@@ -707,11 +742,23 @@ html, body, main {
   color: #FF0000;
 }
 
+.login__has, .registr__has {
+  margin: 0 auto;
+  margin-top: 1px;
+  padding: 0px;
+  width: 100%;
+  height: 16px;
+}
+
+.login__has span, .registr__has span {
+  line-height: 16px;
+}
+
 .login__faggot, .registr__faggot {
   display: block;
   margin: 0 auto;
   height: 15px;
-  margin-top: 27px;
+  margin-top: 8px;
   text-align: center;
   font-size: 14px;
   line-height: 15px;
@@ -775,6 +822,10 @@ html, body, main {
   width: 241px;
 }
 
+.registr input[type='password'] {
+  margin-top: 0px;
+}
+
 .footer {
   height: 60px;
   width: 100%;
@@ -784,6 +835,7 @@ html, body, main {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   border: 1px solid #000000;
+  background-color: #FFFFFF;
   border-radius: 5px;
   padding: 8px 10px 0px 10px;
 }
@@ -1051,10 +1103,12 @@ a {
 
 .box {
   margin: 0 auto;
+  margin-left: 1px;
+  margin-top: 3px;
   position: fixed;
   display: block;
-  width: 267px;
-  height: 82px;
+  width: 265px;
+  height: 75px;
   top: 100px;
 }
 
