@@ -16,8 +16,8 @@
         <div class="container-1">
           <div class="content__header">
             <span>ВСЕ</span>
-            <span>UFC</span>
-            <span>ESPORT</span>
+            <span>MMA</span>
+            <span>E-SPORTS</span>
             <span>FIFA</span>
           </div>
         </div>

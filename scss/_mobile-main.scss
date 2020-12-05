@@ -2,6 +2,7 @@ html, body, main {
   color: $color-second;
   font-family: $font-main;
   overflow: auto;
+  min-width: 375px;
 }
 .header {
   width: 100%;
@@ -21,7 +22,7 @@ html, body, main {
     background-color: $color-second-bg; 
   }
   &__logo{
-    max-width: 100px;
+    width: 100px;
   }
 &__rightside{
   display: flex;
@@ -38,6 +39,13 @@ html, body, main {
     justify-content: space-between;
     align-self:center;
     align-items: center;
+    div{
+      margin:0 auto;
+      margin-left: 8px;
+    }
+    .header__logo{
+      margin-left: 0px;
+    }
   }
   &__bar {
     
@@ -125,11 +133,10 @@ html, body, main {
     font-size: 18px;
     line-height: 20px;
     img{
-      margin-top: -15px;
       width: 52px;
       height: 52px;
-      margin-top: -15px;
     }
+  
   }
   &__info {
     width: 100%;
@@ -176,28 +183,40 @@ html, body, main {
       line-height: 35px;
     }
     input, select {
-      height: 35px;
+      height: 30px;
       width: 122px;
       outline: none;
-      border: none;
+      border: 1px solid rgba(72, 157, 255, 0.2);
+      border-radius:5px;
       background-color: $color-main;
       color: $color-second;
-      margin: 0;
-      padding: 0;
+      margin: 0px 0px 5px 0px;
+      padding: 2px 0px 2px 5px;
+    
     }
+    input[type='date']{position:relative; margin-bottom: -3px;}
+    ::-webkit-datetime-edit, ::-webkit-clear-button,::-webkit-calendar-picker-indicator{position:absolute;}
+    ::-webkit-clear-button{right:1.54em;}
+    ::-webkit-inner-spin-button{-webkit-appearance:none; margin:0;}
+    ::-webkit-calendar-picker-indicator{right:0; padding:.539em .34em;}
+        
     .input__wrapper {
       width: 100%;
       position: relative;
       text-align: center;
     } 
     .input__file {
+      margin-left: -55px;
       opacity: 0;
       visibility: hidden;
       position: absolute;
     } 
     .input__file-button-text {
+      color: #ffffff;
       line-height: 35px;
       font-size: 15px;
+      display: block;
+      margin-left: 5px;
     }  
     .input__file-button {
       width: 100%;
@@ -209,7 +228,7 @@ html, body, main {
       justify-content: flex-start;
       border-radius: 3px;
       margin: 0 auto;
-      background-color: $color-second;
+      background-color: $color-main;
     }
   }
   &__right {
@@ -221,7 +240,7 @@ html, body, main {
         display: block;
         width: 120px;
         height: 2px;
-        background-color: $color-bg;
+        /*background-color: $color-bg;*/
         bottom: -1px;
         left: 0px;
       }
@@ -243,10 +262,30 @@ html, body, main {
       line-height: 16px;
     }
   }
+  &__submit{
+  width: 97px;
+  height: 29px;
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-second;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all .218s ease 0s;
+  }
+
+
   &__redact{
     text-align: center;
     width: 100%;
-    background: #0F1533;
+    margin: 0 auto;
+    margin-top: 8px;
     border-radius: 5px;
     padding: 2px;
     span{
@@ -263,8 +302,10 @@ html, body, main {
         margin-top: 10px;
         width: 75px;
       }
+      
     }
   }
+
   &__exit{
     text-align: center;
     width: 131px;
@@ -315,6 +356,8 @@ html, body, main {
   }
   &__header {
     position: relative;
+    margin: 0 auto;
+    width: 285px;
     height: 93px;
     display: flex;
     justify-content: space-between;
@@ -395,11 +438,14 @@ html, body, main {
     height: 30px;
   }
   &__nav {
+    margin: 0 auto;
+    width: 270px;
     height: 31px;
-    padding: 0 8px;
     margin-top: 22px;
     display: flex;
     justify-content: center;
+    background-color: $color-bg;
+    border-radius:5px;
     .menu__nax{
       width: 251px;
       background-color: $color-bg;
@@ -475,6 +521,12 @@ html, body, main {
     background-color: $color-second-bg;
   }
 }
+
+.menu{
+  &__select{
+    padding:6px 17px;
+  }
+}
 .login, .registr {
   &__container {
     padding: 13px 13px;
@@ -505,21 +557,34 @@ html, body, main {
       }
     }
   }
-  &__faggottext{
-    
+  &__faggottext ,&__has{
+    display: block;
     width: 198px;
-    height: 15px;
-    padding: 0 auto;
-    top:6px;
+    height: 13px;
     text-align: center;
     margin: 0 auto;
+    margin-top: 6px;
+    
     span{
+      display: block;
       font-family: Comfortaa;
       font-style: normal;
       font-weight: normal;
       font-size: 11px;
-      line-height: 12px;
+     line-height: 12px;
       color: #FF0000;
+      opacity: 0;
+    }
+  }
+  &__has{
+    margin: 0 auto;
+    margin-top: 1px;
+    padding: 0px;
+    width: 100%;
+    height: 16px;
+    span{
+      opacity: 0;
+      line-height: 16px;
     }
   }
   &__faggot {
@@ -530,7 +595,7 @@ html, body, main {
     display: block;
     margin: 0 auto;
     height: 15px;
-    margin-top: 27px;
+    margin-top: 8px;
     text-align: center; 
     font-size: 14px;
     line-height: 15px;  
@@ -545,6 +610,7 @@ html, body, main {
     margin-top: 15px;
     border: 1px solid $color-second;
     border-radius: 5px;
+    
     span {
       margin-top: 6px;
       display: block;
@@ -558,8 +624,8 @@ html, body, main {
       justify-content: space-evenly;
       div {
         margin-top: 6px;
-        width: 38px;
-        height: 38px;
+        width: 35px;
+        height: 35px;
         background: rgba(255, 255, 255, 0.03);
         border-radius: 5px;
         display: flex;
@@ -574,6 +640,9 @@ html, body, main {
     margin-top: 17px;
     width: 241px;
   }
+    input[type='password']{ 
+    margin-top: 0px;
+      }
 }
 .footer{
 height: 60px;
@@ -583,6 +652,7 @@ bottom: 0px;
 left: 50%;
 transform: translateX(-50%);
 border: 1px solid #000000;
+background-color:$color-second;
 border-radius: 5px;
 padding: 8px 10px 0px 10px;
   &__logo{
@@ -650,7 +720,7 @@ padding: 8px 10px 0px 10px;
     justify-content: space-around;
     align-items:center;
     padding: 0px 15% 0px 15%;
-    padding-top: 130%;
+    padding-top: 500px;
     
   
     img{
@@ -802,66 +872,39 @@ a {
   border-radius: 5px;
 }
 
-.chat {
-	border:1px solid #333;
-	margin:15px;
-	width:40%;
-	height:70%;
-	background:#555;
-	color:#fff;
+.box{ 
+  margin: 0 auto;
+  margin-left: 1px;
+  margin-top: 3px;
+  position: fixed;
+  display: block;
+  width: 265px;
+  height: 75px;
+  top: 100px;
 }
-
-.chat-messages {
-	min-height:93%;
-	max-height:93%;
-	overflow:auto;
+.top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 50%;
 }
-
-.chat-messages__content {
-	padding:1px;
+.bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: 50%; 
 }
-
-.chat__message {
-	border-left:3px solid #333;
-	margin-top:2px;
-	padding:2px;
+.ellipse1{
+  background-color: #ffffff;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  
 }
-
-.chat__message_black {
-	border-color:#000;
-}
-
-.chat__message_blue {
-	border-color:blue;
-}
-
-.chat__message_green {
-	border-color:green;
-}
-
-.chat__message_red {
-	border-color:red;
-}
-
-.chat-input {
-	min-height:6%;
-}
-input {
-	font-family:arial;
-	font-size:16px;
-	vertical-align:middle;
-	background:#333;
-	color:#fff;
-	border:0;
-	display:inline-block;
-	margin:1px;
-	height:30px;
-}
-
-.chat-form__input {
-	width:79%;
-}
-
-.chat-form__submit {
-	width:18%;
+.ellipse2{
+  background-color: #ffffff;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
 }

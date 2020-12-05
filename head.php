@@ -11,4 +11,5 @@ require "db.php";
   <title>Unity</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
