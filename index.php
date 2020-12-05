@@ -95,7 +95,9 @@
           <span id="fifaBtn" onclick="show('FIFA'); hide('UFC'); hide('ALL'); hide('ESPORT'); paint('fifaBtn'); painta('allBtn'); painta('ufcBtn'); painta('esportBtn')" class="fifa-btn">FIFA</span>
         </div>
         <div class="content__main">
-          <div id="ALL">ALL stream</div>
+          <div id="ALL">
+           ALL STREAM
+          </div>
           <div id="UFC" class="none">UFC stream</div>
           <div id="ESPORT" class="none">ESPORT stream</div>
           <div id="FIFA" class="none">FIFA stream</div>
