@@ -4,6 +4,7 @@ html, body, main {
   color: #FFFFFF;
   font-family: "Comfortaa", cursive;
   overflow: auto;
+  min-width: 375px;
 }
 
 .header {
@@ -34,7 +35,7 @@ html, body, main {
 }
 
 .header__logo {
-  max-width: 100px;
+  width: 100px;
 }
 
 .header__rightside {
@@ -81,10 +82,8 @@ html, body, main {
 }
 
 .header__search {
-  width: 100%;
-  height: 100%;
-  max-height: 32px;
-  max-width: 32px;
+  height: 32px;
+  width: 32px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -686,6 +685,10 @@ html, body, main {
   background-color: #FFFFFF;
 }
 
+.menu__select {
+  padding: 6px 17px;
+}
+
 .login__container, .registr__container {
   padding: 13px 13px;
 }
@@ -729,7 +732,6 @@ html, body, main {
   text-align: center;
   margin: 0 auto;
   margin-top: 6px;
-  opacity: 1;
 }
 
 .login__faggottext span, .login__has span, .registr__faggottext span, .registr__has span {
@@ -740,6 +742,7 @@ html, body, main {
   font-size: 11px;
   line-height: 12px;
   color: #FF0000;
+  opacity: 0;
 }
 
 .login__has, .registr__has {
@@ -751,6 +754,7 @@ html, body, main {
 }
 
 .login__has span, .registr__has span {
+  opacity: 0;
   line-height: 16px;
 }
 
