@@ -1,7 +1,6 @@
 html, body, main {
   color: $color-second;
   font-family: $font-main;
-  overflow: auto;
   min-width: 375px;
 }
 .header {
@@ -34,13 +33,12 @@ html, body, main {
     width: 161px;
     border: 1px solid $color-bg;
     border-radius: 7px;
-    padding: 5px;
+    padding: 5px 8px 5px 5px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-self:center;
     align-items: center;
     div{
-      margin:0 auto;
       margin-left: 8px;
     }
     .header__logo{
@@ -48,25 +46,24 @@ html, body, main {
     }
   }
   &__bar {
-    
     width: 1px;
     height: 100%;
     background-color: $color-bg;
+    border-radius:3px;
   }
   &__search {
     height: 32px;
     width: 32px;
     display: flex;
     align-self: center;
-    justify-content: center;
-    margin-right: 2px;
+    justify-content: center;  
   }
   &__select {
     height: 30px;
     width: 158px;
-    padding: 6px 17px;
+    padding: 6px 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items:center;
     background-color: $color-bg;
     border-radius: 5px;
@@ -91,6 +88,12 @@ html, body, main {
   }
 }
 .container {
+  padding: 0 30px;
+}
+.container_2 {
+  position: sticky;
+  top: 48px;
+  z-index: 60;
   padding: 0 30px;
 }
 .content {
@@ -322,7 +325,7 @@ html, body, main {
       font-size: 18px;
       line-height: 20px;
       text-align: center;
-      color: #FFFFFF;
+      color: #ff0000;
       }
     }
   }
@@ -524,7 +527,7 @@ html, body, main {
 
 .menu{
   &__select{
-    padding:6px 17px;
+    padding:6px 20px;
   }
 }
 .login, .registr {
@@ -848,11 +851,13 @@ a {
   transform: translateX(-50%);
 }
 .news-title {
+  width: 370px;
   padding: 5px;
   font-size: 10px;
   line-height: 13px;
   text-align: center;
   color: $color-second;
+  margin: auto auto;
 }
 
 .content__news {
