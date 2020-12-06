@@ -13,7 +13,7 @@
   <main class="main">
     <div class="container-menu">
       <div class="content">
-        <div class="container-1">
+        <div class="container_2">
           <div class="content__header">
             <span>ВСЕ</span>
             <span>MMA</span>
