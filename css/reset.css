@@ -65,6 +65,9 @@ button,
 textarea,
 select {
   font: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */

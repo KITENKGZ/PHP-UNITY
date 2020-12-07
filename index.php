@@ -94,18 +94,35 @@
           <span id="esportBtn" onclick="show('ESPORT'); hide('UFC'); hide('ALL'); hide('FIFA'); paint('esportBtn'); painta('allBtn'); painta('ufcBtn'); painta('fifaBtn')" class="esport-btn">E-SPORTS</span>
           <span id="fifaBtn" onclick="show('FIFA'); hide('UFC'); hide('ALL'); hide('ESPORT'); paint('fifaBtn'); painta('allBtn'); painta('ufcBtn'); painta('esportBtn')" class="fifa-btn">FIFA</span>
         </div>
-        <div class="content__main">
-<<<<<<< HEAD
+        <div class="content__main content__news">
           <div id="ALL">
-           ALL STREAM
+          <?php
+            $numOfStream = R::count( 'streams' ); 
+            $countStreams = range(2,$numOfStreams+1);
+            $streams = R::loadAll( 'streams', $countStreams);
+            $i = 0;
+            ?>
+            <?php foreach( array_reverse($streams) as $stream): ?>
+              <a style="text-decoration: none;" href="stream.php?stream_id=<?=$stream->id;?>">
+                <div class="content__mainheader stream__item">
+                  <div class="content__mainimg stream__img"><img src="<?=$stream->leftpic;?>"></div>
+                  <div class="content__maininfo stream__info">
+                    <span><?=$stream->title;?></span>
+                    <span><?=$stream->date;?> <?=$stream->time;?></span>
+                  </div>
+                  <div class="content__mainimg stream__img"><img src="<?=$stream->rightpic;?>"></div>
+                </div>
+              </a>
+            <?php
+                $i++;
+                if ($i % 7 == 0) { 
+                  echo "<div class='news-cm'>Место для вашей рекламы</div>";
+              } 
+            ?>
+            <?php endforeach; ?>
           </div>
-          <div id="UFC" class="none">UFC stream</div>
-          <div id="ESPORT" class="none">ESPORT stream</div>
-=======
-          <div id="ALL">ALL stream</div>
           <div id="UFC" class="none">MMA stream</div>
           <div id="ESPORT" class="none">E-SPORTS stream</div>
->>>>>>> e07f208a3808f4726883138d7ff99ea2ea1ee0b0
           <div id="FIFA" class="none">FIFA stream</div>
         </div>
       </div>
