@@ -1295,3 +1295,44 @@ a {
 #newsBtn {
   color: #FF0000;
 }
+
+.ESPORT {
+  padding: 20px 30px 0px 30px;
+}
+
+.sport__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.game__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 107px;
+  height: 59px;
+  background: #0F1533;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 26px;
+}
+
+.game__block a {
+  width: 100%;
+  display: block;
+  padding: 15px;
+}
+
+.game__block a img {
+  width: 100%;
+  display: block;
+}
