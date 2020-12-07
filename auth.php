@@ -36,9 +36,7 @@ if($user) {
   
 
 if(!empty($errors)) {
-
-		echo '<div style="color: red; ">' . array_shift($errors). '</div><hr>';
-
+    header('Location: index.php?errors=1');
 	}
 
 }

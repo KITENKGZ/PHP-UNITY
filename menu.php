@@ -1,4 +1,3 @@
-
 <div class="menu" id="menu">
       <div class="menu__container">
         <div class="menu__header">
@@ -66,7 +65,7 @@
       <form action="auth.php" class="login__auth" method="POST">
         <input class="inp" name="login" type="text" placeholder="Логин...">
         <input class="inp" name="password" type="password" placeholder="Пароль...">
-        <div  class="login__faggottext"><span>неверный логин или пароль</span>
+        <div  class="login__faggottext"><span id="wrong">неверный логин или пароль</span>
         </div>
         <div class="login__faggot"><a href="forget.php">Забыли пароль?</a></div>
         <input name="do_login" type="submit" class="login__login" value="ВОЙТИ">
@@ -92,7 +91,7 @@
     </div>
     <form action="reg.php" class="registr__auth" method="POST">
       <input class="inp" name="login" type="text" placeholder="Логин...">
-      <div class="login__has"><span>пользователь с таким логином уже есть</span></div> <!---->
+      <div class="login__has"><span id="inc">1</span></div> <!---->
       <input class="inp" name="password" type="password" placeholder="Пароль...">
       <input class="inp" name="email" type="text" placeholder="Почта...">
       <input class="registr__login" name="do_signup" type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ">
@@ -108,3 +107,52 @@
     </div>
   </div>
 </div>
+<?php 
+        $errors = $_GET['errors'];
+        $error = $_GET['error'];
+          if($errors) {
+            echo '<script type="text/javascript">';
+            echo 'document.getElementById("login").style.display = "block";';
+            echo ' ';
+            echo 'document.getElementById("wrong").style.opacity = "1";';
+            echo ' ';
+            echo '</script>';
+          }
+          if($error) {
+            echo '<script type="text/javascript">';
+            echo 'document.getElementById("reg").style.display = "block";';
+            echo ' ';
+            echo 'document.getElementById("inc").style.opacity = "Что-то пошло не так";';
+            echo ' ';
+            echo 'document.getElementById("inc").style.opacity = "1";';
+            echo ' ';
+            $error = (int)$error;
+            switch ($error) {
+              case 1:
+                  echo 'document.getElementById("inc").innerHTML = "Пользователь с таким email уже существует";';
+                  break;
+              case 2:
+                  echo 'document.getElementById("inc").innerHTML = "Пользователь с таким логином уже существует";';
+                  break;
+              case 3:
+                  echo 'document.getElementById("inc").innerHTML = "email введен некорректно";';
+                  break;
+              case 4:
+                  echo 'document.getElementById("inc").innerHTML = "Минимальная длина пароля 8 символов";';
+                  break;
+              case 5:
+                  echo 'document.getElementById("inc").innerHTML = "Логин короче 4 или длинее 12 символов";';
+                  break;
+              case 6:
+                  echo 'document.getElementById("inc").innerHTML = "Введите пароль";';
+                  break;
+              case 7:
+                  echo 'document.getElementById("inc").innerHTML = "Введите email";';
+                  break;
+              case 8:
+                  echo 'document.getElementById("inc").innerHTML = "Введите логин";';
+                  break;
+              }
+              echo '</script>';
+          }
+        ?>

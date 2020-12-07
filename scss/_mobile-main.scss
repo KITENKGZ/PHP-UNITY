@@ -574,8 +574,8 @@ html, body, main {
       font-family: Comfortaa;
       font-style: normal;
       font-weight: normal;
-      font-size: 11px;
-     line-height: 12px;
+      font-size: 10px;
+      line-height: 12px;
       color: #FF0000;
       opacity: 0;
     }
@@ -1010,4 +1010,8 @@ a {
     width: 48px;
     height: 48px;
   }
+}
+
+#newsBtn {
+  color: #FF0000;
 }

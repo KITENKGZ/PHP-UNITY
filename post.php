@@ -15,10 +15,29 @@
       <div class="content">
         <div class="container_2">
           <div class="content__header">
-            <span>ВСЕ</span>
-            <span>MMA</span>
-            <span>E-SPORTS</span>
-            <span>FIFA</span>
+            <span onclick="location.href='index.php'">ВСЕ</span>
+            <span id="MMA" onclick="location.href='index.php?type=NMMA'">MMA</span>
+            <span id="ESPORT" onclick="location.href='index.php?type=NESPORTS'">E-SPORTS</span>
+            <span id="FIFA" onclick="location.href='index.php?type=NFIFA'">FIFA</span>
+            <?php 
+                $type = $post->type;
+                if ($type == "FIFA") {
+                  echo '<script type="text/javascript">';
+                  echo 'document.getElementById("FIFA").style.color = "#FF0000";';
+                  echo '</script>';
+                } elseif ($type == "UFC") {
+                  echo '<script type="text/javascript">';
+                  echo 'document.getElementById("MMA").style.color = "#FF0000";';
+                  echo '</script>';
+                } else {
+                  echo '<script type="text/javascript">';
+                  echo 'document.getElementById("ESPORT").style.color = "#FF0000";';
+                  echo '</script>';
+                }
+                echo '<script type="text/javascript">';
+                echo 'document.getElementById("newsBtn").style.color = "#FF0000";';
+                echo '</script>';
+            ?>
           </div>
         </div>
         <div class="content__main">

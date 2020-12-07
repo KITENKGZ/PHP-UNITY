@@ -16,7 +16,7 @@
               <span id="NewsFifaBtn" onclick="show('FIFANEWS'); hide('UFCNEWS'); hide('ALLNEWS'); hide('ESPORTNEWS'); paint('NewsFifaBtn'); painta('NewsAllBtn'); painta('NewsUfcBtn'); painta('NewsEsportBtn')" class="fifa-btn">FIFA</span>
             </div>
           </div>
-       <!--здесть должен быть блок-->
+        <!--здесть должен быть блок-->
         <div class="content__main content__news">
           <?php
           function dump($what) {
@@ -101,11 +101,26 @@
           <div id="ALL">
           <?php
             $numOfStream = R::count( 'streams' ); 
-            $countStreams = range(2,$numOfStreams+1);
+            $countStreams = range(1,$numOfStream);
             $streams = R::loadAll( 'streams', $countStreams);
-            $i = 0;
+            $streammma = R::find( 'streams', 'type = ?', array("UFC") );
+            $streamesports = R::find( 'streams', 'type = ?', array("ESPORT") );
+            $streamfifa = R::find( 'streams', 'type = ?', array("FIFA") );
+            if ($numOfStream > 1) {
+              $streams = array_reverse($streams);
+            }
+            if (count($streammma) > 1) {
+              $streammma = array_reverse($streammma);
+            }
+            if (count($streamesports) > 1) {
+              $streamesports = array_reverse($streamesports);
+            }
+            if (count($streamfifa) > 1) {
+              $streamfifa = array_reverse($streamfifa);
+            }
+            $x = 0;
             ?>
-            <?php foreach( array_reverse($streams) as $stream): ?>
+            <?php foreach($streams as $stream): ?>
               <a style="text-decoration: none;" href="stream.php?stream_id=<?=$stream->id;?>">
                 <div class="content__mainheader stream__item">
                   <div class="content__mainimg stream__img"><img src="<?=$stream->leftpic;?>"></div>
@@ -117,16 +132,55 @@
                 </div>
               </a>
             <?php
-                $i++;
-                if ($i % 7 == 0) { 
+                $x++;
+                if ($x % 7 == 0) { 
                   echo "<div class='news-cm'>Место для вашей рекламы</div>";
               } 
             ?>
             <?php endforeach; ?>
           </div>
-          <div id="UFC" class="none">MMA stream</div>
-          <div id="ESPORT" class="none">E-SPORTS stream</div>
-          <div id="FIFA" class="none">FIFA stream</div>
+          <div id="UFC" class="none">
+          <?php foreach($streammma as $stream): ?>
+              <a style="text-decoration: none;" href="stream.php?stream_id=<?=$stream->id;?>">
+                <div class="content__mainheader stream__item">
+                  <div class="content__mainimg stream__img"><img src="<?=$stream->leftpic;?>"></div>
+                  <div class="content__maininfo stream__info">
+                    <span><?=$stream->title;?></span>
+                    <span><?=$stream->date;?> <?=$stream->time;?></span>
+                  </div>
+                  <div class="content__mainimg stream__img"><img src="<?=$stream->rightpic;?>"></div>
+                </div>
+              </a>
+            <?php endforeach; ?>
+          </div>
+          <div id="ESPORT" class="none">
+          <?php foreach($streamesports as $stream): ?>
+              <a style="text-decoration: none;" href="stream.php?stream_id=<?=$stream->id;?>">
+                <div class="content__mainheader stream__item">
+                  <div class="content__mainimg stream__img"><img src="<?=$stream->leftpic;?>"></div>
+                  <div class="content__maininfo stream__info">
+                    <span><?=$stream->title;?></span>
+                    <span><?=$stream->date;?> <?=$stream->time;?></span>
+                  </div>
+                  <div class="content__mainimg stream__img"><img src="<?=$stream->rightpic;?>"></div>
+                </div>
+              </a>
+            <?php endforeach; ?>
+          </div>
+          <div id="FIFA" class="none">
+          <?php foreach($streamfifa as $stream): ?>
+              <a style="text-decoration: none;" href="stream.php?stream_id=<?=$stream->id;?>">
+                <div class="content__mainheader stream__item">
+                  <div class="content__mainimg stream__img"><img src="<?=$stream->leftpic;?>"></div>
+                  <div class="content__maininfo stream__info">
+                    <span><?=$stream->title;?></span>
+                    <span><?=$stream->date;?> <?=$stream->time;?></span>
+                  </div>
+                  <div class="content__mainimg stream__img"><img src="<?=$stream->rightpic;?>"></div>
+                </div>
+              </a>
+            <?php endforeach; ?>
+          </div>
         </div>
       </div>
     </div>
@@ -145,6 +199,90 @@
     </div>
   </div>
 </div>
+<?php 
+  $type = $_GET['type'];
+    if($type == "NMMA") {
+      echo '<script type="text/javascript">';
+      echo 'document.getElementById("ALLNEWS").style.display = "none";';
+      echo 'document.getElementById("NEWS").style.display = "block";';
+      echo 'document.getElementById("UFCNEWS").style.display = "block";';
+      echo 'document.getElementById("NewsUfcBtn").style.color = "#FF0000";';
+      echo 'document.getElementById("NewsAllBtn").style.color = "#FFFFFF";';
+      echo '</script>';        
+    } else if($type == "NESPORTS") {
+      echo '<script type="text/javascript">';
+      echo 'document.getElementById("ALLNEWS").style.display = "none";';
+      echo 'document.getElementById("NEWS").style.display = "block";';
+      echo 'document.getElementById("ESPORTNEWS").style.display = "block";';
+      echo 'document.getElementById("NewsEsportBtn").style.color = "#FF0000";';
+      echo 'document.getElementById("NewsAllBtn").style.color = "#FFFFFF";';
+      echo '</script>';        
+    } else if($type == "NFIFA") {
+      echo '<script type="text/javascript">';
+      echo 'document.getElementById("ALLNEWS").style.display = "none";';
+      echo 'document.getElementById("NEWS").style.display = "block";';
+      echo 'document.getElementById("FIFANEWS").style.display = "block";';
+      echo 'document.getElementById("NewsFifaBtn").style.color = "#FF0000";';
+      echo 'document.getElementById("NewsAllBtn").style.color = "#FFFFFF";';
+      echo '</script>';
+    }
+    if($type == "MMA") {
+      echo '<script type="text/javascript">';
+      echo 'document.getElementById("NEWS").style.display = "none";';
+      echo 'document.getElementById("STREAM").style.display = "block";';
+      echo 'document.getElementById("ALL").style.display = "none";';
+      echo 'document.getElementById("UFC").style.display = "block";';
+      echo 'document.getElementById("ufcBtn").style.color = "#FF0000";';
+      echo 'document.getElementById("allBtn").style.color = "#FFFFFF";';
+      echo 'document.getElementById("streamBtn").style.color = "#FF0000";';
+      echo 'document.getElementById("newsBtn").style.color = "#FFFFFF";';
+      echo '</script>';        
+    } else if($type == "ESPORTS") {
+      echo '<script type="text/javascript">';
+      echo 'document.getElementById("NEWS").style.display = "none";';
+      echo 'document.getElementById("STREAM").style.display = "block";';
+      echo 'document.getElementById("ALL").style.display = "none";';
+      echo 'document.getElementById("ESPORT").style.display = "block";';
+      echo 'document.getElementById("esportBtn").style.color = "#FF0000";';
+      echo 'document.getElementById("allBtn").style.color = "#FFFFFF";';
+      echo 'document.getElementById("streamBtn").style.color = "#FF0000";';
+      echo 'document.getElementById("newsBtn").style.color = "#FFFFFF";';
+      echo '</script>';         
+    } else if($type == "FIFA") {
+      echo '<script type="text/javascript">';
+      echo 'document.getElementById("NEWS").style.display = "none";';
+      echo 'document.getElementById("STREAM").style.display = "block";';
+      echo 'document.getElementById("ALL").style.display = "none";';
+      echo 'document.getElementById("FIFA").style.display = "block";';
+      echo 'document.getElementById("fifaBtn").style.color = "#FF0000";';
+      echo 'document.getElementById("allBtn").style.color = "#FFFFFF";';
+      echo 'document.getElementById("streamBtn").style.color = "#FF0000";';
+      echo 'document.getElementById("newsBtn").style.color = "#FF0000";';
+      echo '</script>';  
+    } else if($type == "NEWS") {
+      echo '<script type="text/javascript">';
+      echo 'document.getElementById("NEWS").style.display = "block";';
+      echo 'document.getElementById("STREAM").style.display = "none";';
+      echo 'document.getElementById("NewsAllBtn").style.color = "#FF0000";';
+      echo 'document.getElementById("NewsFifaBtn").style.color = "#FFFFFF";';
+      echo 'document.getElementById("NewsEsportBtn").style.color = "#FFFFFF";';
+      echo 'document.getElementById("NewsUfcBtn").style.color = "#FFFFFF";';
+      echo 'document.getElementById("newsBtn").style.color = "#FF0000";';
+      echo 'document.getElementById("streamBtn").style.color = "#FFFFFF";';
+      echo '</script>';
+    } else if($type == "LIVE") {
+      echo '<script type="text/javascript">';
+      echo 'document.getElementById("NEWS").style.display = "none";';
+      echo 'document.getElementById("STREAM").style.display = "block";';
+      echo 'document.getElementById("allBtn").style.color = "#FF0000";';
+      echo 'document.getElementById("fifaBtn").style.color = "#FFFFFF";';
+      echo 'document.getElementById("esportBtn").style.color = "#FFFFFF";';
+      echo 'document.getElementById("ufcBtn").style.color = "#FFFFFF";';
+      echo 'document.getElementById("streamBtn").style.color = "#FF0000";';
+      echo 'document.getElementById("newsBtn").style.color = "#FFFFFF";';
+      echo '</script>';
+    }
+?>
 </body>
 <?php
     include "script.php"

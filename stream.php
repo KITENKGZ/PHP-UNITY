@@ -14,10 +14,30 @@
     <div class="container">
       <div class="content">
         <div class="content__header">
-            <span>ВСЕ</span>
-            <span>MMA</span>
-            <span>E-SPORTS</span>
-            <span>FIFA</span>
+        <span onclick="location.href='index.php?type=LIVE'">ВСЕ</span>
+            <span id="MMA" onclick="location.href='index.php?type=MMA'">MMA</span>
+            <span id="ESPORT" onclick="location.href='index.php?type=ESPORTS'">E-SPORTS</span>
+            <span id="FIFA" onclick="location.href='index.php?type=FIFA'">FIFA</span>
+            <?php 
+                $type = $stream->type;
+                if ($type == "FIFA") {
+                  echo '<script type="text/javascript">';
+                  echo 'document.getElementById("FIFA").style.color = "#FF0000";';
+                  echo '</script>';
+                } elseif ($type == "UFC") {
+                  echo '<script type="text/javascript">';
+                  echo 'document.getElementById("MMA").style.color = "#FF0000";';
+                  echo '</script>';
+                } else {
+                  echo '<script type="text/javascript">';
+                  echo 'document.getElementById("ESPORT").style.color = "#FF0000";';
+                  echo '</script>';
+                }
+                echo '<script type="text/javascript">';
+                echo 'document.getElementById("streamBtn").style.color = "#FF0000";';
+                echo 'document.getElementById("newsBtn").style.color = "#FFFFFF";';
+                echo '</script>';
+            ?>
         </div>
         <div class="content__main">
         <div class="content__mainheader">

@@ -15,50 +15,50 @@ if(isset($data['do_signup'])) {
         // trim — удаляет пробелы (или другие символы) из начала и конца строки
 	if(trim($data['login']) == '') {
 
-		$errors[] = "Введите логин!";
+		header('Location: index.php?error=8');
 	}
 
 	if(trim($data['email']) == '') {
 
-		$errors[] = "Введите Email";
+		header('Location: index.php?error=7');
 	}
 
 	if($data['password'] == '') {
 
-		$errors[] = "Введите пароль";
+		header('Location: index.php?error=6');
 	}
 
          // функция mb_strlen - получает длину строки
 	if(mb_strlen($data['login']) < 4 || mb_strlen($data['login']) > 12) {
 
-	    $errors[] = "Недопустимая длина логина";
+	  header('Location: index.php?error=5');
 
     }
 
     if (mb_strlen($data['password']) < 8 || mb_strlen($data['password']) > 32){
 	
-	    $errors[] = "Недопустимая длина пароля (от 8 до 32 символов)";
+			header('Location: index.php?error=4');
 
     }
 
     // проверка на правильность написания Email
     if (!preg_match("/[0-9a-z_]+@[0-9a-z_^\.]+\.[a-z]{2,3}/i", $data['email'])) {
 
-	    $errors[] = 'Неверно введен е-mail';
+		header('Location: index.php?error=3');
     
     }
 
 	// Проверка на уникальность логина
 	if(R::count('users', "login = ?", array($data['login'])) > 0) {
 
-		$errors[] = "Пользователь с таким логином существует!";
+		header('Location: index.php?error=2');
 	}
 
 	// Проверка на уникальность email
 
 	if(R::count('users', "email = ?", array($data['email'])) > 0) {
 
-		$errors[] = "Пользователь с таким Email существует!";
+		header('Location: index.php?error=1');
 	}
 
 
@@ -79,8 +79,7 @@ if(isset($data['do_signup'])) {
         echo '<div style="color: green; ">Вы успешно зарегистрированы! Можно <a href="login.php">авторизоваться</a>.</div><hr>';
 
 	} else {
-                // array_shift() извлекает первое значение массива array и возвращает его, сокращая размер array на один элемент. 
-		echo '<div style="color: red; ">' . array_shift($errors). '</div><hr>';
+		header('Location: index.php?error=404');
 	}
 }
   ?>
