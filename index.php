@@ -156,27 +156,25 @@
           </div>
           <div  id="ESPORT" class="ESPORT">
             <div class="sport__inner">
-              <div class="game__block"> <a href="#" > <img src="img/stream/csgo.png" alt="csgo"> </a> </div>
-              <div class="game__block"> <a href="#" > <img src="img/stream/dota2.png" alt="dota"> </a> </div>
-              <div class="game__block"> <a href="#" > <img src="img/stream/codm.png" alt="cod"> </a> </div>
-              <div class="game__block"> <a href="#" > <img src="img/stream/pubg_m.png" alt="pubg"> </a> </div>
-              <div class="game__block"> <a href="#" > <img src="img/stream/mlbb.png" alt="ml"> </a> </div>
-              <div class="game__block"> <a href="#" > <img src="img/stream/lol.png" alt="lol"> </a> </div>
+               <div class="game__block"> <a href="#" > <img src="img/stream/csgo.png" alt="csgo"> </a></div>
+               <div class="game__block"> <a href="#" > <img src="img/stream/dota2.png" alt="dota"> </a> </div>
+               <div class="game__block"> <a href="#" > <img src="img/stream/codm.png" alt="cod"> </a> </div>
+               <div class="game__block"> <a href="#" > <img src="img/stream/pubg_m.png" alt="pubg"> </a> </div>
+               <div class="game__block"> <a href="#" > <img src="img/stream/mlbb.png" alt="ml"> </a> </div>
+               <div class="game__block"> <a href="#" > <img src="img/stream/lol.png" alt="lol"> </a> </div>
               </div>
             </div>
-          <div id="FIFA" class="none">
-          <?php foreach($streamfifa as $stream): ?>
-              <a style="text-decoration: none;" href="stream.php?stream_id=<?=$stream->id;?>">
-                <div class="content__mainheader stream__item">
-                  <div class="content__mainimg stream__img"><img src="<?=$stream->leftpic;?>"></div>
-                  <div class="content__maininfo stream__info">
-                    <span><?=$stream->title;?></span>
-                    <span><?=$stream->date;?> <?=$stream->time;?></span>
-                  </div>
-                  <div class="content__mainimg stream__img"><img src="<?=$stream->rightpic;?>"></div>
-                </div>
-              </a>
-            <?php endforeach; ?>
+          <div id="FIFA" class="FIFA">
+          <div class="sport__inner">
+               <div class="game__block"> <a href="#" > <img src="img/fifa/lc.png" alt="lc"> </a> </div>
+               <div class="game__block"> <a href="#" > <img src="img/fifa/le.png" alt="le"> </a> </div>
+               <div class="game__block"> <a href="#" > <img src="img/fifa/pl.png" alt="pl"> </a> </div>
+               <div class="game__block"> <a href="#" > <img src="img/fifa/ll.png" alt="ll"> </a> </div>
+               <div class="game__block"> <a href="#" > <img src="img/fifa/rplb.png" alt="rplb"> </a> </div>
+               <div class="game__block"> <a href="#" > <img src="img/fifa/bl.png" alt="bl"> </a> </div>
+               <div class="game__block"> <a href="#" > <img src="img/fifa/l1.png" alt="l1"> </a> </div>
+               <div class="game__block"> <a href="#" > <img src="img/fifa/saa.png" alt="saa"> </a> </div>
+              </div>
           </div>
         </div>
       </div>

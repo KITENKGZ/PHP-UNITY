@@ -29,15 +29,20 @@ html, body, main {
   
 }
   &__main {
+    position: relative;
     height: 48px;
-    width: 161px;
+    
+    /* width:327px; 161px*/
     border: 1px solid $color-bg;
+    background: #fff ;
     border-radius: 7px;
     padding: 5px 8px 5px 5px;
     display: flex;
     justify-content: space-around;
     align-self:center;
     align-items: center;
+    float: left;
+    z-index: 10;
     div{
       margin-left: 8px;
     }
@@ -58,7 +63,11 @@ html, body, main {
     align-self: center;
     justify-content: center;  
   }
+ 
+  
   &__select {
+    position: absolute;
+    right: 40px;
     height: 30px;
     width: 158px;
     padding: 6px 10px;
@@ -69,14 +78,18 @@ html, body, main {
     border-radius: 5px;
     font-size: 17px;
     line-height: 17px;
+    z-index: 1;
     .header__bar {
       margin-right: 0px;
       background-color: $color-second;
     }
   }
   &__menu {
+    position: absolute;
+    right: 0px;
     height: 32px;
     width: 32px;
+    z-index: 10;
   }
   &__cm {
     margin-top: 48px;
@@ -87,6 +100,47 @@ html, body, main {
     text-align: center;
   }
 }
+/* поиск */
+.search-box{
+  
+  background: #0F1533;
+  height: 32px;
+  border-radius: 7px;
+  display: flex;
+  align-self: center;
+  justify-content: center;  
+}
+.search-btn{
+  float: right;;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.search-box:hover > .search-txt
+{
+  width: 164px;
+  padding-left: 10px;
+}
+
+.search-txt{
+  border:none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: #FFFFFF;
+  font-size: 13px;
+  transition: 0.4s;
+  line-height: 32px;
+  width: 0px;
+  transition: 0.4s;
+}
+
+/* конец поиска*/
+
 .container {
   padding: 0 30px;
 
@@ -864,6 +918,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
 }
+
 .news-title {
   width: 370px;
   padding: 5px;
@@ -1031,7 +1086,7 @@ a {
   color: #FF0000;
 }
 
-.ESPORT{
+.ESPORT ,.FIFA{
   padding: 20px 30px 0px 30px;
 }
 .sport__inner{
@@ -1040,6 +1095,7 @@ a {
   flex-wrap: wrap;
 }
 .game__block{
+  border-bottom: 1px solid rgb(167, 167, 167);
   display: flex;
   align-items:center;
   width: 107px;
@@ -1051,11 +1107,26 @@ a {
  
   a{
     width: 100%;
-    display: block;
-    padding: 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
     img{
-      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
       display: block;
     }
   }
 }
+
+.news-bar1 {
+  height: 1px;
+  width: 79px;
+  background-color: $color-second;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+

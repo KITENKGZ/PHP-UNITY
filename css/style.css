@@ -47,9 +47,11 @@ html, body, main {
 }
 
 .header__main {
+  position: relative;
   height: 48px;
-  width: 161px;
+  /* width:327px; 161px*/
   border: 1px solid #01082B;
+  background: #fff;
   border-radius: 7px;
   padding: 5px 8px 5px 5px;
   display: -webkit-box;
@@ -62,6 +64,8 @@ html, body, main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  float: left;
+  z-index: 10;
 }
 
 .header__main div {
@@ -93,6 +97,8 @@ html, body, main {
 }
 
 .header__select {
+  position: absolute;
+  right: 40px;
   height: 30px;
   width: 158px;
   padding: 6px 10px;
@@ -108,6 +114,7 @@ html, body, main {
   border-radius: 5px;
   font-size: 17px;
   line-height: 17px;
+  z-index: 1;
 }
 
 .header__select .header__bar {
@@ -116,8 +123,11 @@ html, body, main {
 }
 
 .header__menu {
+  position: absolute;
+  right: 0px;
   height: 32px;
   width: 32px;
+  z-index: 10;
 }
 
 .header__cm {
@@ -129,6 +139,58 @@ html, body, main {
   text-align: center;
 }
 
+/* поиск */
+.search-box {
+  background: #0F1533;
+  height: 32px;
+  border-radius: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.search-btn {
+  float: right;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+}
+
+.search-box:hover > .search-txt {
+  width: 164px;
+  padding-left: 10px;
+}
+
+.search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: #FFFFFF;
+  font-size: 13px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  line-height: 32px;
+  width: 0px;
+  transition: 0.4s;
+}
+
+/* конец поиска*/
 .container {
   padding: 0 30px;
 }
@@ -1303,7 +1365,7 @@ a {
   color: #FF0000;
 }
 
-.ESPORT {
+.ESPORT, .FIFA {
   padding: 20px 30px 0px 30px;
 }
 
@@ -1319,6 +1381,7 @@ a {
 }
 
 .game__block {
+  border-bottom: 1px solid #a7a7a7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1335,11 +1398,31 @@ a {
 
 .game__block a {
   width: 100%;
-  display: block;
-  padding: 15px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .game__block a img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
   display: block;
+}
+
+.news-bar1 {
+  height: 1px;
+  width: 79px;
+  background-color: #FFFFFF;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
