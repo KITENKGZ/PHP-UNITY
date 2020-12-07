@@ -5,6 +5,12 @@
   <?php
     include "header.php"
   ?>
+  <?php 
+      echo '<script type="text/javascript">';
+      echo 'document.getElementById("streamBtn").style.color = "#FFFFFF";';
+      echo 'document.getElementById("newsBtn").style.color = "#FFFFFF";';
+      echo '</script>';
+  ?>
   <div class="container">
     <div class="content"> 
       <div class="content__box">
