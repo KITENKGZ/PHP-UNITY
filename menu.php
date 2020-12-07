@@ -14,7 +14,7 @@
           <div class="menu__profile">
                           <!-- Если авторизован выведет приветствие -->
         <?php if(isset($_SESSION['logged_user'])) : ?>
-            <img src="img/social/profile.png" alt="profile">
+            <img src="<?php echo $_SESSION['logged_user']->avatar; ?>" alt="profile">
               <div class="menu__mid" onclick="location.href='profile.php';" style="cursor: pointer;">
                 <div class="menu__login"><?php echo $_SESSION['logged_user']->login; ?></div> 
                 </div>

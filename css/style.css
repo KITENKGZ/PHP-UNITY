@@ -210,6 +210,8 @@ html, body, main {
 .content__head img {
   width: 52px;
   height: 52px;
+  border-radius: 5px;
+  border: 1px solid #FFFFFF;
 }
 
 .content__info {
@@ -552,7 +554,12 @@ html, body, main {
 
 .menu__profile img, .login__profile img, .registr__profile img {
   width: 52px;
+  height: 52px;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-top: -15px;
+  border-radius: 5px;
+  border: 1px solid #FFFFFF;
 }
 
 .menu__mid, .login__mid, .registr__mid {

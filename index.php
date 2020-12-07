@@ -156,12 +156,12 @@
           </div>
           <div  id="ESPORT" class="ESPORT">
             <div class="sport__inner">
-               <div class="game__block"> <a href="#" > <img src="img/stream/csgo.png" alt="csgo"> </a> </div>
-               <div class="game__block"> <a href="#" > <img src="img/stream/dota2.png" alt="dota"> </a> </div>
-               <div class="game__block"> <a href="#" > <img src="img/stream/codm.png" alt="cod"> </a> </div>
-               <div class="game__block"> <a href="#" > <img src="img/stream/pubg_m.png" alt="pubg"> </a> </div>
-               <div class="game__block"> <a href="#" > <img src="img/stream/mlbb.png" alt="ml"> </a> </div>
-               <div class="game__block"> <a href="#" > <img src="img/stream/lol.png" alt="lol"> </a> </div>
+              <div class="game__block"> <a href="#" > <img src="img/stream/csgo.png" alt="csgo"> </a> </div>
+              <div class="game__block"> <a href="#" > <img src="img/stream/dota2.png" alt="dota"> </a> </div>
+              <div class="game__block"> <a href="#" > <img src="img/stream/codm.png" alt="cod"> </a> </div>
+              <div class="game__block"> <a href="#" > <img src="img/stream/pubg_m.png" alt="pubg"> </a> </div>
+              <div class="game__block"> <a href="#" > <img src="img/stream/mlbb.png" alt="ml"> </a> </div>
+              <div class="game__block"> <a href="#" > <img src="img/stream/lol.png" alt="lol"> </a> </div>
               </div>
             </div>
           <div id="FIFA" class="none">
@@ -280,6 +280,15 @@
       echo '</script>';
     }
 ?>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-184469361-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-184469361-1');
+</script>
 </body>
 <?php
     include "script.php"

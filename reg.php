@@ -14,50 +14,47 @@ if(isset($data['do_signup'])) {
 	// Проводим проверки
         // trim — удаляет пробелы (или другие символы) из начала и конца строки
 	if(trim($data['login']) == '') {
-
+		$errors[] = 1;
 		header('Location: index.php?error=8');
 	}
-
 	if(trim($data['email']) == '') {
-
+		$errors[] = 1;
 		header('Location: index.php?error=7');
 	}
-
 	if($data['password'] == '') {
-
+		$errors[] = 1;
 		header('Location: index.php?error=6');
 	}
 
          // функция mb_strlen - получает длину строки
 	if(mb_strlen($data['login']) < 4 || mb_strlen($data['login']) > 12) {
-
+		$errors[] = 1;
 	  header('Location: index.php?error=5');
 
     }
 
     if (mb_strlen($data['password']) < 8 || mb_strlen($data['password']) > 32){
-	
-			header('Location: index.php?error=4');
+		$errors[] = 1;
+		header('Location: index.php?error=4');
 
     }
 
     // проверка на правильность написания Email
     if (!preg_match("/[0-9a-z_]+@[0-9a-z_^\.]+\.[a-z]{2,3}/i", $data['email'])) {
-
+		$errors[] = 1;
 		header('Location: index.php?error=3');
     
     }
 
 	// Проверка на уникальность логина
 	if(R::count('users', "login = ?", array($data['login'])) > 0) {
-
+		$errors[] = 1;
 		header('Location: index.php?error=2');
 	}
 
 	// Проверка на уникальность email
-
 	if(R::count('users', "email = ?", array($data['email'])) > 0) {
-
+		$errors[] = 1;
 		header('Location: index.php?error=1');
 	}
 
@@ -76,7 +73,7 @@ if(isset($data['do_signup'])) {
 
 		// Сохраняем таблицу
 		R::store($user);
-        echo '<div style="color: green; ">Вы успешно зарегистрированы! Можно <a href="login.php">авторизоваться</a>.</div><hr>';
+				header('Location: index.php');
 
 	} else {
 		header('Location: index.php?error=404');
