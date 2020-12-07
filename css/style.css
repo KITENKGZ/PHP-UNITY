@@ -136,8 +136,23 @@ html, body, main {
 .container_2 {
   position: -webkit-sticky;
   position: sticky;
-  top: 48px;
+  top: 53px;
   z-index: 2;
+}
+
+.container_3 {
+  position: -webkit-sticky;
+  position: sticky;
+  padding: 0 25px;
+  top: 53px;
+  z-index: 2;
+}
+
+.container__player {
+  min-width: 375px;
+  height: 100%;
+  margin-left: -36px;
+  margin-right: -36px;
 }
 
 .content__box {
@@ -391,28 +406,23 @@ html, body, main {
 
 .content__redact {
   text-align: center;
-  width: 100%;
+  width: 97px;
   margin: 0 auto;
-  margin-top: 8px;
+  margin-top: 10px;
   border-radius: 5px;
   padding: 2px;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .content__redact span {
-  display: block;
   font-size: 14px;
   height: 20px;
   line-height: 20px;
   color: #FFFFFF;
-  background-color: #01082B;
+  /*background-color: $color-bg;*/
   width: 110px;
   margin: 0 auto;
   border-radius: 5px;
-}
-
-.content__redact span:last-child {
-  margin-top: 10px;
-  width: 75px;
 }
 
 .content__exit {
@@ -1047,7 +1057,7 @@ a {
 .news-item {
   position: relative;
   padding: 5px;
-  margin-top: 10px;
+  margin-top: 5px;
   background-color: #0F1533;
   border-radius: 5px;
   display: -webkit-box;
@@ -1237,7 +1247,7 @@ a {
   height: 195px;
   background-color: #FFFFFF;
   top: 200px;
-  margin-left: -36px;
+  margin: 0 auto;
   border-radius: 5px;
   border: solid 2px #0F1533;
 }
@@ -1284,4 +1294,45 @@ a {
 
 #newsBtn {
   color: #FF0000;
+}
+
+.ESPORT {
+  padding: 20px 30px 0px 30px;
+}
+
+.sport__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.game__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 107px;
+  height: 59px;
+  background: #0F1533;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 26px;
+}
+
+.game__block a {
+  width: 100%;
+  display: block;
+  padding: 15px;
+}
+
+.game__block a img {
+  width: 100%;
+  display: block;
 }
