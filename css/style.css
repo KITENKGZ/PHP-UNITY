@@ -92,6 +92,22 @@ html, body, main {
           justify-content: center;
 }
 
+.header__searchstr {
+  position: absolute;
+  margin-right: 40px;
+  height: 32px;
+  left: 153px;
+  z-index: 2;
+  display: none;
+}
+
+.header__searchstr input {
+  height: 32px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  width: 100%;
+}
+
 .header__select {
   height: 30px;
   width: 158px;
@@ -1296,7 +1312,7 @@ a {
   color: #FF0000;
 }
 
-.ESPORT {
+.ESPORT, .FIFA {
   padding: 20px 30px 0px 30px;
 }
 
