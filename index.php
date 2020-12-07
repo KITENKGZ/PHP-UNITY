@@ -25,16 +25,15 @@
           ?>
           <div id="ALLNEWS">
             <?php
-            $numOfNews = R::count( 'news' ); 
-            $countNews = range(2,$numOfNews+1);
-            $news = R::loadAll( 'news', $countNews);
+            $news = R::findAll('news',
+            ' ORDER BY title LIMIT 9999 ');
             $i = 0;
             ?>
             <?php foreach( array_reverse($news) as $post): ?>
             <a href="post.php?post_id=<?=$post->id;?>">
               <div class="news-item">
                 <img src="<?=$post->img;?>" alt="IMG">
-                <div class="news-title"><?=$post->title;?></div>
+                <div class="news-title"><?= mb_substr(($post->title), 0, 100, "UTF-8");?>...</div>
                 <div class="news-bar"></div>
               </div>
             </a>
@@ -54,7 +53,7 @@
                 <a href="post.php?post_id=<?=$postufc->id;?>">
               <div class="news-item">
                 <img src="<?=$postufc->img;?>" alt="IMG">
-                <div class="news-title"><?=$postufc->title;?></div>
+                <div class="news-title"><?= mb_substr(($postufc->title), 0, 100, "UTF-8");?>...</div>
                 <div class="news-bar"></div>
               </div>
             </a>
@@ -68,7 +67,7 @@
                 <a href="post.php?post_id=<?=$poste->id;?>">
               <div class="news-item">
                 <img src="<?=$poste->img;?>" alt="IMG">
-                <div class="news-title"><?=$poste->title;?></div>
+                <div class="news-title"><?= mb_substr(($poste->title), 0, 100, "UTF-8");?>...</div>
                 <div class="news-bar"></div>
               </div>
             </a>
@@ -82,7 +81,7 @@
                 <a href="post.php?post_id=<?=$postfifa->id;?>">
               <div class="news-item">
                 <img src="<?=$postfifa->img;?>" alt="IMG">
-                <div class="news-title"><?=$postfifa->title;?></div>
+                <div class="news-title"><?= mb_substr(($postfifa->title), 0, 100, "UTF-8");?>...</div>
                 <div class="news-bar"></div>
               </div>
             </a>
