@@ -48,8 +48,10 @@
           </div>
           <div class="content__mainimg"><img src="<?=$stream->rightpic;?>"></div>
         </div>
-        <div class="content__player">
-        <?=$stream->streamid;?>
+          <div class="container__player">
+            <div class="content__player">
+            <?=$stream->streamid;?>
+            </div>
         </div>
         <div class="content__cm">Баннер под видео</div>
         </div>

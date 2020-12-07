@@ -50,9 +50,10 @@
             </div>
           </div>
           <!-- тут поставил для прекола Cumиль-->
-          <div class="content__redact">
-          <input name="do_edit" type="submit" id="input__save" class="content__submit" value="Сохранить">
-          </div>
+          
+          <div class="content__redact" name="do_signup" type="submit"><span>Сохранить</span></div>
+          <!--<input name="do_edit" type="submit" id="input__save" class="content__submit" value="Сохранить">-->
+          
         </div>
       </div>  
     </div>

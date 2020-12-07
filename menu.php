@@ -94,7 +94,8 @@
       <div class="login__has"><span id="inc">1</span></div> <!---->
       <input class="inp" name="password" type="password" placeholder="Пароль...">
       <input class="inp" name="email" type="text" placeholder="Почта...">
-      <input class="registr__login" name="do_signup" type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ">
+      <div class="registr__login" name="do_signup" type="submit"><span>ЗАРЕГИСТРИРОВАТЬСЯ</span></div>
+     <!-- <input class="registr__login" name="do_signup" type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ"> -->
     </form> 
     <div class="login__sociallog"> 
       <div class="login__socialauth">

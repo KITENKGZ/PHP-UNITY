@@ -91,11 +91,13 @@
         </div>
       </div>
       <div class="content stream-block" id="STREAM">
+      <div class="container_2">
         <div class="content__header">
           <span id="allBtn" onclick="show('ALL'); hide('UFC'); hide('ESPORT'); hide('FIFA'); paint('allBtn'); painta('ufcBtn'); painta('esportBtn'); painta('fifaBtn')" class="all-btn">ВСЕ</span>
           <span id="ufcBtn" onclick="show('UFC'); hide('ALL'); hide('ESPORT'); hide('FIFA'); paint('ufcBtn'); painta('allBtn'); painta('esportBtn'); painta('fifaBtn')" class="ufc-btn">MMA</span>
           <span id="esportBtn" onclick="show('ESPORT'); hide('UFC'); hide('ALL'); hide('FIFA'); paint('esportBtn'); painta('allBtn'); painta('ufcBtn'); painta('fifaBtn')" class="esport-btn">E-SPORTS</span>
           <span id="fifaBtn" onclick="show('FIFA'); hide('UFC'); hide('ALL'); hide('ESPORT'); paint('fifaBtn'); painta('allBtn'); painta('ufcBtn'); painta('esportBtn')" class="fifa-btn">FIFA</span>
+        </div>
         </div>
         <div class="content__main content__news">
           <div id="ALL">
@@ -154,18 +156,7 @@
             <?php endforeach; ?>
           </div>
           <div id="ESPORT" class="none">
-          <?php foreach($streamesports as $stream): ?>
-              <a style="text-decoration: none;" href="stream.php?stream_id=<?=$stream->id;?>">
-                <div class="content__mainheader stream__item">
-                  <div class="content__mainimg stream__img"><img src="<?=$stream->leftpic;?>"></div>
-                  <div class="content__maininfo stream__info">
-                    <span><?=$stream->title;?></span>
-                    <span><?=$stream->date;?> <?=$stream->time;?></span>
-                  </div>
-                  <div class="content__mainimg stream__img"><img src="<?=$stream->rightpic;?>"></div>
-                </div>
-              </a>
-            <?php endforeach; ?>
+               <div class="game__block"> <a href="#" > <img src="" alt=""> </a> </div>
           </div>
           <div id="FIFA" class="none">
           <?php foreach($streamfifa as $stream): ?>

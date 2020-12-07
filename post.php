@@ -13,7 +13,7 @@
   <main class="main">
     <div class="container-menu">
       <div class="content">
-        <div class="container_2">
+        <div class="container_3">
           <div class="content__header">
             <span onclick="location.href='index.php'">ВСЕ</span>
             <span id="MMA" onclick="location.href='index.php?type=NMMA'">MMA</span>
