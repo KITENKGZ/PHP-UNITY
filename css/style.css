@@ -1374,6 +1374,7 @@ a {
 }
 
 .game__block {
+  border-bottom: 1px solid #a7a7a7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1390,11 +1391,31 @@ a {
 
 .game__block a {
   width: 100%;
-  display: block;
-  padding: 15px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .game__block a img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
   display: block;
+}
+
+.news-bar1 {
+  height: 1px;
+  width: 79px;
+  background-color: #FFFFFF;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }

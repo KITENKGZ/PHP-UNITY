@@ -912,6 +912,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
 }
+
 .news-title {
   width: 370px;
   padding: 5px;
@@ -1088,6 +1089,7 @@ a {
   flex-wrap: wrap;
 }
 .game__block{
+  border-bottom: 1px solid rgb(167, 167, 167);
   display: flex;
   align-items:center;
   width: 107px;
@@ -1096,13 +1098,29 @@ a {
   border-radius:5px;
   padding: 5px;
   margin-bottom: 26px;
+ 
   a{
     width: 100%;
-    display: block;
-    padding: 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
     img{
-      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
       display: block;
     }
   }
 }
+
+.news-bar1 {
+  height: 1px;
+  width: 79px;
+  background-color: $color-second;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+

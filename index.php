@@ -156,7 +156,7 @@
           </div>
           <div  id="ESPORT" class="ESPORT">
             <div class="sport__inner">
-               <div class="game__block"> <a href="#" > <img src="img/stream/csgo.png" alt="csgo"> </a> </div>
+               <div class="game__block"> <a href="#" > <img src="img/stream/csgo.png" alt="csgo"> </a></div>
                <div class="game__block"> <a href="#" > <img src="img/stream/dota2.png" alt="dota"> </a> </div>
                <div class="game__block"> <a href="#" > <img src="img/stream/codm.png" alt="cod"> </a> </div>
                <div class="game__block"> <a href="#" > <img src="img/stream/pubg_m.png" alt="pubg"> </a> </div>
