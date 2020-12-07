@@ -35,7 +35,7 @@
               <div class="menu__select">
                   <span>News</span>
                   <div class="menu__bar"></div>
-                  <span>Stream</span>
+                  <span>Live</span>
               </div>          
         </div>
         <div class="menu__nav">

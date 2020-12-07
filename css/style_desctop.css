@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap");
+html, body, main {
+  color: #ffffff;
+  font-family: "Comfortaa", cursive;
+  overflow: auto;
+  min-width: 375px;
+  background-color: rgb(136, 136, 136);
+}
+
+.header{
+  width: 100%;
+  height: 56px;
+  top: 0;
+  background: #fff;
+
+}
+.container{
+  margin: 0 auto;
+  width: 800px;
+  
+}
