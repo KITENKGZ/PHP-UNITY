@@ -29,15 +29,20 @@ html, body, main {
   
 }
   &__main {
+    position: relative;
     height: 48px;
-    width: 161px;
+    
+    /* width:327px; 161px*/
     border: 1px solid $color-bg;
+    background: #fff ;
     border-radius: 7px;
     padding: 5px 8px 5px 5px;
     display: flex;
     justify-content: space-around;
     align-self:center;
     align-items: center;
+    float: left;
+    z-index: 10;
     div{
       margin-left: 8px;
     }
@@ -58,21 +63,11 @@ html, body, main {
     align-self: center;
     justify-content: center;  
   }
-  &__searchstr{
-    position: absolute;
-    margin-right: 40px;
-    height: 32px;
-    left:153px ;
-    z-index: 2;
-    display: none;
-    input{
-      height: 32px;
-      border:1px solid #000;
-      border-radius:5px;
-      width:100%;
-    }
-  }
+ 
+  
   &__select {
+    position: absolute;
+    right: 40px;
     height: 30px;
     width: 158px;
     padding: 6px 10px;
@@ -83,14 +78,18 @@ html, body, main {
     border-radius: 5px;
     font-size: 17px;
     line-height: 17px;
+    z-index: 1;
     .header__bar {
       margin-right: 0px;
       background-color: $color-second;
     }
   }
   &__menu {
+    position: absolute;
+    right: 0px;
     height: 32px;
     width: 32px;
+    z-index: 10;
   }
   &__cm {
     margin-top: 48px;
@@ -101,6 +100,47 @@ html, body, main {
     text-align: center;
   }
 }
+/* поиск */
+.search-box{
+  
+  background: #0F1533;
+  height: 32px;
+  border-radius: 7px;
+  display: flex;
+  align-self: center;
+  justify-content: center;  
+}
+.search-btn{
+  float: right;;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.search-box:hover > .search-txt
+{
+  width: 164px;
+  padding-left: 10px;
+}
+
+.search-txt{
+  border:none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: #FFFFFF;
+  font-size: 13px;
+  transition: 0.4s;
+  line-height: 32px;
+  width: 0px;
+  transition: 0.4s;
+}
+
+/* конец поиска*/
+
 .container {
   padding: 0 30px;
 

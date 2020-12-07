@@ -3,11 +3,13 @@
       <div class="header__main">
         <div class="header__logo"><a href="index.php"><img src="img/logo.png" alt=""></a></div>
         <div class="header__bar"></div>
-        <div class="header__search"><img src="img/search.png" alt="SEARCH">
-        <div class="header__searchstr">
-          <input type="text" class ="" name="" placeholder=Поиск...>
-           </div>
-      </div>
+        <div class="search-box">
+            <input  class="search-txt" type="text" name="" placeholder="Поиск...">
+            <a class="search-btn" href="#">
+              <img class="search-img" src="img/search1.png" alt="search">
+            </a>
+	      	</div>
+      
       </div>
       
       <div class="header__rightside">
