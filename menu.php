@@ -14,10 +14,13 @@
           <div class="menu__profile">
                           <!-- Если авторизован выведет приветствие -->
         <?php if(isset($_SESSION['logged_user'])) : ?>
-            <img src="<?php echo $_SESSION['logged_user']->avatar; ?>" alt="profile">
-              <div class="menu__mid" onclick="location.href='profile.php';" style="cursor: pointer;">
-                <div class="menu__login"><?php echo $_SESSION['logged_user']->login; ?></div> 
-                </div>
+          <div class="content__head">
+          <img src="<?php echo $_SESSION['logged_user']->avatar; ?>" alt="profile">
+            <div class="content__info">
+              <span><?php echo $_SESSION['logged_user']->firstname; ?> <?php echo $_SESSION['logged_user']->lastname; ?></span> 
+              <span><?php echo $_SESSION['logged_user']->login; ?></span>
+            </div>
+          </div>  
         <?php else : ?>
         <!-- Если пользователь не авторизован выведет ссылки на авторизацию и регистрацию -->
         <img src="img/social/profile.png" alt="profile">
