@@ -51,6 +51,18 @@
             <div class="news__title"><?=$post->title;?></div>
             <div class="news__bar"></div>
           </div>
+          <div class="container_5">
+          <form  class="news__dialog" action="">
+            <div class="news__comment"> <input type="text" placeholder="Коментарии..."> 
+            <input type="button">
+            </div>
+            <div class="news__left">
+              <div class="news__like"><input type="button"> <input type="number" placeholder="0"></div>
+              <div class="news__dislike"><input type="button"> <input type="number" placeholder="0"></div>
+              <div class="news__share"><input type="button"></div>
+            </div>
+          </form>
+          </div>
         </div>
       </div>
     </div>

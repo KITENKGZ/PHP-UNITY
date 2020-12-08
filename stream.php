@@ -13,8 +13,9 @@
   <main class="main">
     <div class="container">
       <div class="content">
+        <div class="container_2">
         <div class="content__header">
-        <span onclick="location.href='index.php?type=LIVE'">ВСЕ</span>
+          <span onclick="location.href='index.php?type=LIVE'">ВСЕ</span>
             <span id="MMA" onclick="location.href='index.php?type=MMA'">MMA</span>
             <span id="ESPORT" onclick="location.href='index.php?type=ESPORTS'">E-SPORTS</span>
             <span id="FIFA" onclick="location.href='index.php?type=FIFA'">FIFA</span>
@@ -38,8 +39,12 @@
                 echo 'document.getElementById("newsBtn").style.color = "#FFFFFF";';
                 echo '</script>';
             ?>
-        </div>
+          </div>
+          
+          </div>
+         
         <div class="content__main">
+        
         <div class="content__mainheader">
           <div class="content__mainimg"><img src="<?=$stream->leftpic;?>"></div>
           <div class="content__maininfo">

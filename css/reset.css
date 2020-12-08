@@ -63,7 +63,9 @@ article > * + * {
 input,
 button,
 textarea,
-select {
+select ,
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
   font: inherit;
   -webkit-appearance: none;
   -moz-appearance: none;
