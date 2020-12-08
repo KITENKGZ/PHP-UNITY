@@ -15,7 +15,6 @@
               <span id="NewsEsportBtn" onclick="show('ESPORTNEWS'); hide('UFCNEWS'); hide('ALLNEWS'); hide('FIFANEWS'); paint('NewsEsportBtn'); painta('NewsAllBtn'); painta('NewsUfcBtn'); painta('NewsFifaBtn')" class="esport-btn">E-SPORTS</span>
               <span id="NewsFifaBtn" onclick="show('FIFANEWS'); hide('UFCNEWS'); hide('ALLNEWS'); hide('ESPORTNEWS'); paint('NewsFifaBtn'); painta('NewsAllBtn'); painta('NewsUfcBtn'); painta('NewsEsportBtn')" class="fifa-btn">FIFA</span>
             </div>
-           
           </div>
           
         <!--здесть должен быть блок-->
@@ -49,6 +48,7 @@
           <div id="UFCNEWS" class="none">
             <?php
               $newsufc = R::find( 'news', 'type = ?', array("UFC") );
+              $u = 0;
             ?>
               <?php foreach( array_reverse($newsufc) as $postufc): ?>
                 <a href="post.php?post_id=<?=$postufc->id;?>">
@@ -57,11 +57,18 @@
                 <div class="news-title"><?= mb_substr(($postufc->title), 0, 100, "UTF-8");?>...</div>
               </div>
             </a>
+            <?php
+                $u++;
+                if ($i % 7 == 0) { 
+                  echo "<div class='news-cm'>Место для вашей рекламы</div>";
+              } 
+            ?>
               <?php endforeach; ?>
           </div>
           <div id="ESPORTNEWS" class="none">
           <?php
               $newse = R::find( 'news', 'type = ?', array("ESPORT") );
+              $y = 0;
             ?>
               <?php foreach( array_reverse($newse) as $poste): ?>
                 <a href="post.php?post_id=<?=$poste->id;?>">
@@ -70,11 +77,18 @@
                 <div class="news-title"><?= mb_substr(($poste->title), 0, 100, "UTF-8");?>...</div>
               </div>
             </a>
+            <?php
+                $y++;
+                if ($i % 7 == 0) { 
+                  echo "<div class='news-cm'>Место для вашей рекламы</div>";
+              } 
+            ?>
               <?php endforeach; ?>
           </div>
           <div id="FIFANEWS" class="none">
           <?php
               $newsfifa = R::find( 'news', 'type = ?', array("FIFA") );
+              $t = 0;
             ?>
               <?php foreach( array_reverse($newsfifa) as $postfifa): ?>
                 <a href="post.php?post_id=<?=$postfifa->id;?>">
@@ -83,6 +97,12 @@
                 <div class="news-title"><?= mb_substr(($postfifa->title), 0, 100, "UTF-8");?>...</div>
               </div>
             </a>
+            <?php
+                $t++;
+                if ($i % 7 == 0) { 
+                  echo "<div class='news-cm'>Место для вашей рекламы</div>";
+              } 
+            ?>
               <?php endforeach; ?>
           </div>
         </div>
@@ -93,7 +113,7 @@
           <span id="allBtn" onclick="show('ALL'); hide('UFC'); hide('ESPORT'); hide('FIFA'); paint('allBtn'); painta('ufcBtn'); painta('esportBtn'); painta('fifaBtn')" class="all-btn">ВСЕ</span>
           <span id="ufcBtn" onclick="show('UFC'); hide('ALL'); hide('ESPORT'); hide('FIFA'); paint('ufcBtn'); painta('allBtn'); painta('esportBtn'); painta('fifaBtn')" class="ufc-btn">MMA</span>
           <span id="esportBtn" onclick="show('ESPORT'); hide('UFC'); hide('ALL'); hide('FIFA'); paint('esportBtn'); painta('allBtn'); painta('ufcBtn'); painta('fifaBtn')" class="esport-btn">E-SPORTS</span>
-          <span id="fifaBtn" onclick="show('FIFA'); hide('UFC'); hide('ALL'); hide('ESPORT'); paint('fifaBtn'); painta('allBtn'); painta('ufcBtn'); painta('esportBtn')" class="fifa-btn">FIFA</span>
+          <span id="fifaBtn" onclick="show('FIFA'); hide('UFC'); hide('ALL'); hide('ESPORT'); paint('fifaBtn'); painta('allBtn'); painta('ufcBtn'); painta('esportBtn'); showf('fifa_inner'); hide('fifa_stream')" class="fifa-btn">FIFA</span>
         </div>  
         </div>
         <div class="content__main content__news">
@@ -125,7 +145,7 @@
                   <div class="content__mainimg stream__img"><img src="<?=$stream->leftpic;?>"></div>
                   <div class="content__maininfo stream__info">
                     <span><?=$stream->title;?></span>
-                    <span><?=$stream->date;?> <?=$stream->time;?></span>
+                    <span><?=date("m/d/y g:i A", ($stream->date));?> <?=$stream->time;?></span>
                   </div>
                   <div class="content__mainimg stream__img"><img src="<?=$stream->rightpic;?>"></div>
                 </div>
@@ -139,6 +159,9 @@
             <?php endforeach; ?>
           </div>
           <div id="UFC" class="none">
+            <?php 
+            $z = 0;
+            ?>
           <?php foreach($streammma as $stream): ?>
               <a style="text-decoration: none;" href="stream.php?stream_id=<?=$stream->id;?>">
                 <div class="content__mainheader stream__item">
@@ -150,10 +173,16 @@
                   <div class="content__mainimg stream__img"><img src="<?=$stream->rightpic;?>"></div>
                 </div>
               </a>
+              <?php
+                $z++;
+                if ($x % 7 == 0) { 
+                  echo "<div class='news-cm'>Место для вашей рекламы</div>";
+              } 
+            ?>
             <?php endforeach; ?>
           </div>
           <div  id="ESPORT" class="ESPORT">
-            <div class="sport__inner">
+            <div class="sport__inner" id="sport_inner">
                <div class="game__block"> <a href="#" > <img src="img/stream/csgo.png" alt="csgo"> </a></div>
                <div class="game__block"> <a href="#" > <img src="img/stream/dota2.png" alt="dota"> </a> </div>
                <div class="game__block"> <a href="#" > <img src="img/stream/codm.png" alt="cod"> </a> </div>
@@ -163,15 +192,40 @@
               </div>
             </div>
           <div id="FIFA" class="FIFA">
-          <div class="sport__inner">
-               <div class="game__block"> <a href="#" > <img src="img/fifa/lc.png" alt="lc"> </a> </div>
-               <div class="game__block"> <a href="#" > <img src="img/fifa/le.png" alt="le"> </a> </div>
-               <div class="game__block"> <a href="#" > <img src="img/fifa/pl.png" alt="pl"> </a> </div>
-               <div class="game__block"> <a href="#" > <img src="img/fifa/ll.png" alt="ll"> </a> </div>
-               <div class="game__block"> <a href="#" > <img src="img/fifa/rplb.png" alt="rplb"> </a> </div>
-               <div class="game__block"> <a href="#" > <img src="img/fifa/bl.png" alt="bl"> </a> </div>
-               <div class="game__block"> <a href="#" > <img src="img/fifa/l1.png" alt="l1"> </a> </div>
-               <div class="game__block"> <a href="#" > <img src="img/fifa/saa.png" alt="saa"> </a> </div>
+          <div class="sport__inner" id="fifa_inner">
+               <div class="game__block"> <a href="index.php?type=LIVE&liga=lc" > <img src="img/fifa/lc.png" alt="lc"> </a> </div>
+               <div class="game__block"> <a href="index.php?type=LIVE&liga=le" > <img src="img/fifa/le.png" alt="le"> </a> </div>
+               <div class="game__block"> <a href="index.php?type=LIVE&liga=pl" > <img src="img/fifa/pl.png" alt="pl"> </a> </div>
+               <div class="game__block"> <a href="index.php?type=LIVE&liga=ll" > <img src="img/fifa/ll.png" alt="ll"> </a> </div>
+               <div class="game__block"> <a href="index.php?type=LIVE&liga=rpl" > <img src="img/fifa/rplb.png" alt="rpl"> </a> </div>
+               <div class="game__block"> <a href="index.php?type=LIVE&liga=bl" > <img src="img/fifa/bl.png" alt="bl"> </a> </div>
+               <div class="game__block"> <a href="index.php?type=LIVE&liga=l1" > <img src="img/fifa/l1.png" alt="l1"> </a> </div>
+               <div class="game__block"> <a href="index.php?type=LIVE&liga=sa" > <img src="img/fifa/saa.png" alt="sa"> </a> </div>
+              </div>
+              <div id="fifa_stream">
+              <?php 
+              $stream_liga = $_GET['liga'];
+              $streamother = R::find( 'streams', 'liga = ?', array($stream_liga) );
+              $c = 0;
+              ?>
+              <?php foreach($streamother as $stream): ?>
+              <a style="text-decoration: none;" href="stream.php?stream_id=<?=$stream->id;?>">
+                <div class="content__mainheader stream__item">
+                  <div class="content__mainimg stream__img"><img src="<?=$stream->leftpic;?>"></div>
+                  <div class="content__maininfo stream__info">
+                    <span><?=$stream->title;?></span>
+                    <span><?=$stream->date;?> <?=$stream->time;?></span>
+                  </div>
+                  <div class="content__mainimg stream__img"><img src="<?=$stream->rightpic;?>"></div>
+                </div>
+              </a>
+            <?php
+                $c++;
+                if ($x % 7 == 0) { 
+                  echo "<div class='news-cm'>Место для вашей рекламы</div>";
+              } 
+            ?>
+            <?php endforeach; ?>
               </div>
           </div>
         </div>
@@ -194,6 +248,7 @@
 </div>
 <?php 
   $type = $_GET['type'];
+  $liga = $_GET['liga'];
     if($type == "NMMA") {
       echo '<script type="text/javascript">';
       echo 'document.getElementById("ALLNEWS").style.display = "none";';
@@ -235,6 +290,7 @@
       echo 'document.getElementById("NEWS").style.display = "none";';
       echo 'document.getElementById("STREAM").style.display = "block";';
       echo 'document.getElementById("ALL").style.display = "none";';
+      echo 'document.getElementById("FIFA").style.display = "none";';
       echo 'document.getElementById("ESPORT").style.display = "block";';
       echo 'document.getElementById("esportBtn").style.color = "#FF0000";';
       echo 'document.getElementById("allBtn").style.color = "#FFFFFF";';
@@ -246,6 +302,7 @@
       echo 'document.getElementById("NEWS").style.display = "none";';
       echo 'document.getElementById("STREAM").style.display = "block";';
       echo 'document.getElementById("ALL").style.display = "none";';
+      echo 'document.getElementById("ESPORT").style.display = "none";';
       echo 'document.getElementById("FIFA").style.display = "block";';
       echo 'document.getElementById("fifaBtn").style.color = "#FF0000";';
       echo 'document.getElementById("allBtn").style.color = "#FFFFFF";';
@@ -273,6 +330,21 @@
       echo 'document.getElementById("ufcBtn").style.color = "#FFFFFF";';
       echo 'document.getElementById("streamBtn").style.color = "#FF0000";';
       echo 'document.getElementById("newsBtn").style.color = "#FFFFFF";';
+      echo '</script>';
+    }
+    if($liga) {
+      echo '<script type="text/javascript">';
+      echo 'document.getElementById("NEWS").style.display = "none";';
+      echo 'document.getElementById("STREAM").style.display = "block";';
+      echo 'document.getElementById("ALL").style.display = "none";';
+      echo 'document.getElementById("ESPORT").style.display = "none";';
+      echo 'document.getElementById("FIFA").style.display = "block";';
+      echo 'document.getElementById("fifaBtn").style.color = "#FF0000";';
+      echo 'document.getElementById("allBtn").style.color = "#FFFFFF";';
+      echo 'document.getElementById("streamBtn").style.color = "#FF0000";';
+      echo 'document.getElementById("newsBtn").style.color = "#FFFFFF";';
+      echo 'document.getElementById("fifa_inner").style.display = "none";';
+      echo 'document.getElementById("fifa_stream").style.display = "block";';
       echo '</script>';
     }
 ?>

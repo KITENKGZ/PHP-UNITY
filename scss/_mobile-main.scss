@@ -246,6 +246,8 @@ html, body, main {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    font-size: 18px;
+    line-height: 18px;
   }
   &__horizontal{
   width: 245px;
@@ -338,6 +340,7 @@ html, body, main {
       justify-content: flex-start;
       border-radius: 3px;
       margin: 0 auto;
+      border: 1px solid rgba(72, 157, 255, 0.2);
       background-color: $color-main;
     }
   }
@@ -496,8 +499,8 @@ html, body, main {
       padding: 0;
       display: block;
       height: 25px;
-      font-size: 25px;
-      line-height: 25px;
+      font-size: 18px;
+      line-height: 18px;
       font-style: bold;
       &:last-child(3) {
         margin-top: 20px;
@@ -1219,13 +1222,11 @@ a {
   color: #FF0000;
 }
 
-.ESPORT ,.FIFA{
-  padding: 20px 30px 0px 30px;
-}
 .sport__inner{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 20px 30px 0px 30px;
 }
 .game__block{
   border-bottom: 1px solid rgb(167, 167, 167);
@@ -1254,6 +1255,6 @@ a {
 }
 
 
-#loginSubmit {
+#loginSubmit, #FIFABLOCK, #ESPORTBLOCK {
   display: none;
 }

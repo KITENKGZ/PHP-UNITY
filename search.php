@@ -16,12 +16,22 @@
             <span id="FIFA" onclick="location.href='index.php?type=NFIFA'">FIFA</span>
           </div>
         </div>
+        <?php
+          function dump($what) {
+            echo '<pre>';print_r($what);echo '</pre>';
+          }
+          ?>
         <div class="content__main content__news">
           <?php 
-          $search = $_POST;
-          $searchid = $search['id'];
-          $news = R::find( 'news', 'type = ?', array($searchid) );
-          $streams = R::find( 'streams', 'type = ?', array($searchid) );
+          $search = $_GET['search'];
+          $news = R::find('news', 'title LIKE ?', ["%$search%"]);
+          if(!($news)) {
+            $news = R::find('news', 'short LIKE ?', ["%$search%"]);
+            if(!($news)) {
+              $news = R::find('news', 'full LIKE ?', ["%$search%"]); 
+            }
+          }
+          $streams =R::find('streams', 'title LIKE ?', ["%$search%"]);
           ?>
           <?php foreach( array_reverse($news) as $post): ?>
             <a href="post.php?post_id=<?=$post->id;?>">

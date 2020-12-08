@@ -3,12 +3,12 @@
       <div class="header__main">
         <div class="header__logo"><a href="index.php"><img src="img/logo.png" alt=""></a></div>
         <div class="header__bar"></div>
-        <div class="search-box">
+        <form class="search-box" action="search.php">
             <input  class="search-txt" type="text" name="search" placeholder="Поиск...">
             <a class="search-btn" href="#">
               <img class="search-img" src="img/search.png" alt="search">
             </a>
-	      	</div>
+	      	</form>
       
       </div>
       
