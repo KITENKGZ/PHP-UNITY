@@ -153,6 +153,7 @@ html, body, main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-left: 7px;
 }
 
 .search-btn {
@@ -172,7 +173,7 @@ html, body, main {
 }
 
 .search-box:hover > .search-txt {
-  width: 164px;
+  width: 165px;
   padding-left: 10px;
 }
 
@@ -434,6 +435,8 @@ html, body, main {
   width: 100%;
   position: relative;
   text-align: center;
+  height: 30px;
+  margin-bottom: 5px;
 }
 
 .content__left .input__file, .content__right .input__file {
@@ -445,8 +448,9 @@ html, body, main {
 
 .content__left .input__file-button-text, .content__right .input__file-button-text {
   color: #ffffff;
-  line-height: 35px;
-  font-size: 15px;
+  line-height: 30px;
+  font-size: 14px;
+  height: 30px;
   display: block;
   margin-left: 5px;
 }
@@ -454,7 +458,7 @@ html, body, main {
 .content__left .input__file-button, .content__right .input__file-button {
   width: 100%;
   max-width: 290px;
-  height: 35px;
+  height: 30px;
   color: #01082B;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -682,7 +686,7 @@ html, body, main {
 }
 
 .menu__profile span, .login__profile span, .registr__profile span {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   text-align: center;
 }
@@ -1598,6 +1602,6 @@ a {
   display: block;
 }
 
-#loginSubmit, #FIFABLOCK, #ESPORTBLOCK {
+#loginSubmit, #FIFA, #ESPORT {
   display: none;
 }

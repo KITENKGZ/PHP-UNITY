@@ -12,8 +12,8 @@
           <div class="content__header">
             <span onclick="location.href='index.php'">ВСЕ</span>
             <span id="MMA" onclick="location.href='index.php?type=NMMA'">MMA</span>
-            <span id="ESPORT" onclick="location.href='index.php?type=NESPORTS'">E-SPORTS</span>
-            <span id="FIFA" onclick="location.href='index.php?type=NFIFA'">FIFA</span>
+            <span id="ESPORTb" onclick="location.href='index.php?type=NESPORTS'">E-SPORTS</span>
+            <span id="FIFAb" onclick="location.href='index.php?type=NFIFA'">FIFA</span>
           </div>
         </div>
         <?php

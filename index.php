@@ -34,7 +34,9 @@
             ' ORDER BY title LIMIT 9999 ');
             $i = 0;
             ?>
-            <?php foreach( array_reverse($news) as $post): ?>
+            <?php foreach( array_reverse($news) as $post): 
+              if ($post->id != 0) { ?>
+              
             <a href="post.php?post_id=<?=$post->id;?>">
               <div class="news-item">
                 <img src="<?=$post->img;?>" alt="IMG">
@@ -47,14 +49,16 @@
                   echo "<div class='news-cm'>Место для вашей рекламы</div>";
               } 
             ?>
-            <?php endforeach; ?>
+            <?php }  
+          endforeach;?>
           </div>
           <div id="UFCNEWS" class="none">
             <?php
               $newsufc = R::find( 'news', 'type = ?', array("UFC") );
               $u = 0;
             ?>
-              <?php foreach( array_reverse($newsufc) as $postufc): ?>
+              <?php foreach( array_reverse($newsufc) as $postufc): 
+                if ($postufc->id != 0) { ?>
                 <a href="post.php?post_id=<?=$postufc->id;?>">
               <div class="news-item">
                 <img src="<?=$postufc->img;?>" alt="IMG">
@@ -63,18 +67,20 @@
             </a>
             <?php
                 $u++;
-                if ($i % 7 == 0) { 
+                if ($u % 7 == 0) { 
                   echo "<div class='news-cm'>Место для вашей рекламы</div>";
               } 
             ?>
-              <?php endforeach; ?>
+              <?php }  
+          endforeach;?>
           </div>
           <div id="ESPORTNEWS" class="none">
           <?php
               $newse = R::find( 'news', 'type = ?', array("ESPORT") );
               $y = 0;
             ?>
-              <?php foreach( array_reverse($newse) as $poste): ?>
+              <?php foreach( array_reverse($newse) as $poste):
+              if ($poste->id != 0) { ?>
                 <a href="post.php?post_id=<?=$poste->id;?>">
               <div class="news-item">
                 <img src="<?=$poste->img;?>" alt="IMG">
@@ -83,18 +89,20 @@
             </a>
             <?php
                 $y++;
-                if ($i % 7 == 0) { 
+                if ($y % 7 == 0) { 
                   echo "<div class='news-cm'>Место для вашей рекламы</div>";
               } 
             ?>
-              <?php endforeach; ?>
+              <?php }  
+          endforeach;?>
           </div>
           <div id="FIFANEWS" class="none">
           <?php
               $newsfifa = R::find( 'news', 'type = ?', array("FIFA") );
               $t = 0;
             ?>
-              <?php foreach( array_reverse($newsfifa) as $postfifa): ?>
+              <?php foreach( array_reverse($newsfifa) as $postfifa):
+              if ($postfifa->id != 0) { ?>
                 <a href="post.php?post_id=<?=$postfifa->id;?>">
               <div class="news-item">
                 <img src="<?=$postfifa->img;?>" alt="IMG">
@@ -103,11 +111,12 @@
             </a>
             <?php
                 $t++;
-                if ($i % 7 == 0) { 
+                if ($t % 7 == 0) { 
                   echo "<div class='news-cm'>Место для вашей рекламы</div>";
               } 
             ?>
-              <?php endforeach; ?>
+              <?php }  
+          endforeach;?>
           </div>
         </div>
       </div>
@@ -125,31 +134,21 @@
           <?php
             $numOfStream = R::count( 'streams' ); 
             $countStreams = range(1,$numOfStream);
-            $streams = R::loadAll( 'streams', $countStreams);
+            $streams = R::findAll('streams',
+            ' ORDER BY title LIMIT 9999 ');
             $streammma = R::find( 'streams', 'type = ?', array("UFC") );
             $streamesports = R::find( 'streams', 'type = ?', array("ESPORT") );
             $streamfifa = R::find( 'streams', 'type = ?', array("FIFA") );
-            if ($numOfStream > 1) {
-              $streams = array_reverse($streams);
-            }
-            if (count($streammma) > 1) {
-              $streammma = array_reverse($streammma);
-            }
-            if (count($streamesports) > 1) {
-              $streamesports = array_reverse($streamesports);
-            }
-            if (count($streamfifa) > 1) {
-              $streamfifa = array_reverse($streamfifa);
-            }
             $x = 0;
             ?>
-            <?php foreach($streams as $stream): ?>
+            <?php foreach($streams as $stream):
+            if ($stream->id != 0) { ?>
               <a style="text-decoration: none;" href="stream.php?stream_id=<?=$stream->id;?>">
                 <div class="content__mainheader stream__item">
                   <div class="content__mainimg stream__img"><img src="<?=$stream->leftpic;?>"></div>
                   <div class="content__maininfo stream__info">
                     <span><?=$stream->title;?></span>
-                    <span><?=date("m/d/y g:i A", ($stream->date));?> <?=$stream->time;?></span>
+                    <span><?=date('g:i', strtotime($stream->time));?> <?=date('d-m-Y', strtotime($stream->date));?></span>
                   </div>
                   <div class="content__mainimg stream__img"><img src="<?=$stream->rightpic;?>"></div>
                 </div>
@@ -160,13 +159,14 @@
                   echo "<div class='news-cm'>Место для вашей рекламы</div>";
               } 
             ?>
-            <?php endforeach; ?>
+            <?php } endforeach; ?>
           </div>
           <div id="UFC" class="none">
             <?php 
             $z = 0;
             ?>
-          <?php foreach($streammma as $stream): ?>
+          <?php foreach($streammma as $stream):
+          if ($stream->id != 0) { ?>
               <a style="text-decoration: none;" href="stream.php?stream_id=<?=$stream->id;?>">
                 <div class="content__mainheader stream__item">
                   <div class="content__mainimg stream__img"><img src="<?=$stream->leftpic;?>"></div>
@@ -179,11 +179,11 @@
               </a>
               <?php
                 $z++;
-                if ($x % 7 == 0) { 
+                if ($z % 7 == 0) { 
                   echo "<div class='news-cm'>Место для вашей рекламы</div>";
               } 
             ?>
-            <?php endforeach; ?>
+            <?php } endforeach; ?>
           </div>
           <div  id="ESPORT" class="ESPORT">
             <div class="sport__inner" id="sport_inner">
@@ -212,7 +212,8 @@
               $streamother = R::find( 'streams', 'liga = ?', array($stream_liga) );
               $c = 0;
               ?>
-              <?php foreach($streamother as $stream): ?>
+              <?php foreach($streamother as $stream): 
+                if ($post->id != 0) { ?>
               <a style="text-decoration: none;" href="stream.php?stream_id=<?=$stream->id;?>">
                 <div class="content__mainheader stream__item">
                   <div class="content__mainimg stream__img"><img src="<?=$stream->leftpic;?>"></div>
@@ -225,11 +226,11 @@
               </a>
             <?php
                 $c++;
-                if ($x % 7 == 0) { 
+                if ($c % 7 == 0) { 
                   echo "<div class='news-cm'>Место для вашей рекламы</div>";
               } 
             ?>
-            <?php endforeach; ?>
+            <?php } endforeach; ?>
               </div>
           </div>
         </div>
