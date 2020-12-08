@@ -14,7 +14,7 @@
           <div class="menu__profile">
                           <!-- Если авторизован выведет приветствие -->
         <?php if(isset($_SESSION['logged_user'])) : ?>
-            <img src="img/social/profile.png" alt="profile">
+            <img src="<?php echo $_SESSION['logged_user']->avatar; ?>" alt="profile">
               <div class="menu__mid" onclick="location.href='profile.php';" style="cursor: pointer;">
                 <div class="menu__login"><?php echo $_SESSION['logged_user']->login; ?></div> 
                 </div>
@@ -91,11 +91,10 @@
     </div>
     <form action="reg.php" class="registr__auth" method="POST">
       <input class="inp" name="login" type="text" placeholder="Логин...">
-      <div class="login__has"><span id="inc">1</span></div> <!---->
+      <div class="login__has"><span id="inc">1</span></div>
       <input class="inp" name="password" type="password" placeholder="Пароль...">
       <input class="inp" name="email" type="text" placeholder="Почта...">
-      <div class="registr__login" name="do_signup" type="submit"><span>ЗАРЕГИСТРИРОВАТЬСЯ</span></div>
-     <!-- <input class="registr__login" name="do_signup" type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ"> -->
+      <input class="login__login registr__login" name="do_signup" type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ">
     </form> 
     <div class="login__sociallog"> 
       <div class="login__socialauth">

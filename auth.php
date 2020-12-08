@@ -19,14 +19,14 @@ if($user) {
   if(password_verify($data['password'], $user->password)) {
 
  		// Все верно, пускаем пользователя
-    $_SESSION['logged_user'] = $user;
+    $_SESSION['logged_user']['name'] = $user;
     
  		// Редирект на главную страницу
     header('Location: index.php');
 
   } else {
     
-    $errors[] = 'Пароль неверно введен!';
+    $errors[] = '1!123123';
 
   }
 

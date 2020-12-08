@@ -14,72 +14,31 @@ if(isset($data['do_signup'])) {
 	// Проводим проверки
         // trim — удаляет пробелы (или другие символы) из начала и конца строки
 	if(trim($data['login']) == '') {
-
 		header('Location: index.php?error=8');
-	}
-
-	if(trim($data['email']) == '') {
-
+	} else if(trim($data['email']) == '') {
 		header('Location: index.php?error=7');
-	}
-
-	if($data['password'] == '') {
-
+	} else if($data['password'] == '') {
 		header('Location: index.php?error=6');
-	}
-
-         // функция mb_strlen - получает длину строки
-	if(mb_strlen($data['login']) < 4 || mb_strlen($data['login']) > 12) {
-
+	} else if(mb_strlen($data['login']) < 4 || mb_strlen($data['login']) > 12) {
 	  header('Location: index.php?error=5');
-
-    }
-
-    if (mb_strlen($data['password']) < 8 || mb_strlen($data['password']) > 32){
-	
-			header('Location: index.php?error=4');
-
-    }
-
-    // проверка на правильность написания Email
-    if (!preg_match("/[0-9a-z_]+@[0-9a-z_^\.]+\.[a-z]{2,3}/i", $data['email'])) {
-
+	} else if (mb_strlen($data['password']) < 8 || mb_strlen($data['password']) > 32){
+		header('Location: index.php?error=4');
+  } else if (!preg_match("/[0-9a-z_]+@[0-9a-z_^\.]+\.[a-z]{2,3}/i", $data['email'])) {
 		header('Location: index.php?error=3');
-    
-    }
-
-	// Проверка на уникальность логина
-	if(R::count('users', "login = ?", array($data['login'])) > 0) {
-
+	} else if(R::count('users', "login = ?", array($data['login'])) > 0) {
 		header('Location: index.php?error=2');
-	}
-
-	// Проверка на уникальность email
-
-	if(R::count('users', "email = ?", array($data['email'])) > 0) {
-
+	} else if(R::count('users', "email = ?", array($data['email'])) > 0) {
 		header('Location: index.php?error=1');
-	}
-
-
-	if(empty($errors)) {
-
-		// Все проверено, регистрируем
-		// Создаем таблицу users
+	} else if(empty($errors)) {
 		$user = R::dispense('users');
-
-    // добавляем в таблицу записи
 		$user->login = $data['login'];
 		$user->email = $data['email'];
-		// Хешируем пароль
 		$user->password = password_hash($data['password'], PASSWORD_DEFAULT);
-
-		// Сохраняем таблицу
 		R::store($user);
-        echo '<div style="color: green; ">Вы успешно зарегистрированы! Можно <a href="login.php">авторизоваться</a>.</div><hr>';
-
+		header('Location: index.php');
+		$_SESSION['logged_user'] = $user;
 	} else {
-		header('Location: index.php?error=404');
+		//header('Location: index.php?error=404');
 	}
 }
   ?>
