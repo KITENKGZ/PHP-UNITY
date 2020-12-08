@@ -34,7 +34,6 @@
               <div class="news-item">
                 <img src="<?=$post->img;?>" alt="IMG">
                 <div class="news-title"><?= mb_substr(($post->title), 0, 100, "UTF-8");?>...</div>
-                <div class="news-bar"></div>
               </div>
             </a>
             <?php
@@ -54,7 +53,6 @@
               <div class="news-item">
                 <img src="<?=$postufc->img;?>" alt="IMG">
                 <div class="news-title"><?= mb_substr(($postufc->title), 0, 100, "UTF-8");?>...</div>
-                <div class="news-bar"></div>
               </div>
             </a>
               <?php endforeach; ?>
@@ -68,7 +66,6 @@
               <div class="news-item">
                 <img src="<?=$poste->img;?>" alt="IMG">
                 <div class="news-title"><?= mb_substr(($poste->title), 0, 100, "UTF-8");?>...</div>
-                <div class="news-bar"></div>
               </div>
             </a>
               <?php endforeach; ?>
@@ -82,7 +79,6 @@
               <div class="news-item">
                 <img src="<?=$postfifa->img;?>" alt="IMG">
                 <div class="news-title"><?= mb_substr(($postfifa->title), 0, 100, "UTF-8");?>...</div>
-                <div class="news-bar"></div>
               </div>
             </a>
               <?php endforeach; ?>
