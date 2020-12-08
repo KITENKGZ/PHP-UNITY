@@ -938,7 +938,7 @@ a {
   color: rgba(255, 255, 255, 0.7);
   height: 84px;
   overflow: hidden;
-  border-bottom:1px solid #fff;
+  border-bottom: 1px solid $color-second;
   img {
     display: block;
     width: 110px;
@@ -1140,17 +1140,6 @@ input[type='button']{
     border-radius: 5px;
     margin: 0 auto;
     align-items: center;
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      height: 1px;
-      width: 171px;
-      bottom: 0px;
-      background-color: $color-second-bg;
-      left: 50%;
-      transform: translateX(-50%);
-    }
   }
   &__mainimg {
     width: 38px;
@@ -1218,9 +1207,7 @@ a {
     width: 100%;
     height: 52px;
     padding: 2px;
-    &::after {
-      width: 203px;
-    }
+    border-bottom: 1px solid $color-second;
   }
   &__img {
     width: 48px;
@@ -1267,3 +1254,6 @@ a {
 }
 
 
+#loginSubmit {
+  display: none;
+}
