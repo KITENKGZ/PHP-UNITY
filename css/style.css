@@ -1134,6 +1134,7 @@ a {
   color: rgba(255, 255, 255, 0.7);
   height: 84px;
   overflow: hidden;
+  border-bottom: 1px solid #fff;
 }
 
 .news-item img {
@@ -1146,17 +1147,17 @@ a {
   margin-right: 5px;
 }
 
+/*
 .news-bar {
   height: 1px;
   width: 203px;
-  background-color: #FFFFFF;
+  background-color: $color-second;
   position: absolute;
   bottom: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
-
+*/
 .news-title {
   width: 370px;
   padding: 5px;

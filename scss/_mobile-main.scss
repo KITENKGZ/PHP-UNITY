@@ -893,6 +893,7 @@ a {
   color: rgba(255, 255, 255, 0.7);
   height: 84px;
   overflow: hidden;
+  border-bottom:1px solid #fff;
   img {
     display: block;
     width: 110px;
@@ -903,6 +904,7 @@ a {
   }
 }
 
+/*
 .news-bar {
   height: 1px;
   width: 203px;
@@ -912,7 +914,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
 }
-
+*/
 .news-title {
   width: 370px;
   padding: 5px;
