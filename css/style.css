@@ -290,7 +290,7 @@ html, body, main {
 }
 
 .content__main {
-  /*margin-top: 5px;*/
+  margin-top: -5px;
   width: 100%;
   min-height: 300px;
   background-color: #01082B;
@@ -1118,7 +1118,7 @@ html, body, main {
       -ms-flex-direction: column;
           flex-direction: column;
   font-size: 11px;
-  line-height: 15px;
+  line-height: 17px;
   text-align: left;
   position: relative;
   color: rgba(255, 255, 255, 0.7);
@@ -1196,8 +1196,7 @@ a {
 
 .news-item {
   position: relative;
-  padding: 5px;
-  margin-top: 5px;
+  margin-top: 8px;
   background-color: #0F1533;
   border-radius: 5px;
   display: -webkit-box;
@@ -1206,19 +1205,28 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 13px;
   position: relative;
   color: rgba(255, 255, 255, 0.7);
   height: 84px;
   overflow: hidden;
-  border-bottom: 1px solid #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  -webkit-box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.75);
+}
+
+.news-item:active {
+  top: 3px;
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+  -webkit-transition: 300ms;
+  transition: 300ms;
 }
 
 .news-item img {
   display: block;
-  width: 110px;
-  height: 74px;
+  width: 135px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
@@ -1542,7 +1550,17 @@ a {
   width: 100%;
   height: 52px;
   padding: 2px;
-  border-bottom: 1px solid #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  -webkit-box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.75);
+}
+
+.stream__item:active {
+  top: 3px;
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+  -webkit-transition: 300ms;
+  transition: 300ms;
 }
 
 .stream__img {
@@ -1567,7 +1585,6 @@ a {
 }
 
 .game__block {
-  border-bottom: 1px solid #a7a7a7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1580,6 +1597,17 @@ a {
   border-radius: 5px;
   padding: 5px;
   margin-bottom: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  -webkit-box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.75);
+}
+
+.game__block:active {
+  top: 3px;
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+  -webkit-transition: 300ms;
+  transition: 300ms;
 }
 
 .game__block a {
@@ -1604,4 +1632,23 @@ a {
 
 #loginSubmit, #FIFA, #ESPORT {
   display: none;
+}
+
+.circle {
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 5px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 87px;
+  z-index: 2;
+}
+
+.circle__inner {
+  height: 5px;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #01082B;
+  z-index: 3;
 }

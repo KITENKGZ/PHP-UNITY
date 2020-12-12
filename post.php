@@ -40,6 +40,7 @@
             ?>
           </div>
         </div>
+        <div class="circle"><div class="circle__inner"></div></div>
         <div class="content__main">
           <div class="news">
             <div class="news__header">

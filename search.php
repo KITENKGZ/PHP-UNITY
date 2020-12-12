@@ -16,22 +16,24 @@
             <span id="FIFAb" onclick="location.href='index.php?type=NFIFA'">FIFA</span>
           </div>
         </div>
+        
         <?php
           function dump($what) {
             echo '<pre>';print_r($what);echo '</pre>';
           }
           ?>
+          <div class="circle"><div class="circle__inner"></div></div>
         <div class="content__main content__news">
           <?php 
           $search = $_GET['search'];
-          $news = R::find('news', 'title LIKE ?', ["%$search%"]);
+          $news = R::find('news', 'title LIKE ?', ["%$search%"], ' ORDER BY datatime');
           if(!($news)) {
-            $news = R::find('news', 'short LIKE ?', ["%$search%"]);
+            $news = R::find('news', 'short LIKE ?', ["%$search%"], ' ORDER BY datatime');
             if(!($news)) {
-              $news = R::find('news', 'full LIKE ?', ["%$search%"]); 
-            }
-          }
-          $streams =R::find('streams', 'title LIKE ?', ["%$search%"]);
+              $news = R::find('news', 'full LIKE ?', ["%$search%"], ' ORDER BY datatime'); 
+            } 
+          } $streams =R::find('streams', 'title LIKE ?', ["%$search%"], ' ORDER BY date');
+          $none = true;
           ?>
           <?php foreach( array_reverse($news) as $post): ?>
             <a href="post.php?post_id=<?=$post->id;?>">
@@ -42,8 +44,9 @@
             </a>
             <?php
                 $i++;
-                if ($i % 7 == 0) { 
+                if ($i % 10 == 0) { 
                   echo "<div class='news-cm'>Место для вашей рекламы</div>";
+                  $none = false;
               } 
             ?>
             <?php endforeach; ?>
@@ -53,18 +56,24 @@
                   <div class="content__mainimg stream__img"><img src="<?=$stream->leftpic;?>"></div>
                   <div class="content__maininfo stream__info">
                     <span><?=$stream->title;?></span>
-                    <span><?=$stream->date;?> <?=$stream->time;?></span>
+                    <span><?=date('H:i d-m-Y', strtotime($stream->date));?></span>
                   </div>
                   <div class="content__mainimg stream__img"><img src="<?=$stream->rightpic;?>"></div>
                 </div>
               </a>
             <?php
                 $x++;
-                if ($x % 7 == 0) { 
+                if ($x % 10 == 0) { 
                   echo "<div class='news-cm'>Место для вашей рекламы</div>";
+                  $none = false;
               } 
             ?>
             <?php endforeach; ?>
+            <?php 
+            if($none) {
+              echo "<span>По зарпосу {$name} ничего не найдено.</span>"; 
+            }
+            ?>
         </div>
       </div>
     </div>

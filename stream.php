@@ -41,15 +41,14 @@
             ?>
           </div>
           
-          </div>
-         
+          </div>      
         <div class="content__main">
         
         <div class="content__mainheader">
           <div class="content__mainimg"><img src="<?=$stream->leftpic;?>"></div>
           <div class="content__maininfo">
             <span><?=$stream->title;?></span>
-            <span><?=$stream->time;?></span>
+            <span><?=date('H:i', strtotime($stream->date));?></span>
           </div>
           <div class="content__mainimg"><img src="<?=$stream->rightpic;?>"></div>
         </div>
@@ -59,6 +58,11 @@
             </div>
         </div>
         <div class="content__cm">Баннер под видео</div>
+        <div class="chat-wrapper">
+      <textarea id="screen" class="chat-text"></textarea>
+      <input id="message" class="chat-input" placeholder="Сообщение...">
+      <button id="button" class="chat-send"><img src="img/send.png" alt="send"></button>
+    </div>
         </div>
       </div>
     </div>
@@ -66,6 +70,34 @@
   <?php
     include "menu.php"
   ?>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript">    
+  function update()
+  {
+    $.post("server.php", {}, function(data){ $("#screen").val(data);});   
+    setTimeout('update()', 1000);
+}
+$(document).ready( 
+function() 
+    {
+    update();
+    $("#button").click(    
+      function() 
+      {         
+      $.post("server.php", 
+    { message: $("#message").val(),
+      userid: "<?php echo $_SESSION['logged_user']->login; ?>",
+      roomid: <?php echo $stream_id; ?>
+    },
+    function(data){ 
+    $("#screen").val(data); 
+    $("#message").val("");
+    }
+    );
+      }
+    );
+    });
+</script>
 </body>
 <?php
     include "script.php"
